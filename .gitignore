@@ -1,0 +1,6 @@
+YOUR_CLIENT_SECRET_FILE.json
+.env
+
+src/YOUR_CLIENT_SECRET_FILE.json
+src/.env
+venv/
