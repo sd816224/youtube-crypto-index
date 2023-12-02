@@ -7,34 +7,29 @@ import json
 from dotenv import load_dotenv
 from pprint import pformat
 import json
+import json
 load_dotenv()
 
-# def list_channel(google_api_key,part,id,page_token=None):
-#     """it invoke search in youtube bigdata v3 api. return the list of specifiy amount of channels
+def list_all_channels(listof_channels,google_api_key):
+    """it iterate the listof_channels and invoke lsit_channel api to get the detail. 
+     export the channel list with detail, including:country, contendetails, statistics and status
 
-#     Parameters: ()
-#         pages_to_search (int): Description of how many pages of calling search, 5 result /page
-#         google_api_key (str): google credential key for the api
-#         q(str): the keyword for searching
-#         order (str): option(date/rating/relevance/title/videoCount/viewCount)
-#         search_type (str): option(channel/playlist/video)
-#         page_token(str): can be used for nextPageToken
-#         ref: https://developers.google.com/youtube/v3/docs/search/list?apix_params=%7B%22part%22%3A%5B%22snippet%22%5D%2C%22q%22%3A%22crypto%22%2C%22type%22%3A%5B%22channel%22%5D%7D
+    Parameters: ()
+        listof_channels (dict): dict generated from search_channels function. contains primary target channels
+        google_api_key (str): google credential key for the api
 
-#     Returns:
-#     int: list of object
-
-#    """
-#     payload=fetch_channels_page(google_api_key,q,page_token=None)
-#     all_items=payload['items']
-#     for i in range(pages_to_search-1):
-#         next_page_token=payload.get('nextPageToken')
-#         if next_page_token:
-#             payload=fetch_channels_page(google_api_key,q,order,search_type,next_page_token)
-#             all_items+=payload['items']
-#         else:
-#             logging.info('fetch pages stop here as no more')
-#     return all_items
+    Returns:
+    dict:
+   """
+    new_list=[]
+    for item in listof_channels['items']:
+        channel_detail=list_channel(google_api_key,part='snippet,contentDetails,statistics,status',id=item['id'],page_token=None)
+        item['country']=channel_detail['items'][0]['snippet']['country']
+        item['contentDetails']=channel_detail['items'][0]['contentDetails']
+        item['statistics']=channel_detail['items'][0]['statistics']
+        item['status']=channel_detail['items'][0]['status']
+        new_list.append(item)
+    return new_list
     
 def list_channel(google_api_key,part,id,page_token=None):
     response = requests.get(
@@ -47,31 +42,30 @@ def list_channel(google_api_key,part,id,page_token=None):
         }  
     )
     payload=json.loads(response.text)
-    print(pformat(payload))
     return payload
 
+def read_json_file(file_path):
+    with open(file_path, 'r') as file:
+        data = json.load(file)
+    return data
 
-def save_channels(input_list):
-    """save the list of channels into json file as:
-    {'items':[item1,item2]}
-    """
-    # json_content={'items':input_list}
-    with open('./data_example/single_list_channel_result.json', 'w') as file:
-        json.dump(input_list, file, indent=4)
+def save_channels(input):
+    with open('./data_example/ready_channel_list.json', 'w') as file:
+        json.dump(input, file, indent=4)
     print('json file done')
 
 def main():
     logging.info('start')
     # config：
     google_api_key=os.getenv('google_api_key')
-    part='snippet,contentDetails,statistics,status'
-    id='UC-0Hk4yjo7pfxrRq9vJke-Q'
-    example=list_channel(
+    file_path = './data_example/listof_tailered_channels.json'
+    listof_channels = read_json_file(file_path)
+    ready_channel_list=list_all_channels(
+        listof_channels,    
         google_api_key,
-        part,
-        id,
         )
-    save_channels(example)
+    save_channels(ready_channel_list)
+
 if __name__=='__main__':
     logging.basicConfig(level=logging.INFO)
     sys.exit(main())
