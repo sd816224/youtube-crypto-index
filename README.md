@@ -9,7 +9,7 @@
     - in the google pubsubhubbub Hub: fill the callback_url and topic_url with target channel_id
         - https://developers.google.com/youtube/v3/guides/push_notifications 
 
-can get pubsubhubbub connected but can not read atom feed, application/atom+xml content type. got stucked here for longtime
+
 
 figure out another with retrieve youtube api:
 - list channel by chanel_id, show part of contentDetails. cached the upload_playlist_id

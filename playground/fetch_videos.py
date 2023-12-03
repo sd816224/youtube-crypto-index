@@ -73,18 +73,4 @@ def save_channels(input):
         json.dump(input, file, indent=4)
     print('json file done')
 
-def main():
-    logging.info('start')
-    # config：
-    pages_to_search=2
-    google_api_key=os.getenv('google_api_key')
-    playlistId='longUploadsUnspecified'
-    video_list=search_videos(
-        google_api_key,
-        playlistId,
-        )
-    save_channels(video_list)
 
-if __name__=='__main__':
-    logging.basicConfig(level=logging.INFO)
-    sys.exit(main())

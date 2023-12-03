@@ -6,7 +6,7 @@ import json
 
 app = Flask(__name__)
 
-@app.route('/webhook', methods=['GET','POST'])
+@app.route('/feed', methods=['GET','POST'])
 
 def webhook():
     challenge = request.args.get('hub.challenge')
@@ -28,5 +28,5 @@ def webhook():
     return "", 204
 
 if __name__ == '__main__':
-    app.run(port=5002)
+    app.run()
 
