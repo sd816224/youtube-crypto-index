@@ -1,5 +1,2 @@
-a=[1,2,3]
-
-a+=[3,4,5]
-
-print(a)
+a={'name':123}
+print('name1' in a)

@@ -1,0 +1,67 @@
+{
+    "feed": {
+        "@xmlns:yt": "http://www.youtube.com/xml/schemas/2015",
+        "@xmlns:media": "http://search.yahoo.com/mrss/",
+        "@xmlns": "http://www.w3.org/2005/Atom",
+        "link": [
+            {
+                "@rel": "self",
+                "@href": "http://www.youtube.com/feeds/videos.xml?channel_id=UC30CiUvwTY9dV6FUkPeh2iQ"
+            },
+            {
+                "@rel": "alternate",
+                "@href": "https://www.youtube.com/channel/UC30CiUvwTY9dV6FUkPeh2iQ"
+            }
+        ],
+        "id": "yt:channel:30CiUvwTY9dV6FUkPeh2iQ",
+        "yt:channelId": "30CiUvwTY9dV6FUkPeh2iQ",
+        "title": "birmingham miles",
+        "author": {
+            "name": "birmingham miles",
+            "uri": "https://www.youtube.com/channel/UC30CiUvwTY9dV6FUkPeh2iQ"
+        },
+        "published": "2013-05-24T21:55:38+00:00",
+        "entry": {
+            "id": "yt:video:WUn7dosO9lY",
+            "yt:videoId": "WUn7dosO9lY",
+            "yt:channelId": "UC30CiUvwTY9dV6FUkPeh2iQ",
+            "title": "08/11/23 \u82f1\u56fd\u4f2f\u660e\u7ff0 \u897f\u4e2d\u90e8\u5730\u533a\u8054\u8d5bWMBL. Miles vs Stourport Spartans.yangyangyang",
+            "link": {
+                "@rel": "alternate",
+                "@href": "https://www.youtube.com/watch?v=WUn7dosO9lY"
+            },
+            "author": {
+                "name": "birmingham miles",
+                "uri": "https://www.youtube.com/channel/UC30CiUvwTY9dV6FUkPeh2iQ"
+            },
+            "published": "2023-11-08T01:52:39+00:00",
+            "updated": "2023-12-03T13:08:58+00:00",
+            "media:group": {
+                "media:title": "08/11/23 \u82f1\u56fd\u4f2f\u660e\u7ff0 \u897f\u4e2d\u90e8\u5730\u533a\u8054\u8d5bWMBL. Miles vs Stourport Spartans.yangyangyang",
+                "media:content": {
+                    "@url": "https://www.youtube.com/v/WUn7dosO9lY?version=3",
+                    "@type": "application/x-shockwave-flash",
+                    "@width": "640",
+                    "@height": "390"
+                },
+                "media:thumbnail": {
+                    "@url": "https://i4.ytimg.com/vi/WUn7dosO9lY/hqdefault.jpg",
+                    "@width": "480",
+                    "@height": "360"
+                },
+                "media:description": null,
+                "media:community": {
+                    "media:starRating": {
+                        "@count": "1",
+                        "@average": "5.00",
+                        "@min": "1",
+                        "@max": "5"
+                    },
+                    "media:statistics": {
+                        "@views": "44"
+                    }
+                }
+            }
+        }
+    }
+}
