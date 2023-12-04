@@ -107,7 +107,7 @@ def test_fetch_channels_page_handle_error_in_get_response(caplog):
     q = 'bitcoin'
     order = 'wrong_order',
     search_type = 'channel'
-    with caplog.at_level(logging.INFO):
+    with caplog.at_level(logging.ERROR):
         fetch_channels_page(google_api_key, q, order, search_type)
         assert "error in response: fetch_channels_page" in caplog.text
 
