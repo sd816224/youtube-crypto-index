@@ -16,3 +16,8 @@ figure out another with retrieve youtube api:
 - list all the video by listing playlistitems by that upload_playlist_id
 - store all the video to database with table name of the chanel_id/name
 - compare the new retrieve and existing db, we will get the new-uploaded video.
+
+schema:yt
+https://dbdiagram.io/
+![Alt text](md_images/watch_channels.png)
+

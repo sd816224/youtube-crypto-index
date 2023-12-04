@@ -29,7 +29,7 @@ def list_all_channels(listof_channels, google_api_key):
         from pprint import pprint
         pprint(channel_detail)
         item['country'] = channel_detail['items'][0]['snippet']['country']
-        item['contentDetails'] = channel_detail['items'][0]['contentDetails']
+        item['uploads_id'] = channel_detail['items'][0]['contentDetails']['relatedPlaylists']['uploads'] # noqa
         item['statistics'] = channel_detail['items'][0]['statistics']
         item['status'] = channel_detail['items'][0]['status']
         new_list.append(item)

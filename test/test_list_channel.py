@@ -117,10 +117,7 @@ def test_list_all_channels_return_correct_format(mock_list_channel_detail):
     listof_channels = {'items': [{'id': 'testId',
                                   'publishedAt': 'testTime',
                                  'title': 'testTitle'}]}
-    expected_result = [{'contentDetails':
-                       {'relatedPlaylists':
-                        {'likes': '',
-                         'uploads': 'testUploads'}},
+    expected_result = [{'uploads_id': 'testUploads',
                         'country': 'RS',
                         'id': 'testId',
                         'publishedAt': 'testTime',
