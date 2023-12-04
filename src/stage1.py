@@ -6,12 +6,24 @@ from pprint import pprint
 import logging
 import sys
 import os
+import json
 from dotenv import load_dotenv
 
+def save_json(input,file_name):
+    with open(file_name, 'w') as file:
+        json.dump(input, file, indent=4)
+    logger.info('json file done: %s',file_name)
+
+def read_json_file(file_path):
+    with open(file_path, 'r') as file:
+        data = json.load(file)
+    return data
 
 def stage1_lambda():
     # config
     logger.info('start')
+    output_json_file_name='./data_example/ready_channel_list.json'
+
     channel_pages_to_search = 2
     google_api_key = os.getenv('google_api_key')
     q = 'bitcoin'
@@ -48,9 +60,11 @@ def stage1_lambda():
 
     pprint(ready_channel_list)
 
-    create_tables(conn)
-    check_tables(conn)
-    conn.close()
+    # create_tables(conn)
+    # check_tables(conn)
+    # conn.close()
+
+    save_json(ready_channel_list,output_json_file_name)
 
 
 if __name__ == '__main__':
@@ -61,12 +75,3 @@ if __name__ == '__main__':
     sys.exit(stage1_lambda())
 
 
-# def read_json_file(file_path):
-#     with open(file_path, 'r') as file:
-#         data = json.load(file)
-#     return data
-
-# def save_channels(input):
-#     with open('./data_example/ready_channel_list.json', 'w') as file:
-#         json.dump(input, file, indent=4)
-#     print('json file done')
