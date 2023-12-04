@@ -31,7 +31,7 @@ jobs:
         - name: Run Coverage Checks
           run: make check-coverage
 
-      run-unit-tests:
+    run-unit-tests:
       runs-on: ubuntu-latest
       needs: run-checks
       steps:
