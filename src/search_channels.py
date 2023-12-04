@@ -4,7 +4,7 @@ import json
 from dotenv import load_dotenv
 
 load_dotenv()
-logger = logging.getLogger('MyLogger')
+logger = logging.getLogger('search_channels')
 logger.setLevel(logging.INFO)
 
 
