@@ -1,23 +1,37 @@
 from list_channel import list_all_channels
 from search_channels import search_channels
+from create_db_tables import create_tables, check_tables, destroy_tables
+from db_connection import get_connection
 from pprint import pprint
 import logging
 import sys
 import os
 from dotenv import load_dotenv
-load_dotenv()
 
 
 def stage1_lambda():
     # config
-    logging.info('start')
+    logger.info('start')
     channel_pages_to_search = 2
     google_api_key = os.getenv('google_api_key')
     q = 'bitcoin'
     order = 'relevance'
     search_type = 'channel'
-
+    reset_db = False
+    conn = get_connection(
+        {
+            'RDS_USERNAME': os.getenv('RDS_USERNAME'),
+            'RDS_HOSTNAME': os.getenv('RDS_HOSTNAME'),
+            'DS_DB_NAME': os.getenv('DS_DB_NAME'),
+            'RDS_PORT': os.getenv('RDS_PORT'),
+            'RDS_PASSWORD': os.getenv('RDS_PASSWORD'),
+        }
+    )
     # config
+    if reset_db:
+        destroy_tables(conn)
+        logger.info('reset db done')
+        return
 
     channel_list_primary = search_channels(
         channel_pages_to_search,
@@ -26,7 +40,7 @@ def stage1_lambda():
         order,
         search_type,
     )
-    pprint(channel_list_primary)
+
     ready_channel_list = list_all_channels(
         channel_list_primary,
         google_api_key,
@@ -34,9 +48,16 @@ def stage1_lambda():
 
     pprint(ready_channel_list)
 
+    create_tables(conn)
+    check_tables(conn)
+    conn.close()
+
 
 if __name__ == '__main__':
-    logging.basicConfig(level=logging.INFO)
+    load_dotenv()
+    logging.basicConfig()
+    logger = logging.getLogger('stage1_lambda')
+    logger.setLevel(logging.INFO)
     sys.exit(stage1_lambda())
 
 
