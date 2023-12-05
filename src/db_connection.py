@@ -1,5 +1,5 @@
 import logging
-from pg8000.native import Connection, DatabaseError, InterfaceError
+from pg8000 import Connection, DatabaseError, InterfaceError
 
 
 logger = logging.getLogger('db_connection')

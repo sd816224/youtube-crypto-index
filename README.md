@@ -21,3 +21,6 @@ schema:yt
 https://dbdiagram.io/
 ![Alt text](md_images/watch_channels.png)
 
+
+
+autopep8 --in-place --aggressive --aggressive
