@@ -26,15 +26,15 @@ def stage1_lambda():
     # config
     logger.info('start')
     reset_db = True
-    work_on_remote_db=False
+    work_on_remote_db = False
     channel_pages_to_search = 2
     google_api_key = os.getenv('google_api_key')
     q = 'bitcoin'
     # config
-    
+
     order = 'relevance'
     search_type = 'channel'
-    
+
     if work_on_remote_db:
         conn = get_connection(
             {
@@ -47,14 +47,14 @@ def stage1_lambda():
         )
     else:
         conn = get_connection(
-        {
-            'RDS_USERNAME': 'testuser',
-            'RDS_HOSTNAME': 'localhost',
-            'DS_DB_NAME': 'testdb',
-            'RDS_PORT': '5432',
-            'RDS_PASSWORD': 'testpass',
-        }
-    )
+            {
+                'RDS_USERNAME': 'testuser',
+                'RDS_HOSTNAME': 'localhost',
+                'DS_DB_NAME': 'testdb',
+                'RDS_PORT': '5432',
+                'RDS_PASSWORD': 'testpass',
+            }
+        )
     # config
     if reset_db:
         destroy_tables(conn)
