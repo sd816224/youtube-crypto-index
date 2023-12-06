@@ -13,7 +13,7 @@ logger.setLevel(logging.INFO)
 @pytest.fixture(scope="module")
 def pg_container():
     test_dir = os.path.dirname(os.path.abspath(__file__))
-    compose_path = os.path.join(test_dir, "docker-compose.yaml")
+    compose_path = os.path.join(test_dir, "docker-compose-testonly.yaml")
     subprocess.run(
         ["docker", "compose", "-f", compose_path, "up", "-d"], check=False
     )  # noqa: E501
@@ -66,7 +66,7 @@ def test_get_connection_returns_correct_log_when_successful_con(
             "RDS_PASSWORD": "testpass",
             "DS_DB_NAME": "testdb",
             "RDS_HOSTNAME": "localhost",
-            "RDS_PORT": 5432,
+            "RDS_PORT": 5433,
         }
         get_connection(database_credentials)
         assert (
@@ -137,7 +137,7 @@ def test_get_connection_with_database_error_incorrect_database_name(
             "RDS_PASSWORD": "testpass",
             "DS_DB_NAME": "wrong-db-name",
             "RDS_HOSTNAME": "localhost",
-            "RDS_PORT": 5432,
+            "RDS_PORT": 5433,
         }
         get_connection(database_credentials)
 
@@ -153,6 +153,6 @@ def test_get_connection_with_database_error_incorrect_password(pg_container):
             "RDS_PASSWORD": "wrong-password",
             "DS_DB_NAME": "testdb",
             "RDS_HOSTNAME": "localhost",
-            "RDS_PORT": 5432,
+            "RDS_PORT": 5433,
         }
         get_connection(database_credentials)
