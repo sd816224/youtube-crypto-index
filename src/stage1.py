@@ -26,20 +26,32 @@ def stage1_lambda():
     # config
     logger.info('start')
     # output_json_file_name = './data_example/ready_channel_list.json'
-
+    reset_db = False
+    work_on_remote_db=False
     channel_pages_to_search = 2
     google_api_key = os.getenv('google_api_key')
     q = 'bitcoin'
     order = 'relevance'
     search_type = 'channel'
-    reset_db = False
-    conn = get_connection(
+    
+    if work_on_remote_db:
+        conn = get_connection(
+            {
+                'RDS_USERNAME': os.getenv('RDS_USERNAME'),
+                'RDS_HOSTNAME': os.getenv('RDS_HOSTNAME'),
+                'DS_DB_NAME': os.getenv('DS_DB_NAME'),
+                'RDS_PORT': os.getenv('RDS_PORT'),
+                'RDS_PASSWORD': os.getenv('RDS_PASSWORD'),
+            }
+        )
+    else:
+        conn = get_connection(
         {
-            'RDS_USERNAME': os.getenv('RDS_USERNAME'),
-            'RDS_HOSTNAME': os.getenv('RDS_HOSTNAME'),
-            'DS_DB_NAME': os.getenv('DS_DB_NAME'),
-            'RDS_PORT': os.getenv('RDS_PORT'),
-            'RDS_PASSWORD': os.getenv('RDS_PASSWORD'),
+            'RDS_USERNAME': 'testuser',
+            'RDS_HOSTNAME': 'localhost',
+            'DS_DB_NAME': 'testdb',
+            'RDS_PORT': '5432',
+            'RDS_PASSWORD': 'testpass',
         }
     )
     # config
@@ -67,10 +79,10 @@ def stage1_lambda():
 
     pprint(ready_channel_list)
 
-    # create_tables(conn)
-    # check_tables(conn)
-    # conn.commit()
-    # conn.close()
+    create_tables(conn)
+    check_tables(conn)
+    conn.commit()
+    conn.close()
 
 
 if __name__ == '__main__':
