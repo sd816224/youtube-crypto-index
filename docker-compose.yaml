@@ -1,0 +1,13 @@
+version: '3'
+services:
+  local-postgres:
+    image: postgres
+    container_name: local-postgres
+    environment:
+      POSTGRES_DB: testdb
+      POSTGRES_USER: testuser
+      POSTGRES_PASSWORD: testpass
+    ports:
+      - "5432:5432"
+    restart: always
+    # detach: true

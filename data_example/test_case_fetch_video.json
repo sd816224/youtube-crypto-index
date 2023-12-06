@@ -1,15 +1,4 @@
-import logging
-import json
-import pytest
-from src.fetch_videos import fetch_videos_page, fetch_videos
-from unittest.mock import Mock, patch
-import os
-from dotenv import load_dotenv
-load_dotenv()
-
-# logging.basicConfig(level=logging.info)
-
-example_response_dict = {
+{
     "etag": "hNPFKYFNqNJA45aRyFkdRrHkPjM",
     "items": [
         {
@@ -167,66 +156,3 @@ example_response_dict = {
         "totalResults": 500
     }
 }
-
-
-@pytest.fixture
-def mock_response():
-    with patch('src.fetch_videos.requests.get') as mock_get:
-        response = Mock()
-        mock_get.return_value = response
-        response.text = json.dumps(example_response_dict)
-        yield mock_get
-
-
-def test_fetch_videos_page_return_dict(mock_response):
-    # with patcher:
-    google_api_key = 'testkey'
-    playlistId = 'testId',
-    maxResults = 'test5'
-    result = fetch_videos_page(
-        google_api_key,
-        playlistId,
-        maxResults
-    )
-    assert result == example_response_dict
-
-
-def test_fetch_videos_page_handle_error_in_get_response(caplog):
-    google_api_key = os.getenv('google_api_key')
-    playlistId = 'testId'
-    maxResults = '6'
-    with caplog.at_level(logging.ERROR):
-        fetch_videos_page(google_api_key, playlistId, maxResults)
-        assert "error in response: fetch_videos_page" in caplog.text
-
-
-def test_search_channels_return_correct_format_with_single_page(
-        mock_response):
-    google_api_key = 'testkey'
-    playlistId = 'testId'
-    maxResults = '6'
-    result = fetch_videos(google_api_key, playlistId, maxResults)
-    assert result == {
-        "items": [
-            {
-                "id": "testId1",
-                "title": "testTitle1",
-                "videoPublishedAt": "testTime1",
-                'videoId': 'testvideoId1',
-                'channel_id': 'testchannelId1'
-            },
-            {
-                "id": "testId2",
-                "title": "testTitle2",
-                "videoPublishedAt": "testTime2",
-                'videoId': 'testvideoId2',
-                'channel_id': 'testchannelId2'
-            },
-            {
-                "id": "testId3",
-                "title": "testTitle3",
-                "videoPublishedAt": "testTime3",
-                'videoId': 'testvideoId3',
-                'channel_id': 'testchannelId3'
-            }
-        ]}
