@@ -25,12 +25,13 @@ def read_json_file(file_path):
 def stage1_lambda():
     # config
     logger.info('start')
-    # output_json_file_name = './data_example/ready_channel_list.json'
-    reset_db = False
+    reset_db = True
     work_on_remote_db=False
     channel_pages_to_search = 2
     google_api_key = os.getenv('google_api_key')
     q = 'bitcoin'
+    # config
+    
     order = 'relevance'
     search_type = 'channel'
     
@@ -70,6 +71,9 @@ def stage1_lambda():
         q,
         order,
         search_type,
+
+
+
     )
 
     ready_channel_list = list_all_channels(

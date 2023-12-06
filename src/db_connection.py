@@ -15,11 +15,11 @@ def get_connection(database_credentials):
     ----------
     database_credentials (from the get_credentials util),
     which is a dictionary consisting of:
-        user
-        host
-        database
-        port
-        password
+        RDS_USERNAME
+        RDS_HOSTNAME
+        DS_DB_NAME
+        RDS_PORT
+        RDS_PASSWORD
 
     Raises
     ------
