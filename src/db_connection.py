@@ -1,7 +1,7 @@
 import logging
 from pg8000 import Connection, DatabaseError, InterfaceError
 
-
+logging.basicConfig()
 logger = logging.getLogger('db_connection')
 logger.setLevel(logging.INFO)
 
