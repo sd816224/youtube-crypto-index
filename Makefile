@@ -32,11 +32,14 @@ endef
 requirements: create-environment
 	$(call execute_in_env, $(PIP) install -r ./requirements.txt)
 
-
 ## Add new environment requirements
 add-requirements: 
 	$(call execute_in_env, $(PIP) freeze > ./requirements.txt)
 
+## spin up docker for dev-db
+spin-dev-db:
+	docker-compose up -d 
+	$(call execute_in_env, docker-compose up -d )
 ################################################################################################################
 # Build / Run
 
