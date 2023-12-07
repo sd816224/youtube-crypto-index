@@ -41,7 +41,7 @@ def stage1_lambda():
                 'RDS_USERNAME': os.getenv('RDS_USERNAME'),
                 'RDS_HOSTNAME': os.getenv('RDS_HOSTNAME'),
                 'DS_DB_NAME': os.getenv('DS_DB_NAME'),
-                'RDS_PORT': os.getenv('RDS_PORT'),
+                'RDS_PORT': int(os.getenv('RDS_PORT')),
                 'RDS_PASSWORD': os.getenv('RDS_PASSWORD'),
             }
         )
@@ -51,7 +51,7 @@ def stage1_lambda():
                 'RDS_USERNAME': 'testuser',
                 'RDS_HOSTNAME': 'localhost',
                 'DS_DB_NAME': 'testdb',
-                'RDS_PORT': '5432',
+                'RDS_PORT': 5432,
                 'RDS_PASSWORD': 'testpass',
             }
         )
@@ -71,9 +71,6 @@ def stage1_lambda():
         q,
         order,
         search_type,
-
-
-
     )
 
     ready_channel_list = list_all_channels(
