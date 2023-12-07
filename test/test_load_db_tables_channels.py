@@ -107,5 +107,5 @@ def test_load_channel_can_work(pg_container):
     check_channels_table_result = conn.run(
         """select * from yt.watch_channels""")
     assert check_channels_table_result == (
-        ['testChannelId1', 'testUploadsId1', 'testTitle1', datetime.datetime(2015, 2, 7, 21, 1, 18), 'GB', None, None, True, False], # noqa E501
-        ['testChannelId2', 'testUploadsId2', 'testTitle2', datetime.datetime(2015, 5, 7, 21, 1, 18), 'US', None, None, True, False]) # noqa E501
+        ['testChannelId1', 'testUploadsId1', 'testTitle1', datetime.datetime(2015, 2, 7, 21, 1, 18), 'GB', True, False], # noqa E501
+        ['testChannelId2', 'testUploadsId2', 'testTitle2', datetime.datetime(2015, 5, 7, 21, 1, 18), 'US', True, False]) # noqa E501

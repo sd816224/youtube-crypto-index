@@ -1,5 +1,5 @@
 
-def load_channels_table(conn, channels_content):
+def load_channels_table(conn, listof_channels):
     """ query database.
     insert ready_channel_list into yt.watch_channels
     """
@@ -10,17 +10,58 @@ def load_channels_table(conn, channels_content):
          x['uploads_id'],
             x['title'],
             x['publishedAt'],
-            x['country']) for x in channels_content]
+            x['country']) for x in listof_channels]
     try:
         cursor.executemany(query, data)
-        print('query done')
+        print('load_channels_table done')
     except Exception as e:
         print(e)
     conn.commit()
     cursor.close()
 
 
-def load_videos_table(conn, channels_content):
+def load_statistics_table(conn, listof_channels):
+    """ query database.
+    insert data into yt.statistics
+    """
+    cursor = conn.cursor()
+    query = 'INSERT INTO yt.statistics (channel_id, view_count, subscriber_count, hidden_subscriber_count, video_count) VALUES (%s, %s, %s, %s, %s)'  # noqa E501
+    data = [
+        (x['id'],
+         x['statistics']['viewCount'],
+            x['statistics']['subscriberCount'],
+            x['statistics']['hiddenSubscriberCount'],
+            x['statistics']['videoCount']) for x in listof_channels]
+    try:
+        cursor.executemany(query, data)
+        print('load_sstatistics_table done')
+    except Exception as e:
+        print(e)
+    conn.commit()
+    cursor.close()
+
+
+def load_status_table(conn, listof_channels):
+    """ query database.
+    insert data into yt.status
+    """
+    cursor = conn.cursor()
+    query = 'INSERT INTO yt.status (channel_id, privacy_status, is_linked, long_uploads_status) VALUES (%s, %s, %s, %s)'  # noqa E501
+    data = [
+        (x['id'],
+         x['status']['privacyStatus'],
+            x['status']['isLinked'],
+            x['status']['longUploadsStatus']) for x in listof_channels]
+    try:
+        cursor.executemany(query, data)
+        print('load_status_table done')
+    except Exception as e:
+        print(e)
+    conn.commit()
+    cursor.close()
+
+
+def load_videos_table(conn, listof_videos):
     """ query database.
     insert listof_videos into yt.videos
     """
@@ -34,11 +75,11 @@ def load_videos_table(conn, channels_content):
             x['videoId'],
             x['channel_id']
         )
-        for x in channels_content]
+        for x in listof_videos]
 
     try:
         cursor.executemany(query, data)
-        print('query done')
+        print('load_videos_table done')
     except Exception as e:
         print(e)
     conn.commit()

@@ -88,8 +88,8 @@ def test_create_tables_create_tables_with_correct_columns(pg_container):
                 """)
 
     assert table_names == (
-        ['statistics'],
         ['watch_channels'],
+        ['statistics'],
         ['status'],
         ['videos'])
     assert watch_channels_columns == (
@@ -98,18 +98,16 @@ def test_create_tables_create_tables_with_correct_columns(pg_container):
         ['title'],
         ['published_at'],
         ['country'],
-        ['statistic_id'],
-        ['status_id'],
         ['watch_status'],
         ['videos_fetched'])
     assert statistics_columns == (
-        ['id'],
+        ['channel_id'],
         ['view_count'],
         ['subscriber_count'],
         ['hidden_subscriber_count'],
         ['video_count'])
     assert status_columns == (
-        ['id'],
+        ['channel_id'],
         ['privacy_status'],
         ['is_linked'],
         ['long_uploads_status'])
