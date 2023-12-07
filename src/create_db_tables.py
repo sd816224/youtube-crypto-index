@@ -91,11 +91,11 @@ def check_tables(conn):
     check tables in yt schema: logger column name and data type
     """
     result = conn.run("""
-                        SELECT * FROM information_schema.tables
+                        SELECT table_name FROM information_schema.tables
                         WHERE table_schema = 'yt'
                 """)
     # conn.commit()
-    logger.info('yt.watch_channels: [column_name,data_type]')
+    logger.info('all tables name:')
     logger.info(result)
 
 

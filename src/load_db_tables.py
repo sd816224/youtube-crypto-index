@@ -1,6 +1,3 @@
-from db_connection import get_connection
-import json
-
 
 def load_channels_table(conn, channels_content):
     """ query database.
@@ -25,8 +22,7 @@ def load_channels_table(conn, channels_content):
 
 def load_videos_table(conn, channels_content):
     """ query database.
-    insert listos_videos into yt.videos
-
+    insert listof_videos into yt.videos
     """
     cursor = conn.cursor()
     query = 'INSERT INTO yt.videos (id, title, video_published_at, video_id, channel_id) VALUES (%s, %s, %s, %s, %s)'  # noqa E501
@@ -50,26 +46,26 @@ def load_videos_table(conn, channels_content):
 
 
 #######
-def read_json_file(file_path):
-    with open(file_path, 'r') as file:
-        data = json.load(file)
-    return data
+# def read_json_file(file_path):
+#     with open(file_path, 'r') as file:
+#         data = json.load(file)
+#     return data
 
 
-channel_json_file_name = './data_example/ready_channel_list.json'
-channel_content = read_json_file(channel_json_file_name)
+# channel_json_file_name = './data_example/ready_channel_list.json'
+# channel_content = read_json_file(channel_json_file_name)
 
-video_json_file_name = './data_example/listof_videos.json'
-video_content = read_json_file(video_json_file_name)['items']
+# video_json_file_name = './data_example/listof_videos.json'
+# video_content = read_json_file(video_json_file_name)['items']
 
-conn = get_connection(
-    {
-        'RDS_USERNAME': 'testuser',
-        'RDS_HOSTNAME': 'localhost',
-        'DS_DB_NAME': 'testdb',
-        'RDS_PORT': 5432,
-        'RDS_PASSWORD': 'testpass',
-    }
-)
-load_channels_table(conn, channel_content)
-load_videos_table(conn, video_content)
+# conn = get_connection(
+#     {
+#         'RDS_USERNAME': 'testuser',
+#         'RDS_HOSTNAME': 'localhost',
+#         'DS_DB_NAME': 'testdb',
+#         'RDS_PORT': 5432,
+#         'RDS_PASSWORD': 'testpass',
+#     }
+# )
+# load_channels_table(conn, channel_content)
+# load_videos_table(conn, video_content)
