@@ -24,7 +24,7 @@ def pg_container():
                 [
                     "docker",
                     "exec",
-                    "local-postgres",
+                    "local-test-postgres",
                     "pg_isready",
                     "-h",
                     "localhost",

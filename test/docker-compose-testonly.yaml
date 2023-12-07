@@ -2,7 +2,7 @@ version: '3'
 services:
   local-postgres:
     image: postgres:alpine
-    container_name: local-postgres
+    container_name: local-test-postgres
     environment:
       POSTGRES_DB: testdb
       POSTGRES_USER: testuser

@@ -17,10 +17,15 @@ RDS_PASSWORD = *** (same)
 RDS_HOSTNAME = *** (same)
 RDS_PORT = *** (same)
 ```
-- run docker application
+- make sure running docker application. for dev stage with local-dev-db
+- spin up the container by CLI:  
+``` docker-compose -f ./src/docker-compose-dev.yaml up -d```
+    - if docker command not found. try to refresh in desktop application.
+    - for checking the background container: ``` docker ps```
+    - for stopping the container at the end:``` $ docker-compose -f ./src/docker-compose-dev.yaml down ```
 - config in stage1.py:
     - reset_db: only turn is on when needing to reset database and run src/stage1.py
-    - work_on_remote_db: #only turen is on after config the real postgres database and work on it. otherwise its defaulty work on local docker postgres database image
+    - work_on_remote_db: #only turen is on after config the real postgres database and work on it. otherwise its defaulty set to work with local-dev-db container.
     - q: keyword to search for channels
     - channel_pages_to_search: amount of channels to fetch when searching. No=page*maxResult(its set as 5 defaulty now)
 - run following, it setup database and populate channals and videos data into relavent tables. 
@@ -32,8 +37,6 @@ RDS_PORT = *** (same)
 - implement it to kafka producer.
 - get the data form consumer side. 
 - after proper (validation, filter) processing. generate data virtulization
-
-
 
 - there are a few ways to approach the video info fetching:
     - youtube api:
