@@ -64,13 +64,8 @@ figure out another with retrieve youtube api:
 
 schema:yt
 https://dbdiagram.io/
-![Alt text](md_images/watch_channels.png)
 
-
-
-
-
- ![Alt text](image.png)
+ ![Alt text](md_image/image.png)
 
 
  autopep8 --in-place --aggressive --aggressive

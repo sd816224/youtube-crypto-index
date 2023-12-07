@@ -15,36 +15,35 @@ def create_tables(conn):
       watch_channels
       statistics
       status
+      videos
     """
     conn.run("""CREATE SCHEMA IF NOT EXISTS yt;""")
     logger.info('create schema')
 
     conn.run("""
-                      CREATE TABLE IF NOT EXISTS yt.statistics(
-                        id SERIAL PRIMARY KEY,
-                        view_count INT NOT NULL,
-                        subscriber_count INT NOT NULL,
-                        hidden_subscriber_count BOOLEAN NOT NULL,
-                        video_count INT NOT NULL
-                      );
-                      CREATE TABLE IF NOT EXISTS yt.status(
-                        id INT PRIMARY KEY ,
-                        privacy_status VARCHAR NOT NULL,
-                        is_linked BOOLEAN NOT NULL,
-                        long_uploads_status VARCHAR NOT NULL
-                      );
                       CREATE TABLE IF NOT EXISTS yt.watch_channels(
                         channel_id VARCHAR PRIMARY KEY,
                         uploads_id VARCHAR NOT NULL,
                         title VARCHAR NOT NULL,
                         published_at TIMESTAMP NOT NULL,
                         country VARCHAR NOT NULL,
-                        statistic_id INT,
-                        status_id INT,
                         watch_status BOOLEAN DEFAULT true,
-                        videos_fetched BOOLEAN DEFAULT false,
-                        FOREIGN KEY (statistic_id) REFERENCES yt.statistics(id), 
-                        FOREIGN KEY (status_id) REFERENCES yt.status(id)
+                        videos_fetched BOOLEAN DEFAULT false
+                      );
+                      CREATE TABLE IF NOT EXISTS yt.statistics(
+                        channel_id VARCHAR NOT NULL,
+                        view_count INT NOT NULL,
+                        subscriber_count INT NOT NULL,
+                        hidden_subscriber_count BOOLEAN NOT NULL,
+                        video_count INT NOT NULL,
+                        FOREIGN KEY (channel_id) REFERENCES yt.watch_channels(channel_id)
+                      );
+                      CREATE TABLE IF NOT EXISTS yt.status(
+                        channel_id VARCHAR NOT NULL ,
+                        privacy_status VARCHAR NOT NULL,
+                        is_linked BOOLEAN NOT NULL,
+                        long_uploads_status VARCHAR NOT NULL,
+                        FOREIGN KEY (channel_id) REFERENCES yt.watch_channels(channel_id)
                       );
                       CREATE TABLE IF NOT EXISTS yt.videos(
                         id VARCHAR PRIMARY KEY,
@@ -52,7 +51,7 @@ def create_tables(conn):
                         video_published_at TIMESTAMP NOT NULL,
                         video_id VARCHAR NOT NULL,
                         channel_id VARCHAR NOT NULL,
-                        FOREIGN KEY (channel_id) REFERENCES yt.watch_channels(channel_id)      
+                        FOREIGN KEY (channel_id) REFERENCES yt.watch_channels(channel_id)  
                       );
                       """)  # noqa E501
     conn.commit()
@@ -91,11 +90,11 @@ def check_tables(conn):
     check tables in yt schema: logger column name and data type
     """
     result = conn.run("""
-                        SELECT * FROM information_schema.tables
+                        SELECT table_name FROM information_schema.tables
                         WHERE table_schema = 'yt'
                 """)
     # conn.commit()
-    logger.info('yt.watch_channels: [column_name,data_type]')
+    logger.info('all tables name:')
     logger.info(result)
 
 

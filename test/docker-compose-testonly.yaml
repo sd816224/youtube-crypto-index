@@ -9,6 +9,6 @@ services:
       POSTGRES_PASSWORD: testpass
     ports:
       - "5433:5432"
-    restart: always
+    # restart: always
     # volumes:
-    #   - /data/postgres/pgdata:/var/lib/postgresql/data
+    #    - ./mocking_db/test-db-schema.sql:/docker-entrypoint-initdb.d/test-db-schema.sql
