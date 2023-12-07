@@ -60,7 +60,7 @@ def stage1_lambda():
         destroy_tables(conn)
         create_tables(conn)
         check_tables(conn)
-        conn.commit()
+
         conn.close()
         logger.info('reset db done')
         return
@@ -82,6 +82,7 @@ def stage1_lambda():
 
     create_tables(conn)
     check_tables(conn)
+
     conn.commit()
     conn.close()
 

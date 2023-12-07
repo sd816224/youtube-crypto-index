@@ -1,11 +1,13 @@
-import os
-import subprocess
-import time
+
 import logging
 import pytest
 from pg8000 import DatabaseError, InterfaceError
+# from docker_testing_db_fixture import pg_container  # noqa: E501
 from src.db_connection import get_connection
-
+import subprocess
+import time
+import os
+logging.basicConfig()
 logger = logging.getLogger("MyLogger")
 logger.setLevel(logging.INFO)
 

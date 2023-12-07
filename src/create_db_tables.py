@@ -28,7 +28,7 @@ def create_tables(conn):
                         video_count INT NOT NULL
                       );
                       CREATE TABLE IF NOT EXISTS yt.status(
-                        id INT PRIMARY KEY NOT NULL,
+                        id INT PRIMARY KEY ,
                         privacy_status VARCHAR NOT NULL,
                         is_linked BOOLEAN NOT NULL,
                         long_uploads_status VARCHAR NOT NULL
@@ -46,15 +46,21 @@ def create_tables(conn):
                         FOREIGN KEY (statistic_id) REFERENCES yt.statistics(id), 
                         FOREIGN KEY (status_id) REFERENCES yt.status(id)
                       );
-                      """)# noqa E501
-    logger.info(
-        'create table: yt.watch_channels/statistics/status  [column_name,dadta_type]') # noqa
-
+                      CREATE TABLE IF NOT EXISTS yt.videos(
+                        id VARCHAR PRIMARY KEY,
+                        title VARCHAR NOT NULL,
+                        video_published_at TIMESTAMP NOT NULL,
+                        video_id VARCHAR NOT NULL,
+                        channel_id VARCHAR NOT NULL,
+                        FOREIGN KEY (channel_id) REFERENCES yt.watch_channels(channel_id)      
+                      );
+                      """)  # noqa E501
+    conn.commit()
     result = conn.run("""
                         SELECT column_name,data_type FROM information_schema.columns
                         WHERE table_schema = 'yt'
                         AND table_name = 'watch_channels';
-                """) # noqa E501
+                """)  # noqa E501
     logger.info('watch_channels:')
     logger.info(result)
     result = conn.run("""
@@ -71,6 +77,13 @@ def create_tables(conn):
                 """)  # noqa E501
     logger.info('status:')
     logger.info(result)
+    result = conn.run("""
+                        SELECT column_name,data_type FROM information_schema.columns
+                        WHERE table_schema = 'yt'
+                        AND table_name = 'videos';
+                """)  # noqa E501
+    logger.info('videos:')
+    logger.info(result)
 
 
 def check_tables(conn):
@@ -81,6 +94,7 @@ def check_tables(conn):
                         SELECT * FROM information_schema.tables
                         WHERE table_schema = 'yt'
                 """)
+    # conn.commit()
     logger.info('yt.watch_channels: [column_name,data_type]')
     logger.info(result)
 
@@ -89,6 +103,9 @@ def destroy_tables(conn):
     """ query database.
     delete all 3 tables and schema
     """
+    conn.run('DROP TABLE IF EXISTS yt.videos;')
+    logger.info('destroy yt.videos table')
+
     conn.run('DROP TABLE IF EXISTS yt.watch_channels;')
     logger.info('destroy yt.watch_channels table')
 
@@ -100,3 +117,5 @@ def destroy_tables(conn):
 
     conn.run('DROP SCHEMA IF EXISTS yt;')
     logger.info('destroy yt schema')
+
+    conn.commit()

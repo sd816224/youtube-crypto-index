@@ -55,8 +55,6 @@ RDS_PORT = *** (same)
     - web scrap 
         - can not be borthered. lack of knowledge. but its open mind for other solution.
 
-
-
 ---
 figure out another with retrieve youtube api:
 - list channel by chanel_id, show part of contentDetails. cached the upload_playlist_id
@@ -70,6 +68,9 @@ https://dbdiagram.io/
 
 
 
-autopep8 --in-place --aggressive --aggressive
 
-start docker application.
+
+ ![Alt text](image.png)
+
+
+ autopep8 --in-place --aggressive --aggressive
