@@ -1,7 +1,7 @@
 import logging
 import json
 import pytest
-from src.fetch_videos import fetch_videos_page, fetch_videos
+from src.stage1.fetch_videos import fetch_videos_page, fetch_videos
 from unittest.mock import Mock, patch
 import os
 from dotenv import load_dotenv
@@ -171,7 +171,7 @@ example_response_dict = {
 
 @pytest.fixture
 def mock_response():
-    with patch('src.fetch_videos.requests.get') as mock_get:
+    with patch('src.stage1.fetch_videos.requests.get') as mock_get:
         response = Mock()
         mock_get.return_value = response
         response.text = json.dumps(example_response_dict)

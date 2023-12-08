@@ -3,8 +3,8 @@ import subprocess
 import time
 import logging
 import pytest
-from src.db_connection import get_connection
-from src.create_db_tables import create_tables, destroy_tables
+from src.stage1.db_connection import get_connection
+from src.stage1.create_db_tables import create_tables, destroy_tables
 
 logging.basicConfig()
 logger = logging.getLogger("MyLogger")
