@@ -8,15 +8,10 @@ once we had big enough quality data, we potential can build extra features for N
 guidance for colabrators:
 ## stage1 
 - clone the repo
-- create file: into src/.env. config as below:
-```
-google_api_key = *** (create your own google api key)
-DS_DB_NAME = *** (config when you have your postgres database ready, otherwise comment out)
-RDS_USERNAME = *** (same)
-RDS_PASSWORD = *** (same)
-RDS_HOSTNAME = *** (same)
-RDS_PORT = *** (same)
-```
+- create enviroment file: src/.env. config it as src/.env.example:
+    - create your own google api key for google_api_key
+    - config when you have your postgres database ready, otherwise comment out: DS_DB_NAME. RDS_USERNAME. RDS_PASSWORD. RDS_HOSTNAME. RDS_PORT
+
 - make sure running docker application. for dev stage with local-dev-db
 - spin up the container by CLI:  
 ``` docker-compose -f ./src/docker-compose-dev.yaml up -d```
