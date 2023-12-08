@@ -116,4 +116,4 @@ def test_create_tables_create_tables_with_correct_columns(pg_container):
         ['title'],
         ['video_published_at'],
         ['video_id'],
-        ['channel_id'])
+        ['list_id'])

@@ -66,14 +66,14 @@ def load_videos_table(conn, listof_videos):
     insert listof_videos into yt.videos
     """
     cursor = conn.cursor()
-    query = 'INSERT INTO yt.videos (id, title, video_published_at, video_id, channel_id) VALUES (%s, %s, %s, %s, %s)'  # noqa E501
+    query = 'INSERT INTO yt.videos (id, title, video_published_at, video_id, list_id) VALUES (%s, %s, %s, %s, %s)'  # noqa E501
     data = [
         (
             x['id'],
             x['title'],
             x['videoPublishedAt'],
             x['videoId'],
-            x['channel_id']
+            x['list_id']
         )
         for x in listof_videos]
 
