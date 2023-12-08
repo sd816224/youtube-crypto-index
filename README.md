@@ -12,14 +12,15 @@ guidance for colabrators:
     - create your own google api key for google_api_key
     - config when you have your postgres database ready, otherwise comment out: DS_DB_NAME. RDS_USERNAME. RDS_PASSWORD. RDS_HOSTNAME. RDS_PORT
 
-- make sure running docker application. for dev stage with local-dev-db
-- spin up the container by CLI:  
-``` docker-compose -f ./src/docker-compose-dev.yaml up -d```
+
+- setup docker for dev&testing:  
+    - make sure running docker application. for dev stage with local-dev-db
+    - spin up the container by CLI ``` docker-compose -f ./src/docker-compose-dev.yaml up -d```
     - if docker command not found. try to refresh in desktop application.
     - for checking the background container: ``` docker ps```
     - for stopping the container at the end:``` $ docker-compose -f ./src/docker-compose-dev.yaml down ```
 - config in stage1.py:
-    - reset_db: only turn is on when needing to reset database and run src/stage1.py
+    - reset_db_only: only turn is on when needing to reset database and run src/stage1.py
     - work_on_remote_db: #only turen is on after config the real postgres database and work on it. otherwise its defaulty set to work with local-dev-db container.
     - q: keyword to search for channels
     - channel_pages_to_search: amount of channels to fetch when searching. No=page*maxResult(its set as 5 defaulty now)
