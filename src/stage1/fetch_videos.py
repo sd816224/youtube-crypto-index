@@ -32,7 +32,6 @@ def fetch_videos(google_api_key, playlistId, maxResults, page_token=None):
     next_page_token = payload.get('nextPageToken')
     all_items = payload['items']
     page_no = 2
-    print(next_page_token)
     while next_page_token:
         logger.info(f'fetch page: {page_no}')
         payload = fetch_videos_page(
@@ -50,7 +49,7 @@ def fetch_videos(google_api_key, playlistId, maxResults, page_token=None):
                         'title': item['snippet']['title'],
                         'videoPublishedAt': item['contentDetails']['videoPublishedAt'],# noqa E501
                         'videoId': item['snippet']['resourceId']['videoId'],
-                        'channel_id': item['snippet']['channelId'],
+                        'list_id': item['snippet']['playlistId'],
                         # 'description':item['snippet']['description'],
                         } for item in all_items]}
     return tailerd_payload

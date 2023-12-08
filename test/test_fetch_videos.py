@@ -213,20 +213,20 @@ def test_search_channels_return_correct_format_with_single_page(
                 "title": "testTitle1",
                 "videoPublishedAt": "testTime1",
                 'videoId': 'testvideoId1',
-                'channel_id': 'testchannelId1'
+                'list_id': 'testplaylistId1'
             },
             {
                 "id": "testId2",
                 "title": "testTitle2",
                 "videoPublishedAt": "testTime2",
                 'videoId': 'testvideoId2',
-                'channel_id': 'testchannelId2'
+                'list_id': 'testplaylistId2'
             },
             {
                 "id": "testId3",
                 "title": "testTitle3",
                 "videoPublishedAt": "testTime3",
                 'videoId': 'testvideoId3',
-                'channel_id': 'testchannelId3'
+                'list_id': 'testplaylistId3'
             }
         ]}

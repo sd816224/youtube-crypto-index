@@ -25,6 +25,8 @@ def channels_iterator(conn, google_api_key, maxResults_videos):
     while upload_id is not None:
 
         all_videos = fetch_videos(google_api_key, upload_id, maxResults_videos)
+    # save_json(all_videos, 'data_example/debug_stage1_fetch_videos_return.json') # noqa E501
+    # all_videos = read_json_file('data_example/debug_stage1_fetch_videos_return.json')  # noqa E501
         load_videos_table(conn, all_videos['items'])
         mark_channel_fetched(conn, upload_id)
         upload_id = get_one_channel_id_from_db(conn)
@@ -37,7 +39,7 @@ def mark_channel_fetched(conn, channel_id):
         conn(class): pg connction instance
         channel_id(str): channel's uploads_id
     '''
-    query = f'UPDATE yt.watch_channels SET videos_fetched = TRUE WHERE uploads_id = @@{channel_id}@@' # noqa E501
+    query = f'UPDATE yt.watch_channels SET videos_fetched = TRUE WHERE uploads_id = @@{channel_id}@@'  # noqa E501
     conn.run(query.replace('@@', "'"))
     conn.commit()
     logger.info(
@@ -51,12 +53,12 @@ def get_one_channel_id_from_db(conn):
     args:
         conn(class): pg connction instance
     '''
-    channel_id = conn.run('''SELECT uploads_id
+    uploads_id = conn.run('''SELECT uploads_id, channel_id
                                         FROM yt.watch_channels
                                         WHERE videos_fetched=FALSE
                            LIMIT 1 ''')  # join table to statistics and order by viewcount. # noqa E501
-    if len(channel_id) == 0:
+    if len(uploads_id) == 0:
         logger.info("there is no more channel un-fetched")
         return None
-    logger.info(f"get_one_channel_id_from_db: {channel_id[0][0]}")
-    return channel_id[0][0]
+    logger.info(f"get_one_channel_id_from_db: channel_id: {uploads_id[0][1]}, list_id: {uploads_id[0][0]}") # noqa E501
+    return uploads_id[0][0]

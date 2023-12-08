@@ -102,14 +102,14 @@ def destroy_tables(conn):
     conn.run('DROP TABLE IF EXISTS yt.videos;')
     logger.info('destroy yt.videos table')
 
-    conn.run('DROP TABLE IF EXISTS yt.watch_channels;')
-    logger.info('destroy yt.watch_channels table')
-
     conn.run('DROP TABLE IF EXISTS yt.statistics;')
     logger.info('destroy yt.statistics table')
 
     conn.run('DROP TABLE IF EXISTS yt.status;')
     logger.info('destroy yt.status table')
+
+    conn.run('DROP TABLE IF EXISTS yt.watch_channels;')
+    logger.info('destroy yt.watch_channels table')
 
     conn.run('DROP SCHEMA IF EXISTS yt;')
     logger.info('destroy yt schema')

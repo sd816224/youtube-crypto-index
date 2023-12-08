@@ -117,3 +117,13 @@ def test_create_tables_create_tables_with_correct_columns(pg_container):
         ['video_published_at'],
         ['video_id'],
         ['list_id'])
+
+
+def test_delete_tables_can_work(pg_container):
+    conn = get_connection(database_credentials)
+    destroy_tables(conn)
+    table_names = conn.run("""
+                        SELECT table_name FROM information_schema.tables
+                        WHERE table_schema = 'yt'
+                """)
+    assert table_names == ()
