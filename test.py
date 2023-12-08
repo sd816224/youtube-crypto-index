@@ -30,4 +30,5 @@
 
 # iteratr_channels()
 
-print(len(()))
+import time
+print(time.time())
