@@ -26,8 +26,6 @@ def list_all_channels(listof_channels, google_api_key):
             part='snippet,contentDetails,statistics,status',
             id=item['id'],
             page_token=None)
-        from pprint import pprint
-        pprint(channel_detail)
         item['country'] = channel_detail['items'][0]['snippet']['country']
         item['uploads_id'] = channel_detail['items'][0]['contentDetails']['relatedPlaylists']['uploads'] # noqa
         item['statistics'] = channel_detail['items'][0]['statistics']

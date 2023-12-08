@@ -1,7 +1,7 @@
 import logging
 import json
 import pytest
-from src.search_channels import search_channels, fetch_channels_page
+from src.stage1.search_channels import search_channels, fetch_channels_page
 from unittest.mock import Mock, patch
 import os
 from dotenv import load_dotenv
@@ -71,7 +71,7 @@ example_response_dict = {
 
 @pytest.fixture
 def mock_response():
-    with patch('src.search_channels.requests.get') as mock_get:
+    with patch('src.stage1.search_channels.requests.get') as mock_get:
         response = Mock()
         mock_get.return_value = response
         response.text = json.dumps(example_response_dict)
@@ -80,7 +80,7 @@ def mock_response():
 
 @pytest.fixture
 def mock_fetch_channels_page():
-    with patch('src.search_channels.fetch_channels_page') as mock_get:
+    with patch('src.stage1.search_channels.fetch_channels_page') as mock_get:
         example_response_dict['nextPageToken'] = 'testtoken'
         mock_get.return_value = example_response_dict
         yield mock_get

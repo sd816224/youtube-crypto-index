@@ -3,9 +3,9 @@ import subprocess
 import time
 import logging
 import pytest
-from src.db_connection import get_connection
-from src.load_db_tables import load_channels_table, load_videos_table
-from src.create_db_tables import create_tables
+from src.stage1.db_connection import get_connection
+from src.stage1.load_db_tables import load_channels_table, load_videos_table
+from src.stage1.create_db_tables import create_tables
 import datetime
 
 logging.basicConfig()
@@ -109,21 +109,21 @@ def test_load_videos_can_work(pg_container):
                 "title": "testTitle1",
                 "videoPublishedAt": "2023-12-03T17:01:00Z",
                 "videoId": "testVideoId1",
-                "channel_id": "testChannelId1"
+                "list_id": "testUploadsId1"
             },
             {
                 "id": "testId2",
                 "title": "testTitle2",
                 "videoPublishedAt": "2023-12-01T18:09:35Z",
                 "videoId": "testVideoId2",
-                "channel_id": "testChannelId1"
+                "list_id": "testUploadsId1"
             },
             {
                 "id": "testId3",
                 "title": "testTitle3",
                 "videoPublishedAt": "2023-12-01T18:09:35Z",
                 "videoId": "testVideoId3",
-                "channel_id": "testChannelId2"
+                "list_id": "testUploadsId2"
             },
         ]}
     create_tables(conn)
@@ -133,8 +133,8 @@ def test_load_videos_can_work(pg_container):
     assert video_conent_result == (
         [
             'testId1', 'testTitle1', datetime.datetime(
-                2023, 12, 3, 17, 1), 'testVideoId1', 'testChannelId1'], [
+                2023, 12, 3, 17, 1), 'testVideoId1', 'testUploadsId1'], [
             'testId2', 'testTitle2', datetime.datetime(
-                2023, 12, 1, 18, 9, 35), 'testVideoId2', 'testChannelId1'], [
+                2023, 12, 1, 18, 9, 35), 'testVideoId2', 'testUploadsId1'], [
             'testId3', 'testTitle3', datetime.datetime(
-                2023, 12, 1, 18, 9, 35), 'testVideoId3', 'testChannelId2'])
+                2023, 12, 1, 18, 9, 35), 'testVideoId3', 'testUploadsId2'])

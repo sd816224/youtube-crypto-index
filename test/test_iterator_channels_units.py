@@ -3,9 +3,11 @@ import subprocess
 import time
 import logging
 import pytest
+import datetime
 from src.stage1.db_connection import get_connection
-from src.stage1.load_db_tables import load_channels_table, load_status_table
+from src.stage1.load_db_tables import load_channels_table
 from src.stage1.create_db_tables import create_tables
+from src.stage1.iterator_channels import get_one_channel_id_from_db, mark_channel_fetched # noqa E501
 
 logging.basicConfig()
 logger = logging.getLogger("MyLogger")
@@ -60,8 +62,8 @@ def pg_container():
         )  # noqa: E501
 
 
-def test_load_videos_can_work(pg_container):
-    conn = get_connection(database_credentials)
+def test_get_one_channel_id_works_with_some_channel_not_fetched_yet(
+        pg_container):
     channel_content = [
         {
             "id": "testChannelId1",
@@ -101,11 +103,30 @@ def test_load_videos_can_work(pg_container):
                 "madeForKids": False
             }
         }]
-
+    conn = get_connection(database_credentials)
     create_tables(conn)
     load_channels_table(conn, channel_content)
-    load_status_table(conn, channel_content)
-    video_conent_result = conn.run("""select * from yt.status""")
-    assert video_conent_result == (
-        ['testChannelId1', 'public', True, 'longUploadsUnspecified'],
-        ['testChannelId2', 'public', True, 'longUploadsUnspecified'])
+    # load_status_table(conn)
+    result = get_one_channel_id_from_db(conn)
+    assert result == 'testUploadsId1'
+
+
+# def test_get_one_channel_id_works_with_all_channedl_fetched(pg_container):
+#     conn = get_connection(database_credentials)
+#     result=conn.run('select * from yt.watch_channels')
+#     assert result==1
+
+def test_mark_channel_fetched(pg_container):
+    conn = get_connection(database_credentials)
+    result = get_one_channel_id_from_db(conn)
+    mark_channel_fetched(conn, result)
+    result = get_one_channel_id_from_db(conn)
+    mark_channel_fetched(conn, result)
+    updated_channels = conn.run('select * from yt.watch_channels')
+
+    assert updated_channels == (
+        ['testChannelId1', 'testUploadsId1', 'testTitle1', datetime.datetime(2015, 2, 7, 21, 1, 18), 'GB', True, True],  # noqa E501
+        ['testChannelId2', 'testUploadsId2', 'testTitle2', datetime.datetime(2015, 5, 7, 21, 1, 18), 'US', True, True])  # noqa E501
+
+    channel_id = get_one_channel_id_from_db(conn)
+    assert channel_id is None

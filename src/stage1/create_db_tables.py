@@ -23,7 +23,7 @@ def create_tables(conn):
     conn.run("""
                       CREATE TABLE IF NOT EXISTS yt.watch_channels(
                         channel_id VARCHAR PRIMARY KEY,
-                        uploads_id VARCHAR NOT NULL,
+                        uploads_id VARCHAR NOT NULL UNIQUE,
                         title VARCHAR NOT NULL,
                         published_at TIMESTAMP NOT NULL,
                         country VARCHAR NOT NULL,
@@ -31,27 +31,24 @@ def create_tables(conn):
                         videos_fetched BOOLEAN DEFAULT false
                       );
                       CREATE TABLE IF NOT EXISTS yt.statistics(
-                        channel_id VARCHAR NOT NULL,
+                        channel_id VARCHAR REFERENCES yt.watch_channels(channel_id),
                         view_count INT NOT NULL,
                         subscriber_count INT NOT NULL,
                         hidden_subscriber_count BOOLEAN NOT NULL,
-                        video_count INT NOT NULL,
-                        FOREIGN KEY (channel_id) REFERENCES yt.watch_channels(channel_id)
+                        video_count INT NOT NULL
                       );
                       CREATE TABLE IF NOT EXISTS yt.status(
-                        channel_id VARCHAR NOT NULL ,
+                        channel_id VARCHAR REFERENCES yt.watch_channels(channel_id),
                         privacy_status VARCHAR NOT NULL,
                         is_linked BOOLEAN NOT NULL,
-                        long_uploads_status VARCHAR NOT NULL,
-                        FOREIGN KEY (channel_id) REFERENCES yt.watch_channels(channel_id)
+                        long_uploads_status VARCHAR NOT NULL
                       );
                       CREATE TABLE IF NOT EXISTS yt.videos(
                         id VARCHAR PRIMARY KEY,
                         title VARCHAR NOT NULL,
                         video_published_at TIMESTAMP NOT NULL,
                         video_id VARCHAR NOT NULL,
-                        channel_id VARCHAR NOT NULL,
-                        FOREIGN KEY (channel_id) REFERENCES yt.watch_channels(channel_id)  
+                        list_id VARCHAR REFERENCES yt.watch_channels(uploads_id)
                       );
                       """)  # noqa E501
     conn.commit()
@@ -105,14 +102,14 @@ def destroy_tables(conn):
     conn.run('DROP TABLE IF EXISTS yt.videos;')
     logger.info('destroy yt.videos table')
 
-    conn.run('DROP TABLE IF EXISTS yt.watch_channels;')
-    logger.info('destroy yt.watch_channels table')
-
     conn.run('DROP TABLE IF EXISTS yt.statistics;')
     logger.info('destroy yt.statistics table')
 
     conn.run('DROP TABLE IF EXISTS yt.status;')
     logger.info('destroy yt.status table')
+
+    conn.run('DROP TABLE IF EXISTS yt.watch_channels;')
+    logger.info('destroy yt.watch_channels table')
 
     conn.run('DROP SCHEMA IF EXISTS yt;')
     logger.info('destroy yt schema')

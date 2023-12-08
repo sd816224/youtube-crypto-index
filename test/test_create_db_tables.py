@@ -3,8 +3,8 @@ import subprocess
 import time
 import logging
 import pytest
-from src.db_connection import get_connection
-from src.create_db_tables import create_tables, destroy_tables
+from src.stage1.db_connection import get_connection
+from src.stage1.create_db_tables import create_tables, destroy_tables
 
 logging.basicConfig()
 logger = logging.getLogger("MyLogger")
@@ -116,4 +116,14 @@ def test_create_tables_create_tables_with_correct_columns(pg_container):
         ['title'],
         ['video_published_at'],
         ['video_id'],
-        ['channel_id'])
+        ['list_id'])
+
+
+def test_delete_tables_can_work(pg_container):
+    conn = get_connection(database_credentials)
+    destroy_tables(conn)
+    table_names = conn.run("""
+                        SELECT table_name FROM information_schema.tables
+                        WHERE table_schema = 'yt'
+                """)
+    assert table_names == ()

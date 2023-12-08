@@ -2,7 +2,9 @@ from list_channel import list_all_channels
 from search_channels import search_channels
 from create_db_tables import create_tables, check_tables, destroy_tables
 from db_connection import get_connection
-from pprint import pprint
+from load_db_tables import load_channels_table, load_status_table, load_statistics_table # noqa E501
+from iterator_channels import channels_iterator
+# from pprint import pprint
 import logging
 import sys
 import os
@@ -24,17 +26,16 @@ def read_json_file(file_path):
 
 def stage1_lambda():
     # config
-    logger.info('start')
-    reset_db = True
+    reset_db_only = False
     work_on_remote_db = False
     channel_pages_to_search = 2
-    google_api_key = os.getenv('google_api_key')
     q = 'bitcoin'
+    maxResults_videos = '50'
     # config
-
+    google_api_key = os.getenv('google_api_key')
     order = 'relevance'
     search_type = 'channel'
-
+    logger.info('start')
     if work_on_remote_db:
         conn = get_connection(
             {
@@ -56,7 +57,7 @@ def stage1_lambda():
             }
         )
     # config
-    if reset_db:
+    if reset_db_only:
         destroy_tables(conn)
         create_tables(conn)
         check_tables(conn)
@@ -64,7 +65,9 @@ def stage1_lambda():
         conn.close()
         logger.info('reset db done')
         return
-
+    destroy_tables(conn)
+    create_tables(conn)
+    check_tables(conn)
     channel_list_primary = search_channels(
         channel_pages_to_search,
         google_api_key,
@@ -77,13 +80,10 @@ def stage1_lambda():
         channel_list_primary,
         google_api_key,
     )
-
-    pprint(ready_channel_list)
-
-    create_tables(conn)
-    check_tables(conn)
-
-    conn.commit()
+    load_channels_table(conn, ready_channel_list)
+    load_status_table(conn, ready_channel_list)
+    load_statistics_table(conn, ready_channel_list)
+    channels_iterator(conn, google_api_key, maxResults_videos)
     conn.close()
 
 
