@@ -2,7 +2,7 @@ from list_channel import list_all_channels
 from search_channels import search_channels
 from create_db_tables import create_tables, check_tables, destroy_tables
 from db_connection import get_connection
-from load_db_tables import load_channels_table, load_status_table, load_statistics_table # noqa E501
+from load_db_tables import load_channels_table, load_status_table, load_statistics_table  # noqa E501
 from iterator_channels import channels_iterator
 # from pprint import pprint
 import logging
@@ -15,6 +15,7 @@ from dotenv import load_dotenv
 logging.basicConfig()
 logger = logging.getLogger('stage1_lambda')
 logger.setLevel(logging.INFO)
+
 
 def save_json(input, file_name):
     with open(file_name, 'w') as file:
@@ -86,7 +87,6 @@ def stage1_lambda():
         channel_list_primary,
         google_api_key,
     )
-    
     logger.info('list_channels done')
     load_channels_table(conn, ready_channel_list)
     load_status_table(conn, ready_channel_list)

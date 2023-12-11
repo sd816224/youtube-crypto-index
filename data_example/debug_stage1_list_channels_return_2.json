@@ -1,0 +1,941 @@
+[
+    {
+        "id": "UCzrWKkFIRS0kjZf7x24GdGg",
+        "title": "What Bitcoin Did",
+        "publishedAt": "2017-08-29T20:39:21Z",
+        "country": "GB",
+        "uploads_id": "UUzrWKkFIRS0kjZf7x24GdGg",
+        "statistics": {
+            "viewCount": "11809957",
+            "subscriberCount": "106000",
+            "hiddenSubscriberCount": false,
+            "videoCount": "797"
+        },
+        "status": {
+            "privacyStatus": "public",
+            "isLinked": true,
+            "longUploadsStatus": "longUploadsUnspecified"
+        }
+    },
+    {
+        "id": "UCCegl13nmUvxUKMJqng1S-A",
+        "title": "Bitcoinovej Kan\u00e1l",
+        "publishedAt": "2019-02-15T21:19:15Z",
+        "country": "CZ",
+        "uploads_id": "UUCegl13nmUvxUKMJqng1S-A",
+        "statistics": {
+            "viewCount": "14493654",
+            "subscriberCount": "90500",
+            "hiddenSubscriberCount": false,
+            "videoCount": "524"
+        },
+        "status": {
+            "privacyStatus": "public",
+            "isLinked": true,
+            "longUploadsStatus": "longUploadsUnspecified",
+            "madeForKids": false
+        }
+    },
+    {
+        "id": "UCl4takhOQtiyprismCPsa2Q",
+        "title": "Swan Bitcoin",
+        "publishedAt": "2020-04-26T16:35:43Z",
+        "country": "US",
+        "uploads_id": "UUl4takhOQtiyprismCPsa2Q",
+        "statistics": {
+            "viewCount": "13180839",
+            "subscriberCount": "65500",
+            "hiddenSubscriberCount": false,
+            "videoCount": "1395"
+        },
+        "status": {
+            "privacyStatus": "public",
+            "isLinked": true,
+            "longUploadsStatus": "longUploadsUnspecified",
+            "madeForKids": false
+        }
+    },
+    {
+        "id": "UChzLnWVsl3puKQwc5PoO6Zg",
+        "title": "BTC Sessions",
+        "publishedAt": "2016-06-27T20:27:57Z",
+        "country": "CA",
+        "uploads_id": "UUhzLnWVsl3puKQwc5PoO6Zg",
+        "statistics": {
+            "viewCount": "8853485",
+            "subscriberCount": "84100",
+            "hiddenSubscriberCount": false,
+            "videoCount": "1391"
+        },
+        "status": {
+            "privacyStatus": "public",
+            "isLinked": true,
+            "longUploadsStatus": "longUploadsUnspecified",
+            "madeForKids": false
+        }
+    },
+    {
+        "id": "UCiUnrCUGCJTCC7KjuW493Ww",
+        "title": "Crypto Zombie",
+        "publishedAt": "2017-12-31T17:06:38Z",
+        "country": "US",
+        "uploads_id": "UUiUnrCUGCJTCC7KjuW493Ww",
+        "statistics": {
+            "viewCount": "41336993",
+            "subscriberCount": "257000",
+            "hiddenSubscriberCount": false,
+            "videoCount": "1490"
+        },
+        "status": {
+            "privacyStatus": "public",
+            "isLinked": true,
+            "longUploadsStatus": "longUploadsUnspecified",
+            "madeForKids": false
+        }
+    },
+    {
+        "id": "UCi7RBPfTtRkVchV6qO8PUzg",
+        "title": "Crypto Casey",
+        "publishedAt": "2017-06-06T12:37:38Z",
+        "country": "US",
+        "uploads_id": "UUi7RBPfTtRkVchV6qO8PUzg",
+        "statistics": {
+            "viewCount": "23685455",
+            "subscriberCount": "537000",
+            "hiddenSubscriberCount": false,
+            "videoCount": "399"
+        },
+        "status": {
+            "privacyStatus": "public",
+            "isLinked": true,
+            "longUploadsStatus": "longUploadsUnspecified",
+            "madeForKids": false
+        }
+    },
+    {
+        "id": "UCN9Nj4tjXbVTLYWN0EKly_Q",
+        "title": "Crypto Banter",
+        "publishedAt": "2017-09-15T08:03:10Z",
+        "country": "US",
+        "uploads_id": "UUN9Nj4tjXbVTLYWN0EKly_Q",
+        "statistics": {
+            "viewCount": "108934126",
+            "subscriberCount": "678000",
+            "hiddenSubscriberCount": false,
+            "videoCount": "2620"
+        },
+        "status": {
+            "privacyStatus": "public",
+            "isLinked": true,
+            "longUploadsStatus": "longUploadsUnspecified",
+            "madeForKids": false
+        }
+    },
+    {
+        "id": "UCB6Q0S1gUHXMe5-Jjx0_laQ",
+        "title": "Simply Bitcoin",
+        "publishedAt": "2020-07-23T12:16:52Z",
+        "country": "US",
+        "uploads_id": "UUB6Q0S1gUHXMe5-Jjx0_laQ",
+        "statistics": {
+            "viewCount": "4296377",
+            "subscriberCount": "24600",
+            "hiddenSubscriberCount": false,
+            "videoCount": "1895"
+        },
+        "status": {
+            "privacyStatus": "public",
+            "isLinked": true,
+            "longUploadsStatus": "longUploadsUnspecified",
+            "madeForKids": false
+        }
+    },
+    {
+        "id": "UCjpkwsuHgYx9fBE0ojsJ_-w",
+        "title": "Thinking Crypto",
+        "publishedAt": "2013-11-06T04:06:23Z",
+        "country": "US",
+        "uploads_id": "UUjpkwsuHgYx9fBE0ojsJ_-w",
+        "statistics": {
+            "viewCount": "17395050",
+            "subscriberCount": "128000",
+            "hiddenSubscriberCount": false,
+            "videoCount": "2421"
+        },
+        "status": {
+            "privacyStatus": "public",
+            "isLinked": true,
+            "longUploadsStatus": "longUploadsUnspecified",
+            "madeForKids": false
+        }
+    },
+    {
+        "id": "UCF31eojFKhWQJviyMICWO2w",
+        "title": "Bitcoin University",
+        "publishedAt": "2016-02-26T00:52:31Z",
+        "country": "US",
+        "uploads_id": "UUF31eojFKhWQJviyMICWO2w",
+        "statistics": {
+            "viewCount": "21457742",
+            "subscriberCount": "212000",
+            "hiddenSubscriberCount": false,
+            "videoCount": "1287"
+        },
+        "status": {
+            "privacyStatus": "public",
+            "isLinked": true,
+            "longUploadsStatus": "longUploadsUnspecified",
+            "madeForKids": false
+        }
+    },
+    {
+        "id": "UCWll9RyTcxsBfHHe09O2s2A",
+        "title": "The Bitcoin Matrix",
+        "publishedAt": "2020-11-22T23:27:50Z",
+        "country": null,
+        "uploads_id": "UUWll9RyTcxsBfHHe09O2s2A",
+        "statistics": {
+            "viewCount": "156401",
+            "subscriberCount": "3540",
+            "hiddenSubscriberCount": false,
+            "videoCount": "175"
+        },
+        "status": {
+            "privacyStatus": "public",
+            "isLinked": true,
+            "longUploadsStatus": "longUploadsUnspecified"
+        }
+    },
+    {
+        "id": "UCUoUHFzK8wmG6nCLXYLE0qQ",
+        "title": "THE BITCOIN FAMILY Didi Taihuttu",
+        "publishedAt": "2017-06-02T08:33:33Z",
+        "country": "NL",
+        "uploads_id": "UUUoUHFzK8wmG6nCLXYLE0qQ",
+        "statistics": {
+            "viewCount": "7093070",
+            "subscriberCount": "66800",
+            "hiddenSubscriberCount": false,
+            "videoCount": "1469"
+        },
+        "status": {
+            "privacyStatus": "public",
+            "isLinked": true,
+            "longUploadsStatus": "longUploadsUnspecified",
+            "madeForKids": false
+        }
+    },
+    {
+        "id": "UCDo6-SUypaXlTmH6AyrYBZA",
+        "title": "The Bitcoin Layer",
+        "publishedAt": "2022-05-17T03:41:13Z",
+        "country": "US",
+        "uploads_id": "UUDo6-SUypaXlTmH6AyrYBZA",
+        "statistics": {
+            "viewCount": "537857",
+            "subscriberCount": "11100",
+            "hiddenSubscriberCount": false,
+            "videoCount": "387"
+        },
+        "status": {
+            "privacyStatus": "public",
+            "isLinked": true,
+            "longUploadsStatus": "longUploadsUnspecified",
+            "madeForKids": false
+        }
+    },
+    {
+        "id": "UCR9gdpWisRwnk_k23GsHfcA",
+        "title": "World Crypto Network",
+        "publishedAt": "2014-02-01T22:09:53Z",
+        "country": "US",
+        "uploads_id": "UUR9gdpWisRwnk_k23GsHfcA",
+        "statistics": {
+            "viewCount": "6217196",
+            "subscriberCount": "53900",
+            "hiddenSubscriberCount": false,
+            "videoCount": "3401"
+        },
+        "status": {
+            "privacyStatus": "public",
+            "isLinked": true,
+            "longUploadsStatus": "longUploadsUnspecified",
+            "madeForKids": false
+        }
+    },
+    {
+        "id": "UCbvJ-5Kjy7AQ8Lunp2CQBqw",
+        "title": "Mr.Crypto",
+        "publishedAt": "2014-04-17T15:19:44Z",
+        "country": "RO",
+        "uploads_id": "UUbvJ-5Kjy7AQ8Lunp2CQBqw",
+        "statistics": {
+            "viewCount": "1587855",
+            "subscriberCount": "26100",
+            "hiddenSubscriberCount": false,
+            "videoCount": "542"
+        },
+        "status": {
+            "privacyStatus": "public",
+            "isLinked": true,
+            "longUploadsStatus": "longUploadsUnspecified",
+            "madeForKids": false
+        }
+    },
+    {
+        "id": "UC-dLWl8etTtPSGdbbcYffGw",
+        "title": "Bitcoin Trading Challenge",
+        "publishedAt": "2017-04-23T01:43:52Z",
+        "country": "US",
+        "uploads_id": "UU-dLWl8etTtPSGdbbcYffGw",
+        "statistics": {
+            "viewCount": "5350962",
+            "subscriberCount": "71100",
+            "hiddenSubscriberCount": false,
+            "videoCount": "502"
+        },
+        "status": {
+            "privacyStatus": "public",
+            "isLinked": true,
+            "longUploadsStatus": "longUploadsUnspecified"
+        }
+    },
+    {
+        "id": "UCetxkZolEBHX47BqtZktbkg",
+        "title": "Bitcoin.com - Official Channel",
+        "publishedAt": "2016-02-26T01:21:03Z",
+        "country": "US",
+        "uploads_id": "UUetxkZolEBHX47BqtZktbkg",
+        "statistics": {
+            "viewCount": "5484433",
+            "subscriberCount": "85800",
+            "hiddenSubscriberCount": false,
+            "videoCount": "726"
+        },
+        "status": {
+            "privacyStatus": "public",
+            "isLinked": true,
+            "longUploadsStatus": "longUploadsUnspecified",
+            "madeForKids": false
+        }
+    },
+    {
+        "id": "UClf1NZB9mFLnMDiwVWsBi9w",
+        "title": "321 Crypto",
+        "publishedAt": "2019-05-19T15:13:29Z",
+        "country": "PL",
+        "uploads_id": "UUlf1NZB9mFLnMDiwVWsBi9w",
+        "statistics": {
+            "viewCount": "13277715",
+            "subscriberCount": "63200",
+            "hiddenSubscriberCount": false,
+            "videoCount": "1056"
+        },
+        "status": {
+            "privacyStatus": "public",
+            "isLinked": true,
+            "longUploadsStatus": "longUploadsUnspecified",
+            "madeForKids": false
+        }
+    },
+    {
+        "id": "UC4c5FPpwCpb6q8J--i8QHtA",
+        "title": "Crypto Lifer",
+        "publishedAt": "2019-09-09T16:10:10Z",
+        "country": "US",
+        "uploads_id": "UU4c5FPpwCpb6q8J--i8QHtA",
+        "statistics": {
+            "viewCount": "5521764",
+            "subscriberCount": "50200",
+            "hiddenSubscriberCount": false,
+            "videoCount": "3039"
+        },
+        "status": {
+            "privacyStatus": "public",
+            "isLinked": true,
+            "longUploadsStatus": "longUploadsUnspecified",
+            "madeForKids": false
+        }
+    },
+    {
+        "id": "UCgwe5smWqTPMHC3o29iWxGQ",
+        "title": "Bitcoin Feniks",
+        "publishedAt": "2018-08-30T21:51:59Z",
+        "country": "PL",
+        "uploads_id": "UUgwe5smWqTPMHC3o29iWxGQ",
+        "statistics": {
+            "viewCount": "5145580",
+            "subscriberCount": "26500",
+            "hiddenSubscriberCount": false,
+            "videoCount": "2133"
+        },
+        "status": {
+            "privacyStatus": "public",
+            "isLinked": true,
+            "longUploadsStatus": "longUploadsUnspecified",
+            "madeForKids": false
+        }
+    },
+    {
+        "id": "UCpitLpZ8RhYR0c0AezYWzkw",
+        "title": "Bitcoin Magazine NL",
+        "publishedAt": "2017-09-28T13:02:36Z",
+        "country": "NL",
+        "uploads_id": "UUpitLpZ8RhYR0c0AezYWzkw",
+        "statistics": {
+            "viewCount": "1210961",
+            "subscriberCount": "9990",
+            "hiddenSubscriberCount": false,
+            "videoCount": "1827"
+        },
+        "status": {
+            "privacyStatus": "public",
+            "isLinked": true,
+            "longUploadsStatus": "longUploadsUnspecified",
+            "madeForKids": false
+        }
+    },
+    {
+        "id": "UC_i68tipo4IpVBsS_x6eDMQ",
+        "title": "Crypto Miki",
+        "publishedAt": "2021-04-13T21:50:21Z",
+        "country": "CA",
+        "uploads_id": "UU_i68tipo4IpVBsS_x6eDMQ",
+        "statistics": {
+            "viewCount": "3116134",
+            "subscriberCount": "27600",
+            "hiddenSubscriberCount": false,
+            "videoCount": "728"
+        },
+        "status": {
+            "privacyStatus": "public",
+            "isLinked": true,
+            "longUploadsStatus": "longUploadsUnspecified",
+            "madeForKids": false
+        }
+    },
+    {
+        "id": "UCIIjUPZMY4-NWVSPCthgKiw",
+        "title": "Bitcoin Daytrader",
+        "publishedAt": "2017-04-29T16:47:11Z",
+        "country": "NL",
+        "uploads_id": "UUIIjUPZMY4-NWVSPCthgKiw",
+        "statistics": {
+            "viewCount": "1448392",
+            "subscriberCount": "12200",
+            "hiddenSubscriberCount": false,
+            "videoCount": "96"
+        },
+        "status": {
+            "privacyStatus": "public",
+            "isLinked": true,
+            "longUploadsStatus": "longUploadsUnspecified",
+            "madeForKids": false
+        }
+    },
+    {
+        "id": "UCjemQfjaXAzA-95RKoy9n_g",
+        "title": "Discover Crypto",
+        "publishedAt": "2018-02-07T23:54:31Z",
+        "country": "US",
+        "uploads_id": "UUjemQfjaXAzA-95RKoy9n_g",
+        "statistics": {
+            "viewCount": "265409127",
+            "subscriberCount": "1410000",
+            "hiddenSubscriberCount": false,
+            "videoCount": "5053"
+        },
+        "status": {
+            "privacyStatus": "public",
+            "isLinked": true,
+            "longUploadsStatus": "longUploadsUnspecified",
+            "madeForKids": false
+        }
+    },
+    {
+        "id": "UC1wJNXxacQ1hwJZRUpRlZtw",
+        "title": "Bitcoin Angola",
+        "publishedAt": "2019-03-01T13:17:46Z",
+        "country": null,
+        "uploads_id": "UU1wJNXxacQ1hwJZRUpRlZtw",
+        "statistics": {
+            "viewCount": "160197",
+            "subscriberCount": "6390",
+            "hiddenSubscriberCount": false,
+            "videoCount": "593"
+        },
+        "status": {
+            "privacyStatus": "public",
+            "isLinked": true,
+            "longUploadsStatus": "longUploadsUnspecified"
+        }
+    },
+    {
+        "id": "UCQ0zgtTmAjJmdJKZRhETBgQ",
+        "title": "Diario de un Bitcoin",
+        "publishedAt": "2013-01-06T23:09:10Z",
+        "country": "ES",
+        "uploads_id": "UUQ0zgtTmAjJmdJKZRhETBgQ",
+        "statistics": {
+            "viewCount": "344019",
+            "subscriberCount": "3730",
+            "hiddenSubscriberCount": false,
+            "videoCount": "649"
+        },
+        "status": {
+            "privacyStatus": "public",
+            "isLinked": true,
+            "longUploadsStatus": "longUploadsUnspecified"
+        }
+    },
+    {
+        "id": "UCjemQfjaXAzA-95RKoy9n_g",
+        "title": "Discover Crypto",
+        "publishedAt": "2018-02-07T23:54:31Z",
+        "country": "US",
+        "uploads_id": "UUjemQfjaXAzA-95RKoy9n_g",
+        "statistics": {
+            "viewCount": "265409127",
+            "subscriberCount": "1410000",
+            "hiddenSubscriberCount": false,
+            "videoCount": "5053"
+        },
+        "status": {
+            "privacyStatus": "public",
+            "isLinked": true,
+            "longUploadsStatus": "longUploadsUnspecified",
+            "madeForKids": false
+        }
+    },
+    {
+        "id": "UC67AEEecqFEc92nVvcqKdhA",
+        "title": "Crypto Daily",
+        "publishedAt": "2014-08-11T20:00:36Z",
+        "country": "US",
+        "uploads_id": "UU67AEEecqFEc92nVvcqKdhA",
+        "statistics": {
+            "viewCount": "17201768",
+            "subscriberCount": "191000",
+            "hiddenSubscriberCount": false,
+            "videoCount": "522"
+        },
+        "status": {
+            "privacyStatus": "public",
+            "isLinked": true,
+            "longUploadsStatus": "longUploadsUnspecified",
+            "madeForKids": false
+        }
+    },
+    {
+        "id": "UCyBD3P9YOFWNIMTuDzqeObg",
+        "title": "Collection Crypto",
+        "publishedAt": "2021-03-11T22:40:20Z",
+        "country": "US",
+        "uploads_id": "UUyBD3P9YOFWNIMTuDzqeObg",
+        "statistics": {
+            "viewCount": "4018189",
+            "subscriberCount": "72000",
+            "hiddenSubscriberCount": false,
+            "videoCount": "45"
+        },
+        "status": {
+            "privacyStatus": "public",
+            "isLinked": true,
+            "longUploadsStatus": "longUploadsUnspecified"
+        }
+    },
+    {
+        "id": "UC1wJNXxacQ1hwJZRUpRlZtw",
+        "title": "Bitcoin Angola",
+        "publishedAt": "2019-03-01T13:17:46Z",
+        "country": null,
+        "uploads_id": "UU1wJNXxacQ1hwJZRUpRlZtw",
+        "statistics": {
+            "viewCount": "160197",
+            "subscriberCount": "6390",
+            "hiddenSubscriberCount": false,
+            "videoCount": "593"
+        },
+        "status": {
+            "privacyStatus": "public",
+            "isLinked": true,
+            "longUploadsStatus": "longUploadsUnspecified"
+        }
+    },
+    {
+        "id": "UC85Ar3n-HTbD_wkNARnD8UA",
+        "title": "Operation Crypto",
+        "publishedAt": "2017-01-09T04:58:24Z",
+        "country": "GB",
+        "uploads_id": "UU85Ar3n-HTbD_wkNARnD8UA",
+        "statistics": {
+            "viewCount": "2395165",
+            "subscriberCount": "32600",
+            "hiddenSubscriberCount": false,
+            "videoCount": "881"
+        },
+        "status": {
+            "privacyStatus": "public",
+            "isLinked": true,
+            "longUploadsStatus": "longUploadsUnspecified",
+            "madeForKids": false
+        }
+    },
+    {
+        "id": "UCYPI_EGGQ1aNxXElruuyp8g",
+        "title": "Declarando Bitcoin",
+        "publishedAt": "2020-02-28T12:19:25Z",
+        "country": "BR",
+        "uploads_id": "UUYPI_EGGQ1aNxXElruuyp8g",
+        "statistics": {
+            "viewCount": "447476",
+            "subscriberCount": "9840",
+            "hiddenSubscriberCount": false,
+            "videoCount": "538"
+        },
+        "status": {
+            "privacyStatus": "public",
+            "isLinked": true,
+            "longUploadsStatus": "longUploadsUnspecified",
+            "madeForKids": false
+        }
+    },
+    {
+        "id": "UCv1fh4yGuyIwQbHkNKS4TuQ",
+        "title": "Bitcoin Embassy Bar",
+        "publishedAt": "2019-01-09T04:37:24Z",
+        "country": "MX",
+        "uploads_id": "UUv1fh4yGuyIwQbHkNKS4TuQ",
+        "statistics": {
+            "viewCount": "111696",
+            "subscriberCount": "4590",
+            "hiddenSubscriberCount": false,
+            "videoCount": "328"
+        },
+        "status": {
+            "privacyStatus": "public",
+            "isLinked": true,
+            "longUploadsStatus": "longUploadsUnspecified"
+        }
+    },
+    {
+        "id": "UCL_zH0Q088KNHFDkd5FLadw",
+        "title": "Hello Bitcoin",
+        "publishedAt": "2021-01-08T20:54:07Z",
+        "country": null,
+        "uploads_id": "UUL_zH0Q088KNHFDkd5FLadw",
+        "statistics": {
+            "viewCount": "32458",
+            "subscriberCount": "2140",
+            "hiddenSubscriberCount": false,
+            "videoCount": "4"
+        },
+        "status": {
+            "privacyStatus": "public",
+            "isLinked": true,
+            "longUploadsStatus": "longUploadsUnspecified"
+        }
+    },
+    {
+        "id": "UCtvdzJWoDKL1LOewU5ADJIQ",
+        "title": "Crypto Micha\u00ebl",
+        "publishedAt": "2018-03-09T20:17:54Z",
+        "country": "NL",
+        "uploads_id": "UUtvdzJWoDKL1LOewU5ADJIQ",
+        "statistics": {
+            "viewCount": "9412635",
+            "subscriberCount": "162000",
+            "hiddenSubscriberCount": false,
+            "videoCount": "869"
+        },
+        "status": {
+            "privacyStatus": "public",
+            "isLinked": true,
+            "longUploadsStatus": "longUploadsUnspecified",
+            "madeForKids": false
+        }
+    },
+    {
+        "id": "UCavTvSwEoRABvnPtLg0e6LQ",
+        "title": "Crypto Tips",
+        "publishedAt": "2016-11-02T10:51:13Z",
+        "country": "PT",
+        "uploads_id": "UUavTvSwEoRABvnPtLg0e6LQ",
+        "statistics": {
+            "viewCount": "21202882",
+            "subscriberCount": "203000",
+            "hiddenSubscriberCount": false,
+            "videoCount": "1366"
+        },
+        "status": {
+            "privacyStatus": "public",
+            "isLinked": true,
+            "longUploadsStatus": "longUploadsUnspecified",
+            "madeForKids": false
+        }
+    },
+    {
+        "id": "UCW80FUppzDRFNyZNmom39Ow",
+        "title": "\u0645\u062c\u062a\u0645\u0639 \u0627\u0644\u0628\u062a\u0643\u0648\u064a\u0646 - people bitcoin",
+        "publishedAt": "2019-05-01T04:28:49Z",
+        "country": "MA",
+        "uploads_id": "UUW80FUppzDRFNyZNmom39Ow",
+        "statistics": {
+            "viewCount": "1089407",
+            "subscriberCount": "13900",
+            "hiddenSubscriberCount": false,
+            "videoCount": "1310"
+        },
+        "status": {
+            "privacyStatus": "public",
+            "isLinked": true,
+            "longUploadsStatus": "longUploadsUnspecified",
+            "madeForKids": false
+        }
+    },
+    {
+        "id": "UC7ndkZ4vViKiM7kVEgdrlZQ",
+        "title": "Crypto Crew University",
+        "publishedAt": "2017-05-29T18:53:00Z",
+        "country": "US",
+        "uploads_id": "UU7ndkZ4vViKiM7kVEgdrlZQ",
+        "statistics": {
+            "viewCount": "34274775",
+            "subscriberCount": "307000",
+            "hiddenSubscriberCount": false,
+            "videoCount": "803"
+        },
+        "status": {
+            "privacyStatus": "public",
+            "isLinked": true,
+            "longUploadsStatus": "longUploadsUnspecified",
+            "madeForKids": false
+        }
+    },
+    {
+        "id": "UChYclcUdjcVAoHkA689PswQ",
+        "title": "Kraken Crypto Exchange",
+        "publishedAt": "2015-05-26T21:52:37Z",
+        "country": null,
+        "uploads_id": "UUhYclcUdjcVAoHkA689PswQ",
+        "statistics": {
+            "viewCount": "8563474",
+            "subscriberCount": "16900",
+            "hiddenSubscriberCount": false,
+            "videoCount": "243"
+        },
+        "status": {
+            "privacyStatus": "public",
+            "isLinked": true,
+            "longUploadsStatus": "longUploadsUnspecified",
+            "madeForKids": false
+        }
+    },
+    {
+        "id": "UC9lpNkpoVYfCF4FLPeW0HZA",
+        "title": "Bitcoin Hoodie Guy",
+        "publishedAt": "2021-11-19T15:33:28Z",
+        "country": "US",
+        "uploads_id": "UU9lpNkpoVYfCF4FLPeW0HZA",
+        "statistics": {
+            "viewCount": "444754",
+            "subscriberCount": "2640",
+            "hiddenSubscriberCount": false,
+            "videoCount": "901"
+        },
+        "status": {
+            "privacyStatus": "public",
+            "isLinked": true,
+            "longUploadsStatus": "longUploadsUnspecified",
+            "madeForKids": false
+        }
+    },
+    {
+        "id": "UCd4Ys__EL_gbJrYq6JscrAw",
+        "title": "Cheeky Crypto",
+        "publishedAt": "2020-10-02T20:01:59Z",
+        "country": "GB",
+        "uploads_id": "UUd4Ys__EL_gbJrYq6JscrAw",
+        "statistics": {
+            "viewCount": "25289760",
+            "subscriberCount": "154000",
+            "hiddenSubscriberCount": false,
+            "videoCount": "5133"
+        },
+        "status": {
+            "privacyStatus": "public",
+            "isLinked": true,
+            "longUploadsStatus": "longUploadsUnspecified",
+            "madeForKids": false
+        }
+    },
+    {
+        "id": "UCSQVg4jsCNTGzxkFRobygkw",
+        "title": "Bitcoin Depot",
+        "publishedAt": "2017-11-30T22:21:58Z",
+        "country": "US",
+        "uploads_id": "UUSQVg4jsCNTGzxkFRobygkw",
+        "statistics": {
+            "viewCount": "8641553",
+            "subscriberCount": "1620",
+            "hiddenSubscriberCount": false,
+            "videoCount": "16"
+        },
+        "status": {
+            "privacyStatus": "public",
+            "isLinked": true,
+            "longUploadsStatus": "longUploadsUnspecified"
+        }
+    },
+    {
+        "id": "UCybasP-2D2b5kTLAb_kvhWQ",
+        "title": "Crypto Banter +",
+        "publishedAt": "2021-08-16T06:55:52Z",
+        "country": "US",
+        "uploads_id": "UUybasP-2D2b5kTLAb_kvhWQ",
+        "statistics": {
+            "viewCount": "5268370",
+            "subscriberCount": "113000",
+            "hiddenSubscriberCount": false,
+            "videoCount": "527"
+        },
+        "status": {
+            "privacyStatus": "public",
+            "isLinked": true,
+            "longUploadsStatus": "longUploadsUnspecified",
+            "madeForKids": false
+        }
+    },
+    {
+        "id": "UC188KLMYLLGqVJZdYq7mYFw",
+        "title": "JRNY Crypto",
+        "publishedAt": "2017-09-19T23:51:19Z",
+        "country": "US",
+        "uploads_id": "UU188KLMYLLGqVJZdYq7mYFw",
+        "statistics": {
+            "viewCount": "38515451",
+            "subscriberCount": "616000",
+            "hiddenSubscriberCount": false,
+            "videoCount": "391"
+        },
+        "status": {
+            "privacyStatus": "public",
+            "isLinked": true,
+            "longUploadsStatus": "longUploadsUnspecified",
+            "madeForKids": false
+        }
+    },
+    {
+        "id": "UCWKKRsnKBJsaPswBMHvjsAQ",
+        "title": "Bitcoin Collective",
+        "publishedAt": "2022-07-25T09:58:17Z",
+        "country": null,
+        "uploads_id": "UUWKKRsnKBJsaPswBMHvjsAQ",
+        "statistics": {
+            "viewCount": "19663",
+            "subscriberCount": "471",
+            "hiddenSubscriberCount": false,
+            "videoCount": "47"
+        },
+        "status": {
+            "privacyStatus": "public",
+            "isLinked": true,
+            "longUploadsStatus": "longUploadsUnspecified",
+            "madeForKids": false
+        }
+    },
+    {
+        "id": "UCNhcM4eqfIqaHH-OrF2BZ0w",
+        "title": "The Bitcoin Classic",
+        "publishedAt": "2021-04-14T04:36:40Z",
+        "country": "US",
+        "uploads_id": "UUNhcM4eqfIqaHH-OrF2BZ0w",
+        "statistics": {
+            "viewCount": "51164",
+            "subscriberCount": "309",
+            "hiddenSubscriberCount": false,
+            "videoCount": "47"
+        },
+        "status": {
+            "privacyStatus": "public",
+            "isLinked": true,
+            "longUploadsStatus": "longUploadsUnspecified"
+        }
+    },
+    {
+        "id": "UCngIhBkikUe6e7tZTjpKK7Q",
+        "title": "More Crypto Online",
+        "publishedAt": "2021-06-11T21:40:27Z",
+        "country": "GB",
+        "uploads_id": "UUngIhBkikUe6e7tZTjpKK7Q",
+        "statistics": {
+            "viewCount": "31714951",
+            "subscriberCount": "159000",
+            "hiddenSubscriberCount": false,
+            "videoCount": "11477"
+        },
+        "status": {
+            "privacyStatus": "public",
+            "isLinked": true,
+            "longUploadsStatus": "longUploadsUnspecified",
+            "madeForKids": false
+        }
+    },
+    {
+        "id": "UCu7Sre5A1NMV8J3s2FhluCw",
+        "title": "Crypto Love",
+        "publishedAt": "2017-08-22T00:43:44Z",
+        "country": "US",
+        "uploads_id": "UUu7Sre5A1NMV8J3s2FhluCw",
+        "statistics": {
+            "viewCount": "25032354",
+            "subscriberCount": "236000",
+            "hiddenSubscriberCount": false,
+            "videoCount": "2097"
+        },
+        "status": {
+            "privacyStatus": "public",
+            "isLinked": true,
+            "longUploadsStatus": "longUploadsUnspecified",
+            "madeForKids": false
+        }
+    },
+    {
+        "id": "UC7FtNrcMkDD_gfXNMf-zntw",
+        "title": "CryptoCurrency Certification Consortium",
+        "publishedAt": "2019-09-17T14:46:55Z",
+        "country": "CA",
+        "uploads_id": "UU7FtNrcMkDD_gfXNMf-zntw",
+        "statistics": {
+            "viewCount": "113413",
+            "subscriberCount": "4080",
+            "hiddenSubscriberCount": false,
+            "videoCount": "98"
+        },
+        "status": {
+            "privacyStatus": "public",
+            "isLinked": true,
+            "longUploadsStatus": "longUploadsUnspecified",
+            "madeForKids": false
+        }
+    },
+    {
+        "id": "UClwTmoMI3r-iQOW0EnaXhaw",
+        "title": "Ronaldo Silva - Bitcoin RS",
+        "publishedAt": "2016-12-16T02:59:11Z",
+        "country": "BR",
+        "uploads_id": "UUlwTmoMI3r-iQOW0EnaXhaw",
+        "statistics": {
+            "viewCount": "12531202",
+            "subscriberCount": "341000",
+            "hiddenSubscriberCount": false,
+            "videoCount": "671"
+        },
+        "status": {
+            "privacyStatus": "public",
+            "isLinked": true,
+            "longUploadsStatus": "longUploadsUnspecified",
+            "madeForKids": false
+        }
+    }
+]
