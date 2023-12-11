@@ -2,7 +2,7 @@ from list_channel import list_all_channels
 from search_channels import search_channels
 from create_db_tables import create_tables, check_tables, destroy_tables
 from db_connection import get_connection
-from load_db_tables import load_channels_table, load_status_table, load_statistics_table # noqa E501
+from load_db_tables import load_channels_table, load_status_table, load_statistics_table  # noqa E501
 from iterator_channels import channels_iterator
 # from pprint import pprint
 import logging
@@ -10,6 +10,11 @@ import sys
 import os
 import json
 from dotenv import load_dotenv
+
+
+logging.basicConfig()
+logger = logging.getLogger('stage1_lambda')
+logger.setLevel(logging.INFO)
 
 
 def save_json(input, file_name):
@@ -30,6 +35,7 @@ def stage1_lambda():
     work_on_remote_db = False
     channel_pages_to_search = 2
     q = 'bitcoin'
+    maxResults_channels = '25'
     maxResults_videos = '50'
     # config
     google_api_key = os.getenv('google_api_key')
@@ -74,16 +80,20 @@ def stage1_lambda():
         q,
         order,
         search_type,
+        maxResults_channels,
     )
-
+    logger.info('search_channels done')
     ready_channel_list = list_all_channels(
         channel_list_primary,
         google_api_key,
     )
+    logger.info('list_channels done')
     load_channels_table(conn, ready_channel_list)
     load_status_table(conn, ready_channel_list)
     load_statistics_table(conn, ready_channel_list)
+    logger.info('load channges&status&statistics done')
     channels_iterator(conn, google_api_key, maxResults_videos)
+    logger.info('load videos done')
     conn.close()
 
 

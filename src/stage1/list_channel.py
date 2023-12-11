@@ -2,7 +2,9 @@ import logging
 import requests
 import json
 
+logging.basicConfig()
 logger = logging.getLogger('list_channel')
+logger.setLevel(logging.INFO)
 
 
 def list_all_channels(listof_channels, google_api_key):
@@ -19,18 +21,23 @@ def list_all_channels(listof_channels, google_api_key):
     list: [{chanel1_detail},{chanel3_detail},{chanel2_detail}]
    """
 
+    new_list_id_only = []
     new_list = []
     for item in listof_channels['items']:
+        if item['id'] in new_list_id_only:
+            logger.info(f" remove channel {item['id']} as duplicate")
+            continue
         channel_detail = list_channel_detail(
             google_api_key,
             part='snippet,contentDetails,statistics,status',
             id=item['id'],
             page_token=None)
-        item['country'] = channel_detail['items'][0]['snippet']['country']
-        item['uploads_id'] = channel_detail['items'][0]['contentDetails']['relatedPlaylists']['uploads'] # noqa
+        item['country'] = channel_detail['items'][0]['snippet'].get('country')
+        item['uploads_id'] = channel_detail['items'][0]['contentDetails']['relatedPlaylists']['uploads']  # noqa
         item['statistics'] = channel_detail['items'][0]['statistics']
         item['status'] = channel_detail['items'][0]['status']
         new_list.append(item)
+        new_list_id_only.append(item['id'])
     return new_list
 
 

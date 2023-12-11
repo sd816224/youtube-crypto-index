@@ -1,34 +1,32 @@
-# import time
 
-# def iteratr_channels():
+# from pprint import pprint
+# import logging
+# import sys
+# import os
+# import json
+# from dotenv import load_dotenv
 
-#     # select channel from db. until no more video_fetched is false
-#     # result= select query limit = 1.
-#     # while result not None:
-
-
-#     for i in range(10):
-#         print('get the channel **********', i)
-        
-#         yield from search_video(i)
-
-#         # video_list=search_video()  #pass 1 channel_id everytime into search_video. let it work.
-#         # write_video(video_list)
+# def read_json_file(file_path):
+#     with open(file_path, 'r') as file:
+#         data = json.load(file)
+#     return data
 
 
-# def search_video(i): # 
-#     print('search_video from api',i)
-#     return ['video1', 'video2', 'video3']
+# data=read_json_file('data_example/debug_stage1_list_channels_return_2.json') # noqa E501
 
-# def write_video(video_list):
-#     print('write_video to db',video_list)
+# # pprint(data)      
 
-# # channels_gen=iteratr_channels()
-# # while True:
-# #     search_video(next(channels_gen))    
-# #     time.sleep(2)
+# LL=[i['id'] for i in data]
+# pprint(LL)
+# print(len(LL))
+# print(len(set(LL)))
 
-# iteratr_channels()
+# while len(LL)>0:
+#       x=LL.pop()
+#       if x in LL:
+#             print(x)
 
-import time
-print(time.time())
+for i in range(10):
+      if i==5:
+        continue  
+      print(i)
