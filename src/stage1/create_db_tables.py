@@ -26,7 +26,7 @@ def create_tables(conn):
                         uploads_id VARCHAR NOT NULL UNIQUE,
                         title VARCHAR NOT NULL,
                         published_at TIMESTAMP NOT NULL,
-                        country VARCHAR NOT NULL,
+                        country VARCHAR,
                         watch_status BOOLEAN DEFAULT true,
                         videos_fetched BOOLEAN DEFAULT false
                       );

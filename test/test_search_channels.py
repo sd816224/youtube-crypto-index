@@ -93,11 +93,13 @@ def test_fetch_channels_page_return_dict(mock_response):
     order = 'testorder',
     search_type = 'testtype'
     page_token = 'testtoken'
+    maxResults_channels = '10'
     result = fetch_channels_page(
         google_api_key,
         q,
         order,
         search_type,
+        maxResults_channels,
         page_token)
     assert result == example_response_dict
 
@@ -107,8 +109,15 @@ def test_fetch_channels_page_handle_error_in_get_response(caplog):
     q = 'bitcoin'
     order = 'wrong_order',
     search_type = 'channel'
+    maxResults_channels = '10'
     with caplog.at_level(logging.ERROR):
-        fetch_channels_page(google_api_key, q, order, search_type)
+        fetch_channels_page(
+            google_api_key,
+            q,
+            order,
+            maxResults_channels,
+            search_type,
+            maxResults_channels)
         assert "error in response: fetch_channels_page" in caplog.text
 
 
@@ -120,12 +129,14 @@ def test_search_channels_return_correct_format_with_single_page(
     q = 'testkey'
     order = 'testorder',
     search_type = 'testtype'
+    maxResults_channels = '10'
     result = search_channels(
         pages_to_search,
         google_api_key,
         q,
         order,
-        search_type)
+        search_type,
+        maxResults_channels)
     assert result == {
         "items": [
             {
