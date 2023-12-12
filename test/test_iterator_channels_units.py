@@ -4,10 +4,10 @@ import time
 import logging
 import pytest
 import datetime
-from src.stage1.db_connection import get_connection
-from src.stage1.load_db_tables import load_channels_table
-from src.stage1.create_db_tables import create_tables
-from src.stage1.iterator_channels import get_one_channel_id_from_db, mark_channel_fetched # noqa E501
+from src.db_connection import get_connection
+from src.load_db_tables import load_channels_table
+from src.create_db_tables import create_tables
+from src.iterator_channels import get_one_channel_id_from_db, mark_channel_fetched # noqa E501
 
 logging.basicConfig()
 logger = logging.getLogger("MyLogger")

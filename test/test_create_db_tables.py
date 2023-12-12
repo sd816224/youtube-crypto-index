@@ -3,8 +3,8 @@ import subprocess
 import time
 import logging
 import pytest
-from src.stage1.db_connection import get_connection
-from src.stage1.create_db_tables import create_tables, destroy_tables
+from src.db_connection import get_connection
+from src.create_db_tables import create_tables, destroy_tables
 
 logging.basicConfig()
 logger = logging.getLogger("MyLogger")
@@ -86,12 +86,18 @@ def test_create_tables_create_tables_with_correct_columns(pg_container):
                         WHERE table_schema = 'yt'
                         AND table_name = 'videos';
                 """)
+    subscription_columns = conn.run("""
+                        SELECT column_name FROM information_schema.columns
+                        WHERE table_schema = 'yt'
+                        AND table_name = 'subscription';
+                """)
 
     assert table_names == (
         ['watch_channels'],
         ['statistics'],
         ['status'],
-        ['videos'])
+        ['videos'],
+        ['subscription'])
     assert watch_channels_columns == (
         ['channel_id'],
         ['uploads_id'],
@@ -117,6 +123,16 @@ def test_create_tables_create_tables_with_correct_columns(pg_container):
         ['video_published_at'],
         ['video_id'],
         ['list_id'])
+    assert subscription_columns == (['channel_id'],
+                                    ['callback_url'],
+                                    ['state'],
+                                    ['last_successful_verification'],
+                                    ['expiration_time'],
+                                    ['last_subscribe_request'],
+                                    ['last_unsubscribe_request'],
+                                    ['last_verification_error'],
+                                    ['last_delivery_error'],
+                                    ['aggregate_statistics'])
 
 
 def test_delete_tables_can_work(pg_container):

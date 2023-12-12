@@ -3,7 +3,7 @@ import logging
 import pytest
 from pg8000 import DatabaseError, InterfaceError
 # from docker_testing_db_fixture import pg_container  # noqa: E501
-from src.stage1.db_connection import get_connection
+from src.db_connection import get_connection
 import subprocess
 import time
 import os

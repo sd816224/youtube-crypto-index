@@ -1,32 +1,39 @@
-
-# from pprint import pprint
-# import logging
-# import sys
-# import os
-# import json
-# from dotenv import load_dotenv
-
-# def read_json_file(file_path):
-#     with open(file_path, 'r') as file:
-#         data = json.load(file)
-#     return data
+from datetime import datetime
+import json
+xml_dict={'feed': {'xmlns': 'http://www.w3.org/2005/Atom'}}
 
 
-# data=read_json_file('data_example/debug_stage1_list_channels_return_2.json') # noqa E501
 
-# # pprint(data)      
+import codecs
+from pprint import pprint
+import json
 
-# LL=[i['id'] for i in data]
-# pprint(LL)
-# print(len(LL))
-# print(len(set(LL)))
+# def html_reader(html):
+#     print(html)
 
-# while len(LL)>0:
-#       x=LL.pop()
-#       if x in LL:
-#             print(x)
 
-for i in range(10):
-      if i==5:
-        continue  
-      print(i)
+
+
+# with open("feed_example/sample_check_health_response_1702319577.46871.html", "r") as html_file: 
+#     html = html_file.read() 
+
+
+f=codecs.open("feed_example/sample_check_health_response_1702319577.46871.html", 'r')
+html=f.read()
+
+# with open("feed_example/sample_check_health_response_1702319577.46871.html", "r", encoding='utf-8') as f:
+#     html= f.read()
+
+# print(html)
+
+def save_json(input, file_name):
+    with open(file_name, 'w') as file:
+        json.dump(input, file, indent=4)
+    logger.info('json file done: %s', file_name)
+
+
+# with open("feed_example/sample_check_health_response_1702319577.46871.html", "r", encoding='utf-8') as html_file: 
+#     html = html_file.read() 
+
+save_json(json_, "feed_example/html_to_json_health_check_result.json")
+

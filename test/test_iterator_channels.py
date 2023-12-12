@@ -5,10 +5,10 @@ import logging
 import pytest
 import datetime
 from unittest.mock import patch
-from src.stage1.db_connection import get_connection
-from src.stage1.load_db_tables import load_channels_table
-from src.stage1.create_db_tables import create_tables
-from src.stage1.iterator_channels import channels_iterator
+from src.db_connection import get_connection
+from src.load_db_tables import load_channels_table
+from src.create_db_tables import create_tables
+from src.iterator_channels import channels_iterator
 
 logging.basicConfig()
 logger = logging.getLogger("MyLogger")
@@ -133,7 +133,7 @@ def test_iterate_channels(pg_container):
             }
         }]
 
-    with patch('src.stage1.iterator_channels.fetch_videos', side_effect=mock_fetch_video): # noqa E501
+    with patch('src.iterator_channels.fetch_videos', side_effect=mock_fetch_video): # noqa E501
         google_api_key = 'testkey'
         maxResults_videos = 'testMax'
         conn = get_connection(database_credentials)

@@ -3,6 +3,7 @@ from xml.parsers.expat import ExpatError
 from flask import Flask, request
 from werkzeug.local import LocalProxy   
 import json
+import datetime as dt
 
 app = Flask(__name__)
 
@@ -19,9 +20,11 @@ def webhook():
         print(xml_dict)
         
         # Save the dictionary to a JSON file
-        # with open('./data_example/notification_feed.json', 'w') as json_file:
-        #     json.dump(xml_dict, json_file,indent=4)
-            
+        document_prefix=str(dt.datetime.now())[:16]
+        with open(f'./feed_example/notification_{document_prefix}.json', 'w') as json_file:
+            json.dump(xml_dict, json_file,indent=4)
+
+
     except (ExpatError, LookupError):
         return "", 403
     

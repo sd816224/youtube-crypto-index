@@ -1,7 +1,5 @@
 import logging
-from dotenv import load_dotenv
 
-load_dotenv()
 logging.basicConfig()
 logger = logging.getLogger('create_db_tables')
 logger.setLevel(logging.INFO)
@@ -50,6 +48,18 @@ def create_tables(conn):
                         video_id VARCHAR NOT NULL,
                         list_id VARCHAR REFERENCES yt.watch_channels(uploads_id)
                       );
+                      CREATE TABLE IF NOT EXISTS yt.subscription(
+                        channel_id VARCHAR REFERENCES yt.watch_channels(channel_id),
+                        callback_URL VARCHAR NOT NULL,
+                        state VARCHAR NOT NULL,
+                        Last_successful_verification TIMESTAMP,
+                        expiration_time TIMESTAMP,
+                        Last_subscribe_request TIMESTAMP,
+                        Last_unsubscribe_request TIMESTAMP,
+                        Last_verification_error VARCHAR,
+                        Last_delivery_error VARCHAR,
+                        aggregate_statistics VARCHAR
+                      );
                       """)  # noqa E501
     conn.commit()
     result = conn.run("""
@@ -80,6 +90,13 @@ def create_tables(conn):
                 """)  # noqa E501
     logger.info('videos:')
     logger.info(result)
+    result = conn.run("""
+                        SELECT column_name,data_type FROM information_schema.columns
+                        WHERE table_schema = 'yt'
+                        AND table_name = 'subscription';
+                """)  # noqa E501
+    logger.info('subscription:')
+    logger.info(result)
 
 
 def check_tables(conn):
@@ -99,6 +116,9 @@ def destroy_tables(conn):
     """ query database.
     delete all 3 tables and schema
     """
+    conn.run('DROP TABLE IF EXISTS yt.subscription;')
+    logger.info('destroy yt.videos table')
+
     conn.run('DROP TABLE IF EXISTS yt.videos;')
     logger.info('destroy yt.videos table')
 

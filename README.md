@@ -30,6 +30,15 @@ guidance for colabrators:
     - ```python src/stage1/stage1.py```
 
 ## stage2
+
+- setup for dev
+    - setup ngrok with credential,run it for por 5000. will get callback_url from it.
+    - run server by :```python src/stage2/webhook_server.py``` 
+
+google pubsubhubbub defaulty expiry 5 days. it can be renewed without expire.
+take a few minutes to confirm the verified status.
+
+
 - use google pubsubhubbub to get notification of watched channels new updates
     -ref: https://developers.google.com/youtube/v3/guides/push_notifications 
 - implement it to kafka producer.
@@ -52,6 +61,12 @@ guidance for colabrators:
         
     - web scrap 
         - can not be borthered. lack of knowledge. but its open mind for other solution.
+
+
+- sub-manager works for keep all channels notification alive.
+- webhook-server. establish intention and receive the notification pass to producer client
+
+
 
 ---
 

@@ -3,9 +3,9 @@ import subprocess
 import time
 import logging
 import pytest
-from src.stage1.db_connection import get_connection
-from src.stage1.load_db_tables import load_channels_table, load_statistics_table  # noqa: E501
-from src.stage1.create_db_tables import create_tables
+from src.db_connection import get_connection
+from src.load_db_tables import load_channels_table, load_statistics_table  # noqa: E501
+from src.create_db_tables import create_tables
 
 logging.basicConfig()
 logger = logging.getLogger("MyLogger")
