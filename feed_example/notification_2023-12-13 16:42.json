@@ -1,0 +1,67 @@
+{
+    "feed": {
+        "@xmlns:yt": "http://www.youtube.com/xml/schemas/2015",
+        "@xmlns:media": "http://search.yahoo.com/mrss/",
+        "@xmlns": "http://www.w3.org/2005/Atom",
+        "link": [
+            {
+                "@rel": "self",
+                "@href": "http://www.youtube.com/feeds/videos.xml?channel_id=UCF31eojFKhWQJviyMICWO2w"
+            },
+            {
+                "@rel": "alternate",
+                "@href": "https://www.youtube.com/channel/UCF31eojFKhWQJviyMICWO2w"
+            }
+        ],
+        "id": "yt:channel:F31eojFKhWQJviyMICWO2w",
+        "yt:channelId": "F31eojFKhWQJviyMICWO2w",
+        "title": "Bitcoin University",
+        "author": {
+            "name": "Bitcoin University",
+            "uri": "https://www.youtube.com/channel/UCF31eojFKhWQJviyMICWO2w"
+        },
+        "published": "2016-02-26T00:52:31+00:00",
+        "entry": {
+            "id": "yt:video:vdSDRXT7AXg",
+            "yt:videoId": "vdSDRXT7AXg",
+            "yt:channelId": "UCF31eojFKhWQJviyMICWO2w",
+            "title": "Internet Beggar Hates Bitcoin",
+            "link": {
+                "@rel": "alternate",
+                "@href": "https://www.youtube.com/watch?v=vdSDRXT7AXg"
+            },
+            "author": {
+                "name": "Bitcoin University",
+                "uri": "https://www.youtube.com/channel/UCF31eojFKhWQJviyMICWO2w"
+            },
+            "published": "2023-12-13T14:24:15+00:00",
+            "updated": "2023-12-13T14:24:15+00:00",
+            "media:group": {
+                "media:title": "Internet Beggar Hates Bitcoin",
+                "media:content": {
+                    "@url": "https://www.youtube.com/v/vdSDRXT7AXg?version=3",
+                    "@type": "application/x-shockwave-flash",
+                    "@width": "640",
+                    "@height": "390"
+                },
+                "media:thumbnail": {
+                    "@url": "https://i3.ytimg.com/vi/vdSDRXT7AXg/hqdefault.jpg",
+                    "@width": "480",
+                    "@height": "360"
+                },
+                "media:description": "Join Bitcoin University Premium:\nhttps://www.bitcoinuniversity.com\n\nIn this video, I discuss Wikipedia founder Jimmy Wales's comment on Bitcoin and banks.\n\nJimmy Wales betrays his first world privilege when he extols banks at the expense of Bitcoin. What about the 1.3 billion unbanked people on the planet?\n\nSo why Bitcoin, and not banks?\n\n-- Bitcoin never got a banker bonus, while you got your house foreclosed on\n-- Bitcoin doesn't depend on government bailouts\n-- Bitcoin doesn't do bank holidays or 4-martini lunches\n-- Bitcoin is open 24/7/365\n-- When you want to access your funds, Bitcoin never asks you what you need the money for\n-- Bitcoin won't freeze your money when you exercise your right to free speech\n-- Bitcoin won't freeze your money when hyperinflation hits\n\nBitcoiners should do their best to ignore and defund institutions, politicians, celebrities, etc who go out of their way to attack Bitcoin like Jimmy Wales did. At this point, Wikipedia is a highly politicized and wasteful project that enriches itself while unpaid volunteers do most of the work.\n\nNot investment advice! Consult a financial advisor.\n\nIs Jimmy Wales a professional beggar?\nhttps://twitter.com/Lunch77Beatz/status/1727183828178120887\n\nWikipedia founder's private troubles go public:\nhttps://www.nbcnews.com/id/wbna23470060\n\nWikipedia costs have been skyrocketing:\nhttps://en.wikipedia.org/wiki/Wikimedia_Foundation#Social_justice_causes\nhttps://en.wikipedia.org/wiki/User:Guy_Macon/Wikipedia_has_Cancer\n\nJimmy Wales likes banks and hates Bitcoin:\nhttps://twitter.com/jimmy_wales/status/1733935795537363100\n\nBitcoin worked well when Wales requested money:\nhttps://twitter.com/bradmillscan/status/1733969039993508059\n\nWikipedia should have hodled their BTC:\nhttps://twitter.com/Excellion/status/1733989178453684526\n\nLebanese banks to close \u2018indefinitely\u2019 as hold-ups continue:\nhttps://www.aljazeera.com/news/2022/10/7/lebanese-banks-to-close-indefinetly-reuters\n\nBanks Have Begun Freezing Accounts Linked to Trucker Protest:\nhttps://www.newsweek.com/banks-have-begun-freezing-accounts-linked-trucker-protest-1680649\n\nTwo versions of Mao:\nhttps://en.wikipedia.org/wiki/Mao_Zedong\nhttps://www.conservapedia.com/Mao_Zedong\n\nCrashing purchasing power of USD:\nhttps://www.visualcapitalist.com/wp-content/uploads/2021/03/Purchasing-Power-of-the-US-Dollar.jpg \n\nI am not being paid or otherwise compensated by any company or cryptocurrency project that I mention in my videos. My opinion is not for sale. Please do not contact me with any affiliate or advertising deals. \n\n#Bitcoin \n#Banks \n#wikipedia   \n\nDisclaimer \nNeither Bitcoin University, nor any of its directors, officers, shareholders, personnel, representatives, agents, or independent contractors (collectively, the \u201cOperator Parties\u201d) are licensed financial advisors, registered investment advisors, or registered broker-dealers. None of the Operator Parties are providing investment, financial, legal, or tax advice, and nothing in this video, on this YouTube channel, or at www.Trader.University or www.BitcoinUniversity.com (henceforth, \u201cthe Sites\u201d) should be construed as such by you. This video, channel, and the Sites should be used as educational tools only and are not replacements for professional investment advice. Trading or investing in new and volatile assets like Bitcoin can be risky.",
+                "media:community": {
+                    "media:starRating": {
+                        "@count": "726",
+                        "@average": "5.00",
+                        "@min": "1",
+                        "@max": "5"
+                    },
+                    "media:statistics": {
+                        "@views": "2599"
+                    }
+                }
+            }
+        }
+    }
+}

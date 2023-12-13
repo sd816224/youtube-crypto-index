@@ -1,0 +1,17 @@
+{
+    "feed": {
+        "@xmlns:at": "http://purl.org/atompub/tombstones/1.0",
+        "@xmlns": "http://www.w3.org/2005/Atom",
+        "at:deleted-entry": {
+            "@ref": "yt:video:H9iuJ_IGmT0",
+            "@when": "2023-12-13T15:35:36.808828+00:00",
+            "link": {
+                "@href": "https://www.youtube.com/watch?v=H9iuJ_IGmT0"
+            },
+            "at:by": {
+                "name": "birmingham miles",
+                "uri": "https://www.youtube.com/channel/UC30CiUvwTY9dV6FUkPeh2iQ"
+            }
+        }
+    }
+}

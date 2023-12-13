@@ -117,7 +117,7 @@ def destroy_tables(conn):
     delete all 3 tables and schema
     """
     conn.run('DROP TABLE IF EXISTS yt.subscription;')
-    logger.info('destroy yt.videos table')
+    logger.info('destroy yt.subscription table')
 
     conn.run('DROP TABLE IF EXISTS yt.videos;')
     logger.info('destroy yt.videos table')
