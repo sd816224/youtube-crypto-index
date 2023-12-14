@@ -9,7 +9,6 @@ import logging
 import sys
 import os
 import json
-from dotenv import load_dotenv
 
 
 logging.basicConfig()
@@ -98,7 +97,7 @@ def stage1_lambda():
 
 
 if __name__ == '__main__':
-    load_dotenv()
+    # load_dotenv()
     logging.basicConfig()
     logger = logging.getLogger('stage1_lambda')
     logger.setLevel(logging.INFO)

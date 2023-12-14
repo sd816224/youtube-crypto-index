@@ -79,15 +79,3 @@ def fetch_videos_page(google_api_key, playlistId, maxResults, pageToken=None):
     except Exception as e:
         logger.error(e)
         return None
-
-# def save_channels(input):
-#     """simple save input as json file """
-#     with open('./data_example/listof_videos.json', 'w') as file:
-#         json.dump(input, file, indent=4)
-#     print('json file done')
-
-# google_api_key=os.getenv('google_api_key')
-# playlistId='UU61jC9ggxeGu8HJ9Q_TxOGg'
-# maxResults='3'
-# videos=fetch_videos_page(google_api_key,playlistId,maxResults)
-# pprint(videos)

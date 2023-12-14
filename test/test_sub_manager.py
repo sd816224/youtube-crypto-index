@@ -14,10 +14,6 @@ import datetime
 import time_machine
 
 
-with open('./test/sample_health_response.html') as f:
-    test_response = f.read()
-
-
 @pytest.fixture(scope="module")
 def pg_container():
     test_dir = os.path.dirname(os.path.abspath(__file__))
@@ -55,6 +51,10 @@ def pg_container():
         subprocess.run(
             ["docker", "compose", "-f", compose_path, "down"], check=False
         )  # noqa: E501
+
+
+with open('./test/sample_health_response.html') as f:
+    test_response = f.read()
 
 
 @pytest.fixture
@@ -107,16 +107,15 @@ def test_get_channel_list_init_list(pg_container):
         "test/sample_ready_channel_list.json")
     load_channels_table(conn, sample_ready_channels_list)
     channel_list = get_channel_list(conn)
-    assert 'test_id1' in channel_list
-    assert 'test_id2' in channel_list
-    assert 'test_id3' in channel_list
-    assert 'test_id4' in channel_list
-    assert 'test_id5' in channel_list
+    assert 'UC_test_id1' in channel_list
+    assert 'UC_test_id2' in channel_list
+    assert 'UC_test_id3' in channel_list
+    assert 'UC_test_id4' in channel_list
+    assert 'UC_test_id5' in channel_list
     conn.close()
 
 
 def test_load_subscription_table(pg_container):
-
     conn = get_connection(
         {
             'RDS_USERNAME': 'testuser',
@@ -141,11 +140,11 @@ def test_load_subscription_table(pg_container):
     result_expiration_time = conn.run(
         'select expiration_time from yt.subscription;')
     assert result_channel_id == (
-        ['test_id1'],
-        ['test_id2'],
-        ['test_id3'],
-        ['test_id4'],
-        ['test_id5'])
+        ['UC_test_id1'],
+        ['UC_test_id2'],
+        ['UC_test_id3'],
+        ['UC_test_id4'],
+        ['UC_test_id5'])
     assert result_state == (
         ['verified'],
         ['verified'],
@@ -193,4 +192,33 @@ def test_get_channel_list_expire_list(pg_container):
         "test/sample_aggregate_health_report.json")
     load_subscription_table(conn, health_report_aggregate)
     channel_list = get_channel_list(conn)
-    assert channel_list == ['test_id1']
+    assert channel_list == ['UC_test_id1']
+    conn.close()
+
+
+@time_machine.travel("2023-12-13 07:23:22")
+def test_get_channel_list_expire_list_multiple_renew(pg_container):
+    conn = get_connection(
+        {
+            'RDS_USERNAME': 'testuser',
+            'RDS_HOSTNAME': 'localhost',
+            'DS_DB_NAME': 'testdb',
+            'RDS_PORT': 5433,
+            'RDS_PASSWORD': 'testpass',
+        })
+    destroy_tables(conn)
+    create_tables(conn)
+    sample_ready_channels_list = read_json_file(
+        "test/sample_ready_channel_list.json")
+    load_channels_table(conn, sample_ready_channels_list)
+    health_report_aggregate = read_json_file(
+        "test/sample_aggregate_health_report_multiple_renew.json")
+    load_subscription_table(conn, health_report_aggregate)
+    channel_list = get_channel_list(conn)
+
+    from pprint import pprint
+    result = conn.run('select * from yt.subscription;')
+    pprint(result)
+
+    assert channel_list == ['UC_test_id2']
+    conn.close()

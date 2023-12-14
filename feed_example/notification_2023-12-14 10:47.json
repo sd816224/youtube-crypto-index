@@ -1,0 +1,279 @@
+{
+    "feed": {
+        "@xmlns:yt": "http://www.youtube.com/xml/schemas/2015",
+        "@xmlns:media": "http://search.yahoo.com/mrss/",
+        "@xmlns": "http://www.w3.org/2005/Atom",
+        "link": [
+            {
+                "@rel": "self",
+                "@href": "http://www.youtube.com/feeds/videos.xml?channel_id=UCR9gdpWisRwnk_k23GsHfcA"
+            },
+            {
+                "@rel": "alternate",
+                "@href": "https://www.youtube.com/channel/UCR9gdpWisRwnk_k23GsHfcA"
+            }
+        ],
+        "id": "yt:channel:R9gdpWisRwnk_k23GsHfcA",
+        "yt:channelId": "R9gdpWisRwnk_k23GsHfcA",
+        "title": "World Crypto Network",
+        "author": {
+            "name": "World Crypto Network",
+            "uri": "https://www.youtube.com/channel/UCR9gdpWisRwnk_k23GsHfcA"
+        },
+        "published": "2014-02-01T22:09:53+00:00",
+        "entry": [
+            {
+                "id": "yt:video:65H9V1Mh6z8",
+                "yt:videoId": "65H9V1Mh6z8",
+                "yt:channelId": "UCR9gdpWisRwnk_k23GsHfcA",
+                "title": "SECs Midnight Deadline Gray Scales Bitcoin ETF Hangs in the Balance",
+                "link": {
+                    "@rel": "alternate",
+                    "@href": "https://www.youtube.com/watch?v=65H9V1Mh6z8"
+                },
+                "author": {
+                    "name": "World Crypto Network",
+                    "uri": "https://www.youtube.com/channel/UCR9gdpWisRwnk_k23GsHfcA"
+                },
+                "published": "2023-12-14T03:00:03+00:00",
+                "updated": "2023-12-14T03:00:34+00:00",
+                "media:group": {
+                    "media:title": "SECs Midnight Deadline Gray Scales Bitcoin ETF Hangs in the Balance",
+                    "media:content": {
+                        "@url": "https://www.youtube.com/v/65H9V1Mh6z8?version=3",
+                        "@type": "application/x-shockwave-flash",
+                        "@width": "640",
+                        "@height": "390"
+                    },
+                    "media:thumbnail": {
+                        "@url": "https://i3.ytimg.com/vi/65H9V1Mh6z8/hqdefault.jpg",
+                        "@width": "480",
+                        "@height": "360"
+                    },
+                    "media:description": null,
+                    "media:community": {
+                        "media:starRating": {
+                            "@count": "0",
+                            "@average": "0.00",
+                            "@min": "1",
+                            "@max": "5"
+                        },
+                        "media:statistics": {
+                            "@views": "6"
+                        }
+                    }
+                }
+            },
+            {
+                "id": "yt:video:H4aDrbvNMeQ",
+                "yt:videoId": "H4aDrbvNMeQ",
+                "yt:channelId": "UCR9gdpWisRwnk_k23GsHfcA",
+                "title": "Bitcoin and Gold Exchange Challenges Traditional Banking  Crypto Revolution",
+                "link": {
+                    "@rel": "alternate",
+                    "@href": "https://www.youtube.com/watch?v=H4aDrbvNMeQ"
+                },
+                "author": {
+                    "name": "World Crypto Network",
+                    "uri": "https://www.youtube.com/channel/UCR9gdpWisRwnk_k23GsHfcA"
+                },
+                "published": "2023-12-14T01:00:12+00:00",
+                "updated": "2023-12-14T01:00:45+00:00",
+                "media:group": {
+                    "media:title": "Bitcoin and Gold Exchange Challenges Traditional Banking  Crypto Revolution",
+                    "media:content": {
+                        "@url": "https://www.youtube.com/v/H4aDrbvNMeQ?version=3",
+                        "@type": "application/x-shockwave-flash",
+                        "@width": "640",
+                        "@height": "390"
+                    },
+                    "media:thumbnail": {
+                        "@url": "https://i1.ytimg.com/vi/H4aDrbvNMeQ/hqdefault.jpg",
+                        "@width": "480",
+                        "@height": "360"
+                    },
+                    "media:description": null,
+                    "media:community": {
+                        "media:starRating": {
+                            "@count": "2",
+                            "@average": "5.00",
+                            "@min": "1",
+                            "@max": "5"
+                        },
+                        "media:statistics": {
+                            "@views": "11"
+                        }
+                    }
+                }
+            },
+            {
+                "id": "yt:video:tXOET7WSVOw",
+                "yt:videoId": "tXOET7WSVOw",
+                "yt:channelId": "UCR9gdpWisRwnk_k23GsHfcA",
+                "title": "Unlocking Americas Bitcoin Mining Potential Shaking up the Chinese Dominance",
+                "link": {
+                    "@rel": "alternate",
+                    "@href": "https://www.youtube.com/watch?v=tXOET7WSVOw"
+                },
+                "author": {
+                    "name": "World Crypto Network",
+                    "uri": "https://www.youtube.com/channel/UCR9gdpWisRwnk_k23GsHfcA"
+                },
+                "published": "2023-12-13T23:00:44+00:00",
+                "updated": "2023-12-13T23:01:20+00:00",
+                "media:group": {
+                    "media:title": "Unlocking Americas Bitcoin Mining Potential Shaking up the Chinese Dominance",
+                    "media:content": {
+                        "@url": "https://www.youtube.com/v/tXOET7WSVOw?version=3",
+                        "@type": "application/x-shockwave-flash",
+                        "@width": "640",
+                        "@height": "390"
+                    },
+                    "media:thumbnail": {
+                        "@url": "https://i1.ytimg.com/vi/tXOET7WSVOw/hqdefault.jpg",
+                        "@width": "480",
+                        "@height": "360"
+                    },
+                    "media:description": null,
+                    "media:community": {
+                        "media:starRating": {
+                            "@count": "0",
+                            "@average": "0.00",
+                            "@min": "1",
+                            "@max": "5"
+                        },
+                        "media:statistics": {
+                            "@views": "29"
+                        }
+                    }
+                }
+            },
+            {
+                "id": "yt:video:xGHJf5yvg9M",
+                "yt:videoId": "xGHJf5yvg9M",
+                "yt:channelId": "UCR9gdpWisRwnk_k23GsHfcA",
+                "title": "Peter Schiff Exploits His Influence Manipulates Bitcoin Market for Personal Gain",
+                "link": {
+                    "@rel": "alternate",
+                    "@href": "https://www.youtube.com/watch?v=xGHJf5yvg9M"
+                },
+                "author": {
+                    "name": "World Crypto Network",
+                    "uri": "https://www.youtube.com/channel/UCR9gdpWisRwnk_k23GsHfcA"
+                },
+                "published": "2023-12-13T21:00:27+00:00",
+                "updated": "2023-12-13T21:01:02+00:00",
+                "media:group": {
+                    "media:title": "Peter Schiff Exploits His Influence Manipulates Bitcoin Market for Personal Gain",
+                    "media:content": {
+                        "@url": "https://www.youtube.com/v/xGHJf5yvg9M?version=3",
+                        "@type": "application/x-shockwave-flash",
+                        "@width": "640",
+                        "@height": "390"
+                    },
+                    "media:thumbnail": {
+                        "@url": "https://i1.ytimg.com/vi/xGHJf5yvg9M/hqdefault.jpg",
+                        "@width": "480",
+                        "@height": "360"
+                    },
+                    "media:description": null,
+                    "media:community": {
+                        "media:starRating": {
+                            "@count": "0",
+                            "@average": "0.00",
+                            "@min": "1",
+                            "@max": "5"
+                        },
+                        "media:statistics": {
+                            "@views": "61"
+                        }
+                    }
+                }
+            },
+            {
+                "id": "yt:video:YD0HFoJxXmI",
+                "yt:videoId": "YD0HFoJxXmI",
+                "yt:channelId": "UCR9gdpWisRwnk_k23GsHfcA",
+                "title": "Bitcoin The Futuristic Solution to Global Currency Instability",
+                "link": {
+                    "@rel": "alternate",
+                    "@href": "https://www.youtube.com/watch?v=YD0HFoJxXmI"
+                },
+                "author": {
+                    "name": "World Crypto Network",
+                    "uri": "https://www.youtube.com/channel/UCR9gdpWisRwnk_k23GsHfcA"
+                },
+                "published": "2023-12-13T19:00:14+00:00",
+                "updated": "2023-12-13T19:00:48+00:00",
+                "media:group": {
+                    "media:title": "Bitcoin The Futuristic Solution to Global Currency Instability",
+                    "media:content": {
+                        "@url": "https://www.youtube.com/v/YD0HFoJxXmI?version=3",
+                        "@type": "application/x-shockwave-flash",
+                        "@width": "640",
+                        "@height": "390"
+                    },
+                    "media:thumbnail": {
+                        "@url": "https://i2.ytimg.com/vi/YD0HFoJxXmI/hqdefault.jpg",
+                        "@width": "480",
+                        "@height": "360"
+                    },
+                    "media:description": null,
+                    "media:community": {
+                        "media:starRating": {
+                            "@count": "12",
+                            "@average": "5.00",
+                            "@min": "1",
+                            "@max": "5"
+                        },
+                        "media:statistics": {
+                            "@views": "1975"
+                        }
+                    }
+                }
+            },
+            {
+                "id": "yt:video:D7pS7d39iG4",
+                "yt:videoId": "D7pS7d39iG4",
+                "yt:channelId": "UCR9gdpWisRwnk_k23GsHfcA",
+                "title": "SECs Resistance to Bitcoin Threatened by Powerful BlackRock Allies",
+                "link": {
+                    "@rel": "alternate",
+                    "@href": "https://www.youtube.com/watch?v=D7pS7d39iG4"
+                },
+                "author": {
+                    "name": "World Crypto Network",
+                    "uri": "https://www.youtube.com/channel/UCR9gdpWisRwnk_k23GsHfcA"
+                },
+                "published": "2023-12-13T19:00:11+00:00",
+                "updated": "2023-12-13T19:00:43+00:00",
+                "media:group": {
+                    "media:title": "SECs Resistance to Bitcoin Threatened by Powerful BlackRock Allies",
+                    "media:content": {
+                        "@url": "https://www.youtube.com/v/D7pS7d39iG4?version=3",
+                        "@type": "application/x-shockwave-flash",
+                        "@width": "640",
+                        "@height": "390"
+                    },
+                    "media:thumbnail": {
+                        "@url": "https://i1.ytimg.com/vi/D7pS7d39iG4/hqdefault.jpg",
+                        "@width": "480",
+                        "@height": "360"
+                    },
+                    "media:description": null,
+                    "media:community": {
+                        "media:starRating": {
+                            "@count": "0",
+                            "@average": "0.00",
+                            "@min": "1",
+                            "@max": "5"
+                        },
+                        "media:statistics": {
+                            "@views": "8"
+                        }
+                    }
+                }
+            }
+        ]
+    }
+}

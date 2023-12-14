@@ -1,8 +1,9 @@
-import datetime
-import datetime
 
+my_variable = {'key': 'value'}
 
-now = datetime.datetime.now()
-one_hour_ago = now - datetime.timedelta(hours=1)
-time_line_str=one_hour_ago.strftime("%Y-%b-%d %H:%M:%S")
-print(time_line_str)
+if isinstance(my_variable, dict):
+    print("The variable is a dictionary.")
+elif isinstance(my_variable, list):
+    print("The variable is a list.")
+else:
+    print("The variable is neither a dictionary nor a list.")

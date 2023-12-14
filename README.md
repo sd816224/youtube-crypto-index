@@ -15,6 +15,7 @@ guidance for colabrators:
 
 - setup docker for dev&testing:  
     - make sure running docker application. for dev stage with local-dev-d    - spin up the container by CLI ``` docker-compose -f ./src/docker-compose-dev.yaml up -d```
+    - make sure dev db use port 5432, testing db use port 5433.
     - if docker command not found. try to refresh in desktop application.
     - for checking the background container: ``` docker ps```
     - for stopping the container at the end:``` $ docker-compose -f ./src/docker-compose-dev.yaml down ```

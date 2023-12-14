@@ -4,6 +4,12 @@ import logging
 import json
 import time
 import datetime
+import sys
+import os
+from dotenv import load_dotenv
+src_path = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(src_path)
+from db_connection import get_connection # noqa E402
 
 logging.basicConfig()
 logger = logging.getLogger("sub_manager")
@@ -34,7 +40,7 @@ def health_check(callback_url, channel_id):
         "authority": "pubsubhubbub.appspot.com",
         "cache-control": "max-age=0",
         "origin": "https://pubsubhubbub.appspot.com",
-        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9", # noqa E501
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",  # noqa E501
         "referer": "https://pubsubhubbub.appspot.com/subscribe",
         "accept-language": "en-US,en;q=0.9",
     }
@@ -71,14 +77,14 @@ def sub_to_channel(callback_url, channel_id):
         "authority": "pubsubhubbub.appspot.com",
         "cache-control": "max-age=0",
         "origin": "https://pubsubhubbub.appspot.com",
-        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9", # noqa E501
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",  # noqa E501
         "referer": "https://pubsubhubbub.appspot.com/subscribe",
         "accept-language": "en-US,en;q=0.9",
     }
 
     data = {
         "hub.callback": callback_url,
-        "hub.topic": f"https://www.youtube.com/feeds/videos.xml?channel_id={channel_id}", # noqa E501
+        "hub.topic": f"https://www.youtube.com/feeds/videos.xml?channel_id={channel_id}",  # noqa E501
         "hub.verify": "async",
         "hub.mode": "subscribe",
         "hub.verify_token": "",
@@ -120,7 +126,12 @@ def get_channel_list(conn):
     one_hour_future = now + datetime.timedelta(hours=1)
     time_line_str = one_hour_future.strftime("%Y-%b-%d %H:%M:%S")
 
-    query2 = f'''SELECT channel_id FROM yt.subscription WHERE expiration_time < '{time_line_str}'; ''' # noqa E501
+    query2 = f'''
+    select * from (
+    select * , ROW_NUMBER() over (partition by channel_id order by expiration_time DESC) as row_num
+    from yt.subscription s ) subquery
+    where row_num =1 and expiration_time < '{time_line_str}'
+    '''  # noqa E501
     channel_list2 = conn.run(query2)
     expire_channel_list = [item[0] for item in channel_list2]
     logger.info('%s of expire_channel_list', len(expire_channel_list))
@@ -136,15 +147,20 @@ def load_subscription_table(conn, health_report_aggregate):
         health_report_aggregate(list): aggregate list of health reports
     '''
     cursor = conn.cursor()
-    query = 'INSERT INTO yt.subscription (channel_id, callback_URL, state, Last_successful_verification,expiration_time,Last_subscribe_request,Last_unsubscribe_request,Last_verification_error,Last_delivery_error,aggregate_statistics) VALUES (%s, %s, %s, %s,%s, %s, %s, %s,%s, %s)'  # noqa E501
+    query = '''
+    INSERT INTO yt.subscription 
+    (channel_id, callback_URL, state, Last_successful_verification,expiration_time,
+    Last_subscribe_request,Last_unsubscribe_request,Last_verification_error,
+    Last_delivery_error,aggregate_statistics) 
+    VALUES (%s, %s, %s, %s,%s, %s, %s, %s,%s, %s)'''  # noqa E501
     data = [
         (x['channel_id'],
          x['Callback URL'],
          x['State'],
-         None if x['Last successful verification'] == 'n/a' else x['Last successful verification'], # noqa E501
+         None if x['Last successful verification'] == 'n/a' else x['Last successful verification'],  # noqa E501
          None if x['Expiration time'] == 'n/a' else x['Expiration time'],
-         None if x['Last subscribe request'] == 'n/a' else x['Last subscribe request'], # noqa E501
-         None if x['Last unsubscribe request'] == 'n/a' else x['Last unsubscribe request'], # noqa E501
+         None if x['Last subscribe request'] == 'n/a' else x['Last subscribe request'],  # noqa E501
+         None if x['Last unsubscribe request'] == 'n/a' else x['Last unsubscribe request'],  # noqa E501
          x['Last verification error'],
          x['Last delivery error'],
          x['Aggregate statistics'],
@@ -158,29 +174,75 @@ def load_subscription_table(conn, health_report_aggregate):
     cursor.close()
 
 
-def sub_manager(conn, callback_url):
+def sub_manager():
     '''triggered every 1hour.
     renew subscription and channel in channel_list which expiring within 1 hour.
-    ''' # noqa E501
+    wait 100s and reload health check report.
+    '''  # noqa E501
+    # config
+    callback_url = 'https://7ad0-86-1-59-63.ngrok-free.app/feed'
+    work_on_remote_db = False
+    load_dotenv()
     try:
+        if work_on_remote_db:
+            conn = get_connection(
+                {
+                    'RDS_USERNAME': os.getenv('RDS_USERNAME'),
+                    'RDS_HOSTNAME': os.getenv('RDS_HOSTNAME'),
+                    'DS_DB_NAME': os.getenv('DS_DB_NAME'),
+                    'RDS_PORT': int(os.getenv('RDS_PORT')),
+                    'RDS_PASSWORD': os.getenv('RDS_PASSWORD'),
+                }
+            )
+        else:
+            conn = get_connection(
+                {
+                    'RDS_USERNAME': 'testuser',
+                    'RDS_HOSTNAME': 'localhost',
+                    'DS_DB_NAME': 'testdb',
+                    'RDS_PORT': 5432,
+                    'RDS_PASSWORD': 'testpass',
+                }
+            )
+
         channel_list = get_channel_list(conn)
         i = 1
-        for channel_id in channel_list:
-            logger.info(
-                '%s/%s : %s subscription',
-                i,
-                len(channel_list),
-                channel_id)
-            sub_to_channel(callback_url, channel_id)
+        if len(channel_list) > 0:
+            for channel_id in channel_list:
+                logger.info(
+                    '%s/%s : %s subscription',
+                    i,
+                    len(channel_list),
+                    channel_id)
+                i += 1
+                sub_to_channel(callback_url, channel_id)
+            logger.info('subscription done. cool down 100s')
+            time.sleep(100)
+            health_report_aggregate = []
+            for channel_id in channel_list:
+                logger.info('%s append health report', channel_id)
+                health_report_aggregate.append(
+                    health_check(callback_url, channel_id))
 
-        time.sleep(100)
-        health_report_aggregate = []
-        for channel_id in channel_list:
-            logger.info('%s load health report', channel_id)
-            health_report_aggregate.append(
-                health_check(callback_url, channel_id))
+            load_subscription_table(conn, health_report_aggregate)
+            logger.info('load_subscription_table done')
+        else:
+            logger.info('no channel to subscribe..')
+        conn.close()
 
-        load_subscription_table(conn, health_report_aggregate)
     except Exception as e:
         logger.error(e)
         logger.error('sub_manager failed')
+
+
+if __name__ == '__main__':
+    logging.basicConfig()
+    logger = logging.getLogger('sub_manager_lambda')
+    logger.setLevel(logging.INFO)
+
+    i = 1
+    while True:
+        sub_manager()
+        logger.info(f'sub_manager run {i} times. pause 1 hour')
+        time.sleep(3600)
+        i += 1

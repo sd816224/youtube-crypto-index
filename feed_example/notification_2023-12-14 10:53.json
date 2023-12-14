@@ -1,0 +1,153 @@
+{
+    "feed": {
+        "@xmlns:yt": "http://www.youtube.com/xml/schemas/2015",
+        "@xmlns:media": "http://search.yahoo.com/mrss/",
+        "@xmlns": "http://www.w3.org/2005/Atom",
+        "link": [
+            {
+                "@rel": "self",
+                "@href": "http://www.youtube.com/feeds/videos.xml?channel_id=UCjemQfjaXAzA-95RKoy9n_g"
+            },
+            {
+                "@rel": "alternate",
+                "@href": "https://www.youtube.com/channel/UCjemQfjaXAzA-95RKoy9n_g"
+            }
+        ],
+        "id": "yt:channel:jemQfjaXAzA-95RKoy9n_g",
+        "yt:channelId": "jemQfjaXAzA-95RKoy9n_g",
+        "title": "Discover Crypto",
+        "author": {
+            "name": "Discover Crypto",
+            "uri": "https://www.youtube.com/channel/UCjemQfjaXAzA-95RKoy9n_g"
+        },
+        "published": "2018-02-07T23:54:31+00:00",
+        "entry": [
+            {
+                "id": "yt:video:ohHc3qKeTPU",
+                "yt:videoId": "ohHc3qKeTPU",
+                "yt:channelId": "UCjemQfjaXAzA-95RKoy9n_g",
+                "title": "TOP Avalanche Altcoins! (Crypto Gems With MASSIVE Upside)",
+                "link": {
+                    "@rel": "alternate",
+                    "@href": "https://www.youtube.com/watch?v=ohHc3qKeTPU"
+                },
+                "author": {
+                    "name": "Discover Crypto",
+                    "uri": "https://www.youtube.com/channel/UCjemQfjaXAzA-95RKoy9n_g"
+                },
+                "published": "2023-12-14T00:00:20+00:00",
+                "updated": "2023-12-14T00:00:20+00:00",
+                "media:group": {
+                    "media:title": "TOP Avalanche Altcoins! (Crypto Gems With MASSIVE Upside)",
+                    "media:content": {
+                        "@url": "https://www.youtube.com/v/ohHc3qKeTPU?version=3",
+                        "@type": "application/x-shockwave-flash",
+                        "@width": "640",
+                        "@height": "390"
+                    },
+                    "media:thumbnail": {
+                        "@url": "https://i4.ytimg.com/vi/ohHc3qKeTPU/hqdefault.jpg",
+                        "@width": "480",
+                        "@height": "360"
+                    },
+                    "media:description": "Join this channel to get access to perks:\nhttps://www.youtube.com/channel/UCjemQfjaXAzA-95RKoy9n_g/join\n\nCome trade with us on Blofin, where whales are made: \nhttps://partner.blofin.com/d/DiscoverCrypto \n\n\u27a1\ufe0fGet 20% Off an Arculus Wallet, by using code DISCOVERCRYPTO20\nhttps://www.getarculus.com/\n\n\ud83d\udcf2 Follow the OFFICIAL Discover Crypto Socials: \nTwitter (X): https://twitter.com/DiscoverCrypto_\nTik Tok: https://www.tiktok.com/@discovercrypto_official\n\n\u27a1\ufe0fTrade Bitcoin on Fairdesk - https://www.fairdesk.com/signup?vipCode=DiscoverCrypto\n\n\ud83d\udcda Learn more about crypto \u27a1\ufe0f https://bitlabacademy.com\n\n\ud83d\udcc8 BitLab Trading Suite | Get access to the best trading indicators \u27a1\ufe0f https://bitlabacademy.com/indicators \n\nProtect Your Crypto in Cold Storage: \n\ud83d\udcb3 Safepal Wallet \u27a1\ufe0f  https://www.safepal.com/store/s1?ref=...\n\nTools:\n\ud83d\udd2c Research with Token Metrics \u27a1\ufe0f https://tokenmetrics.com/?ref=benarmstrong4\n\u2699\ufe0fLux Algo Trading Tool \u27a1\ufe0f https://luxalgo.com/?rfsn=6778216.6e72df#premium-packages\n\ud83d\udee0 Market Cipher Trading Tool \u27a1\ufe0fhttps://marketciphertrading.com?ref=353\n\nCome Stake On-Chain: \n\ud83e\uddd0 How to join Cardano (ADA) BitPool \u27a1\ufe0f https://bitboycrypto.com/staking/card...\n\n\u25cf\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25cf\n\n\u25cf\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25cf\n\nAll of our videos are strictly personal opinions. Please make sure to do your own research. Never take one person's opinion for financial guidance. There are multiple strategies and not all strategies fit all people. Our videos ARE NOT financial advice. Digital Assets are highly volatile and carry a considerable amount of risk. Only use exchanges for trading digital assets. Never keep your entire portfolio on an exchange. ben armstrong bitboy\n\n#bitcoin #money #crypto",
+                    "media:community": {
+                        "media:starRating": {
+                            "@count": "148",
+                            "@average": "5.00",
+                            "@min": "1",
+                            "@max": "5"
+                        },
+                        "media:statistics": {
+                            "@views": "1937"
+                        }
+                    }
+                }
+            },
+            {
+                "id": "yt:video:u8098vcC_WU",
+                "yt:videoId": "u8098vcC_WU",
+                "yt:channelId": "UCjemQfjaXAzA-95RKoy9n_g",
+                "title": "This Could Trigger MASSIVE XRP Price Surge! (FOMC DAY)",
+                "link": {
+                    "@rel": "alternate",
+                    "@href": "https://www.youtube.com/watch?v=u8098vcC_WU"
+                },
+                "author": {
+                    "name": "Discover Crypto",
+                    "uri": "https://www.youtube.com/channel/UCjemQfjaXAzA-95RKoy9n_g"
+                },
+                "published": "2023-12-13T17:08:05+00:00",
+                "updated": "2023-12-13T22:07:25+00:00",
+                "media:group": {
+                    "media:title": "This Could Trigger MASSIVE XRP Price Surge! (FOMC DAY)",
+                    "media:content": {
+                        "@url": "https://www.youtube.com/v/u8098vcC_WU?version=3",
+                        "@type": "application/x-shockwave-flash",
+                        "@width": "640",
+                        "@height": "390"
+                    },
+                    "media:thumbnail": {
+                        "@url": "https://i2.ytimg.com/vi/u8098vcC_WU/hqdefault.jpg",
+                        "@width": "480",
+                        "@height": "360"
+                    },
+                    "media:description": "In todays video we will discuss the FOMC meeting as markets eye the Federal Reserve's next move and what it means for the crypto markets.\n\nJoin this channel to get access to perks:\nhttps://www.youtube.com/channel/UCjemQfjaXAzA-95RKoy9n_g/join\n\nCome trade with us on Blofin, where whales are made: \nhttps://partner.blofin.com/d/DiscoverCrypto \n\n\u27a1\ufe0fGet 20% Off an Arculus Wallet, by using code DISCOVERCRYPTO20\nhttps://www.getarculus.com/\n\n\ud83d\udcf2 Follow the OFFICIAL Discover Crypto Socials: \nTwitter (X): https://twitter.com/DiscoverCrypto_\nTik Tok: https://www.tiktok.com/@discovercrypto_official\n\n\u27a1\ufe0fTrade Bitcoin on Fairdesk - https://www.fairdesk.com/signup?vipCode=DiscoverCrypto\n\n\ud83d\udcda Learn more about crypto \u27a1\ufe0f https://bitlabacademy.com\n\n\ud83d\udcc8 BitLab Trading Suite | Get access to the best trading indicators \u27a1\ufe0f https://bitlabacademy.com/indicators \n\nProtect Your Crypto in Cold Storage: \n\ud83d\udcb3 Safepal Wallet \u27a1\ufe0f  https://www.safepal.com/store/s1?ref=...\n\nTools:\n\ud83d\udd2c Research with Token Metrics \u27a1\ufe0f https://tokenmetrics.com/?ref=benarmstrong4\n\u2699\ufe0fLux Algo Trading Tool \u27a1\ufe0f https://luxalgo.com/?rfsn=6778216.6e72df#premium-packages\n\ud83d\udee0 Market Cipher Trading Tool \u27a1\ufe0fhttps://marketciphertrading.com?ref=353\n\nCome Stake On-Chain: \n\ud83e\uddd0 How to join Cardano (ADA) BitPool \u27a1\ufe0f https://bitboycrypto.com/staking/card...\n\n\u25cf\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25cf\n\n\u25cf\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25cf\n\nAll of our videos are strictly personal opinions. Please make sure to do your own research. Never take one person's opinion for financial guidance. There are multiple strategies and not all strategies fit all people. Our videos ARE NOT financial advice. Digital Assets are highly volatile and carry a considerable amount of risk. Only use exchanges for trading digital assets. Never keep your entire portfolio on an exchange. ben armstrong bitboy\n\n#bitcoin #money #crypto",
+                    "media:community": {
+                        "media:starRating": {
+                            "@count": "548",
+                            "@average": "5.00",
+                            "@min": "1",
+                            "@max": "5"
+                        },
+                        "media:statistics": {
+                            "@views": "9206"
+                        }
+                    }
+                }
+            },
+            {
+                "id": "yt:video:Btjy47oBO2Y",
+                "yt:videoId": "Btjy47oBO2Y",
+                "yt:channelId": "UCjemQfjaXAzA-95RKoy9n_g",
+                "title": "Google LEAKS Bitcoin ETF Details!! (Blackrock LOVES This!)",
+                "link": {
+                    "@rel": "alternate",
+                    "@href": "https://www.youtube.com/watch?v=Btjy47oBO2Y"
+                },
+                "author": {
+                    "name": "Discover Crypto",
+                    "uri": "https://www.youtube.com/channel/UCjemQfjaXAzA-95RKoy9n_g"
+                },
+                "published": "2023-12-11T21:30:04+00:00",
+                "updated": "2023-12-14T03:52:49+00:00",
+                "media:group": {
+                    "media:title": "Google LEAKS Bitcoin ETF Details!! (Blackrock LOVES This!)",
+                    "media:content": {
+                        "@url": "https://www.youtube.com/v/Btjy47oBO2Y?version=3",
+                        "@type": "application/x-shockwave-flash",
+                        "@width": "640",
+                        "@height": "390"
+                    },
+                    "media:thumbnail": {
+                        "@url": "https://i3.ytimg.com/vi/Btjy47oBO2Y/hqdefault.jpg",
+                        "@width": "480",
+                        "@height": "360"
+                    },
+                    "media:description": "Around the Blockchain is your place for deep discussions on Crypto, Bitcoin and the evolution of money.\n\nToday's crypto experts:\nJenna X\nhttps://twitter.com/JennaXCrypto\nHawk Mining\nhttps://twitter.com/HawkMiningCo\nPeter Chiodo\nhttps://www.linkedin.com/in/peter-chiodo/\nhttps://twitter.com/lorenzocpa\n\nTimestamps\n00:00 Intro\n01:12 The Panel\n03:26 BTC, Bearish or Bullish?\n04:37 Will BTC Drop More When There's No Spot Bitcoin ETF?\n06:28 \"I Would Rather Be on Altcoins\"\n09:39 Should Bitcoin Have DeFi?\n11:26 \"BTC is Meant To Be HODLed\"\n12:34 Thoughts on Uniswap\n14:43 Is Google Lobbying for BlackRock Spot Bitcoin ETF?\n16:11 Crypto Is So Divided, Why?\n17:31 Gold's Price Movement after ETF Was Approved in 2004\n19:22 Did BlackRock Secretly Lobbied for ETF Changes?\n21:36 \"Crypto is Political\"\n22:37 Does Jamie Dimon Secretly Buying BTC While Trash Talking Crypto?\n24:17 Will There Be a BTC 50% Pull Back Before the Halving?\n\n\n\u27a1\ufe0fGet 20% Off an Arculus Wallet, by using code DISCOVERCRYPTO20 https://www.getarculus.com/\n\n\n\nINVEST like an Accredited investor TODAY with Linqto:\n\nhttp://l.linqto.com/HIT\n\n\n\nSHOP HIT MERCH:\u00a0[https://www.hitmerch.com/ ]\n\n\nAll of our videos are strictly personal opinions.\nPlease make sure to do your own research. Never take one person's opinion for financial guidance. There are multiple strategies, and not all strategies fit all people. Our videos ARE NOT financial advice.\n\nbitcoin #ethereum #cryptonews #Cardano #crypto #news #nft #economy #money #blockchain #invest #xrp #xlm #dogecoin #shibainucoin #litecoin #podcast",
+                    "media:community": {
+                        "media:starRating": {
+                            "@count": "384",
+                            "@average": "5.00",
+                            "@min": "1",
+                            "@max": "5"
+                        },
+                        "media:statistics": {
+                            "@views": "7038"
+                        }
+                    }
+                }
+            }
+        ]
+    }
+}
