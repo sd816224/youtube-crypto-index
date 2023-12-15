@@ -8,6 +8,8 @@ import json
 import datetime as dt
 import sys
 import os
+from dotenv import load_dotenv
+
 
 src_path = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(src_path)
@@ -22,6 +24,11 @@ logger.setLevel(logging.INFO)
 
 @app.route('/feed', methods=['GET', 'POST'])
 def webhook():
+    load_dotenv()
+    # config
+    # path_name
+    work_on_remote_db = False
+
     challenge = request.args.get('hub.challenge')
     if challenge:
         return challenge
@@ -29,18 +36,32 @@ def webhook():
         xml_dict = xmltodict.parse(request.data)
 
         # Save the dictionary to a JSON file
+
         document_prefix = str(dt.datetime.now())[:16]
-        with open(f'./feed_example/notification_{document_prefix}.json', 'w') as json_file:  # noqa E501
-            json.dump(xml_dict, json_file, indent=4)
+        file_name = f'./feed_example/notification_{document_prefix}.json'
+        save_json(xml_dict, file_name)
         logger.info('notification saved to json file')
 
-        conn = get_connection(
-            {
-                'RDS_USERNAME': 'testuser',
-                'RDS_HOSTNAME': 'localhost',
-                'DS_DB_NAME': 'testdb',
-                'RDS_PORT': 5432,
-                'RDS_PASSWORD': 'testpass', })
+        if work_on_remote_db:
+            conn = get_connection(
+                {
+                    'RDS_USERNAME': os.getenv('RDS_USERNAME'),
+                    'RDS_HOSTNAME': os.getenv('RDS_HOSTNAME'),
+                    'DS_DB_NAME': os.getenv('DS_DB_NAME'),
+                    'RDS_PORT': int(os.getenv('RDS_PORT')),
+                    'RDS_PASSWORD': os.getenv('RDS_PASSWORD'),
+                }
+            )
+        else:
+            conn = get_connection(
+                {
+                    'RDS_USERNAME': 'testuser',
+                    'RDS_HOSTNAME': 'localhost',
+                    'DS_DB_NAME': 'testdb',
+                    'RDS_PORT': 5432,
+                    'RDS_PASSWORD': 'testpass',
+                }
+            )
 
         listof_videos = parse_filter_notification(conn, xml_dict)
         logger.info('listof_videos parsed: %s', listof_videos)
@@ -54,6 +75,12 @@ def webhook():
         return "", 403
 
     return "", 204
+
+
+def save_json(input, file_name):
+    with open(file_name, 'w') as file:
+        json.dump(input, file, indent=4)
+    logger.info('json file done: %s', file_name)
 
 
 def video_not_exists(conn, video_id):
@@ -95,7 +122,7 @@ def parse_filter_notification(conn, notification):
                 logger.info('video loading skipped as its already exists in the db: %s', video['yt:videoId'])  # noqa E501
                 continue
             video_row = {
-                'id': video['yt:videoId'] + dt.datetime.now().strftime("-%Y-%b-%d %H:%M:%S"), # noqa E501
+                'id': video['yt:videoId'] + dt.datetime.now().strftime("-%Y-%b-%d %H:%M:%S"),  # noqa E501
                 'title': video['title'],
                 'videoPublishedAt': video['published'],
                 'videoId': video['yt:videoId'],
@@ -104,9 +131,9 @@ def parse_filter_notification(conn, notification):
             }
             videos_insertion_content.append(video_row)
         return videos_insertion_content
-    elif isinstance(videos_, dict) and video_not_exists(conn, videos_['yt:videoId']): # noqa E501
+    elif isinstance(videos_, dict) and video_not_exists(conn, videos_['yt:videoId']):  # noqa E501
         video_row = {
-            'id': videos_['yt:videoId'] + dt.datetime.now().strftime("-%Y-%b-%d %H:%M:%S"), # noqa E501
+            'id': videos_['yt:videoId'] + dt.datetime.now().strftime("-%Y-%b-%d %H:%M:%S"),  # noqa E501
             'title': videos_['title'],
             'videoPublishedAt': videos_['published'],
             'videoId': videos_['yt:videoId'],

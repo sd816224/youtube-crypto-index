@@ -9,7 +9,7 @@ import os
 from dotenv import load_dotenv
 src_path = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(src_path)
-from db_connection import get_connection # noqa E402
+from db_connection import get_connection  # noqa E402
 
 logging.basicConfig()
 logger = logging.getLogger("sub_manager")
@@ -179,10 +179,10 @@ def sub_manager():
     renew subscription and channel in channel_list which expiring within 1 hour.
     wait 100s and reload health check report.
     '''  # noqa E501
+    load_dotenv()
     # config
     callback_url = 'https://7ad0-86-1-59-63.ngrok-free.app/feed'
     work_on_remote_db = False
-    load_dotenv()
     try:
         if work_on_remote_db:
             conn = get_connection(
@@ -240,9 +240,11 @@ if __name__ == '__main__':
     logger = logging.getLogger('sub_manager_lambda')
     logger.setLevel(logging.INFO)
 
-    i = 1
-    while True:
-        sub_manager()
-        logger.info(f'sub_manager run {i} times. pause 1 hour')
-        time.sleep(3600)
-        i += 1
+    # i = 1
+    # while True:
+    #     sub_manager()
+    #     logger.info(f'sub_manager run {i} times. pause 1 hour')
+    #     time.sleep(3600)
+    #     i += 1
+
+    sub_manager()

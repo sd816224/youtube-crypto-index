@@ -9,7 +9,7 @@ import logging
 import sys
 import os
 import json
-
+from dotenv import load_dotenv
 
 logging.basicConfig()
 logger = logging.getLogger('stage1_lambda')
@@ -28,7 +28,8 @@ def read_json_file(file_path):
     return data
 
 
-def stage1_lambda():
+def main():
+    load_dotenv()
     # config
     reset_db_only = False
     work_on_remote_db = False
@@ -97,8 +98,7 @@ def stage1_lambda():
 
 
 if __name__ == '__main__':
-    # load_dotenv()
     logging.basicConfig()
     logger = logging.getLogger('stage1_lambda')
     logger.setLevel(logging.INFO)
-    sys.exit(stage1_lambda())
+    sys.exit(main())
