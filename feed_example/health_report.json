@@ -1,0 +1,12 @@
+{
+    "Callback URL": "https://7ad0-86-1-59-63.ngrok-free.app/feed",
+    "State": "verified",
+    "Last successful verification": "Tue, 12 Dec 2023 17:21:54 +0000",
+    "Expiration time": "Sun, 17 Dec 2023 17:21:53 +0000",
+    "Last subscribe request": "Tue, 12 Dec 2023 17:21:53 +0000",
+    "Last unsubscribe request": "n/a",
+    "Last verification error": "n/a",
+    "Last delivery error": "n/a",
+    "Aggregate statistics": "0 delivery request(s) per second to 7ad0-86-1-59-63.ngrok-free.app,\n        0% errors",
+    "channel_id": "UCavTvSwEoRABvnPtLg0e6LQ"
+}

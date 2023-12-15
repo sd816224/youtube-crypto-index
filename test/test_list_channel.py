@@ -1,4 +1,4 @@
-from src.stage1.list_channel import list_all_channels, list_channel_detail
+from src.list_channel import list_all_channels, list_channel_detail
 import logging
 import json
 import pytest
@@ -30,7 +30,7 @@ example_response_dict = {'items':
 
 @pytest.fixture
 def mock_response():
-    with patch('src.stage1.list_channel.requests.get') as mocked_get:
+    with patch('src.list_channel.requests.get') as mocked_get:
         response = Mock()
         mocked_get.return_value = response
         mocked_get.return_value.text = json.dumps(example_response_dict)
@@ -111,7 +111,7 @@ example_single_response_dict = {
 }
 
 
-@patch('src.stage1.list_channel.list_channel_detail',
+@patch('src.list_channel.list_channel_detail',
        return_value=example_single_response_dict)
 def test_list_all_channels_return_correct_format(mock_list_channel_detail):
     listof_channels = {'items': [{'id': 'testId',

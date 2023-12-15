@@ -1,0 +1,97 @@
+[
+    {
+        "id": "UC_test_id1",
+        "title": "BITCOIN",
+        "publishedAt": "2013-09-06T02:12:33Z",
+        "country": "CA",
+        "uploads_id": "UU_test_id1",
+        "statistics": {
+            "viewCount": "1424394",
+            "subscriberCount": "67200",
+            "hiddenSubscriberCount": false,
+            "videoCount": "218"
+        },
+        "status": {
+            "privacyStatus": "public",
+            "isLinked": true,
+            "longUploadsStatus": "longUploadsUnspecified",
+            "madeForKids": false
+        }
+    },
+    {
+        "id": "UC_test_id2",
+        "title": "BalkanTech Crypto",
+        "publishedAt": "2015-05-07T21:01:18Z",
+        "country": "RS",
+        "uploads_id": "UU_test_id2",
+        "statistics": {
+            "viewCount": "9151281",
+            "subscriberCount": "61800",
+            "hiddenSubscriberCount": false,
+            "videoCount": "818"
+        },
+        "status": {
+            "privacyStatus": "public",
+            "isLinked": true,
+            "longUploadsStatus": "longUploadsUnspecified",
+            "madeForKids": false
+        }
+    },
+    {
+        "id": "UC_test_id3",
+        "title": "What Bitcoin Did",
+        "publishedAt": "2017-08-29T20:39:21Z",
+        "country": "GB",
+        "uploads_id": "UU_test_id3",
+        "statistics": {
+            "viewCount": "11739794",
+            "subscriberCount": "105000",
+            "hiddenSubscriberCount": false,
+            "videoCount": "795"
+        },
+        "status": {
+            "privacyStatus": "public",
+            "isLinked": true,
+            "longUploadsStatus": "longUploadsUnspecified"
+        }
+    },
+    {
+        "id": "UC_test_id4",
+        "title": "Simply Bitcoin",
+        "publishedAt": "2020-07-23T12:16:52Z",
+        "country": "US",
+        "uploads_id": "UU_test_id4",
+        "statistics": {
+            "viewCount": "4057851",
+            "subscriberCount": "22900",
+            "hiddenSubscriberCount": false,
+            "videoCount": "1873"
+        },
+        "status": {
+            "privacyStatus": "public",
+            "isLinked": true,
+            "longUploadsStatus": "longUploadsUnspecified",
+            "madeForKids": false
+        }
+    },
+    {
+        "id": "UC_test_id5",
+        "title": "Crypto Banter",
+        "publishedAt": "2017-09-15T08:03:10Z",
+        "country": "US",
+        "uploads_id": "UU_test_id5",
+        "statistics": {
+            "viewCount": "108059268",
+            "subscriberCount": "671000",
+            "hiddenSubscriberCount": false,
+            "videoCount": "2609"
+        },
+        "status": {
+            "privacyStatus": "public",
+            "isLinked": true,
+            "longUploadsStatus": "longUploadsUnspecified",
+            "madeForKids": false
+        }
+    }
+  
+]

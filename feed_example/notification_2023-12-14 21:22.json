@@ -1,0 +1,321 @@
+{
+    "feed": {
+        "@xmlns:yt": "http://www.youtube.com/xml/schemas/2015",
+        "@xmlns:media": "http://search.yahoo.com/mrss/",
+        "@xmlns": "http://www.w3.org/2005/Atom",
+        "link": [
+            {
+                "@rel": "self",
+                "@href": "http://www.youtube.com/feeds/videos.xml?channel_id=UCjemQfjaXAzA-95RKoy9n_g"
+            },
+            {
+                "@rel": "alternate",
+                "@href": "https://www.youtube.com/channel/UCjemQfjaXAzA-95RKoy9n_g"
+            }
+        ],
+        "id": "yt:channel:jemQfjaXAzA-95RKoy9n_g",
+        "yt:channelId": "jemQfjaXAzA-95RKoy9n_g",
+        "title": "Discover Crypto",
+        "author": {
+            "name": "Discover Crypto",
+            "uri": "https://www.youtube.com/channel/UCjemQfjaXAzA-95RKoy9n_g"
+        },
+        "published": "2018-02-07T23:54:31+00:00",
+        "entry": [
+            {
+                "id": "yt:video:WIb9yVVAnjY",
+                "yt:videoId": "WIb9yVVAnjY",
+                "yt:channelId": "UCjemQfjaXAzA-95RKoy9n_g",
+                "title": "Bitcoin Scores Big Win On This News! ($48K Incoming)",
+                "link": {
+                    "@rel": "alternate",
+                    "@href": "https://www.youtube.com/watch?v=WIb9yVVAnjY"
+                },
+                "author": {
+                    "name": "Discover Crypto",
+                    "uri": "https://www.youtube.com/channel/UCjemQfjaXAzA-95RKoy9n_g"
+                },
+                "published": "2023-12-14T16:45:26+00:00",
+                "updated": "2023-12-14T16:56:30+00:00",
+                "media:group": {
+                    "media:title": "Bitcoin Scores Big Win On This News! ($48K Incoming)",
+                    "media:content": {
+                        "@url": "https://www.youtube.com/v/WIb9yVVAnjY?version=3",
+                        "@type": "application/x-shockwave-flash",
+                        "@width": "640",
+                        "@height": "390"
+                    },
+                    "media:thumbnail": {
+                        "@url": "https://i4.ytimg.com/vi/WIb9yVVAnjY/hqdefault.jpg",
+                        "@width": "480",
+                        "@height": "360"
+                    },
+                    "media:description": "In todays video we look at how markets are setting up after another meeting from the Federal Reserve and Jerome Powell as interest rate hikes are now paused and risk assets once again begin a surge to previous highs. Next we dive into the Ledger exploit as dapps become targets for malicious actors. \n\nJoin this channel to get access to perks:\nhttps://www.youtube.com/channel/UCjemQfjaXAzA-95RKoy9n_g/join\n\nCome trade with us on Blofin, where whales are made: \nhttps://partner.blofin.com/d/DiscoverCrypto \n\n\u27a1\ufe0fGet 20% Off an Arculus Wallet, by using code DISCOVERCRYPTO20\nhttps://www.getarculus.com/\n\n\ud83d\udcf2 Follow the OFFICIAL Discover Crypto Socials: \nTwitter (X): https://twitter.com/DiscoverCrypto_\nTik Tok: https://www.tiktok.com/@discovercrypto_official\n\n\u27a1\ufe0fTrade Bitcoin on Fairdesk - https://www.fairdesk.com/signup?vipCode=DiscoverCrypto\n\n\ud83d\udcda Learn more about crypto \u27a1\ufe0f https://bitlabacademy.com\n\n\ud83d\udcc8 BitLab Trading Suite | Get access to the best trading indicators \u27a1\ufe0f https://bitlabacademy.com/indicators \n\nProtect Your Crypto in Cold Storage: \n\ud83d\udcb3 Safepal Wallet \u27a1\ufe0f  https://www.safepal.com/store/s1?ref=...\n\nTools:\n\ud83d\udd2c Research with Token Metrics \u27a1\ufe0f https://tokenmetrics.com/?ref=benarmstrong4\n\u2699\ufe0fLux Algo Trading Tool \u27a1\ufe0f https://luxalgo.com/?rfsn=6778216.6e72df#premium-packages\n\ud83d\udee0 Market Cipher Trading Tool \u27a1\ufe0fhttps://marketciphertrading.com?ref=353\n\nCome Stake On-Chain: \n\ud83e\uddd0 How to join Cardano (ADA) BitPool \u27a1\ufe0f https://bitboycrypto.com/staking/card...\n\n\u25cf\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25cf\n\n\u25cf\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25cf\n\nAll of our videos are strictly personal opinions. Please make sure to do your own research. Never take one person's opinion for financial guidance. There are multiple strategies and not all strategies fit all people. Our videos ARE NOT financial advice. Digital Assets are highly volatile and carry a considerable amount of risk. Only use exchanges for trading digital assets. Never keep your entire portfolio on an exchange. ben armstrong bitboy\n\n#bitcoin #money #crypto",
+                    "media:community": {
+                        "media:starRating": {
+                            "@count": "470",
+                            "@average": "5.00",
+                            "@min": "1",
+                            "@max": "5"
+                        },
+                        "media:statistics": {
+                            "@views": "6141"
+                        }
+                    }
+                }
+            },
+            {
+                "id": "yt:video:ohHc3qKeTPU",
+                "yt:videoId": "ohHc3qKeTPU",
+                "yt:channelId": "UCjemQfjaXAzA-95RKoy9n_g",
+                "title": "Crypto Gems With MASSIVE Upside! (TOP AVAX Altcoins)",
+                "link": {
+                    "@rel": "alternate",
+                    "@href": "https://www.youtube.com/watch?v=ohHc3qKeTPU"
+                },
+                "author": {
+                    "name": "Discover Crypto",
+                    "uri": "https://www.youtube.com/channel/UCjemQfjaXAzA-95RKoy9n_g"
+                },
+                "published": "2023-12-14T00:00:20+00:00",
+                "updated": "2023-12-14T14:26:47+00:00",
+                "media:group": {
+                    "media:title": "Crypto Gems With MASSIVE Upside! (TOP AVAX Altcoins)",
+                    "media:content": {
+                        "@url": "https://www.youtube.com/v/ohHc3qKeTPU?version=3",
+                        "@type": "application/x-shockwave-flash",
+                        "@width": "640",
+                        "@height": "390"
+                    },
+                    "media:thumbnail": {
+                        "@url": "https://i4.ytimg.com/vi/ohHc3qKeTPU/hqdefault.jpg",
+                        "@width": "480",
+                        "@height": "360"
+                    },
+                    "media:description": "Join this channel to get access to perks:\nhttps://www.youtube.com/channel/UCjemQfjaXAzA-95RKoy9n_g/join\n\nCome trade with us on Blofin, where whales are made: \nhttps://partner.blofin.com/d/DiscoverCrypto \n\n\u27a1\ufe0fGet 20% Off an Arculus Wallet, by using code DISCOVERCRYPTO20\nhttps://www.getarculus.com/\n\n\ud83d\udcf2 Follow the OFFICIAL Discover Crypto Socials: \nTwitter (X): https://twitter.com/DiscoverCrypto_\nTik Tok: https://www.tiktok.com/@discovercrypto_official\n\n\u27a1\ufe0fTrade Bitcoin on Fairdesk - https://www.fairdesk.com/signup?vipCode=DiscoverCrypto\n\n\ud83d\udcda Learn more about crypto \u27a1\ufe0f https://bitlabacademy.com\n\n\ud83d\udcc8 BitLab Trading Suite | Get access to the best trading indicators \u27a1\ufe0f https://bitlabacademy.com/indicators \n\nProtect Your Crypto in Cold Storage: \n\ud83d\udcb3 Safepal Wallet \u27a1\ufe0f  https://www.safepal.com/store/s1?ref=...\n\nTools:\n\ud83d\udd2c Research with Token Metrics \u27a1\ufe0f https://tokenmetrics.com/?ref=benarmstrong4\n\u2699\ufe0fLux Algo Trading Tool \u27a1\ufe0f https://luxalgo.com/?rfsn=6778216.6e72df#premium-packages\n\ud83d\udee0 Market Cipher Trading Tool \u27a1\ufe0fhttps://marketciphertrading.com?ref=353\n\nCome Stake On-Chain: \n\ud83e\uddd0 How to join Cardano (ADA) BitPool \u27a1\ufe0f https://bitboycrypto.com/staking/card...\n\n\u25cf\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25cf\n\nTimestamps\n00:00 Intro\n01:09 Coin 1\u2014BENQI\n02:51 Coin 2\n04:24 Coin 3\n06:33 Final Coin\n\n\u25cf\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25cf\n\nAll of our videos are strictly personal opinions. Please make sure to do your own research. Never take one person's opinion for financial guidance. There are multiple strategies and not all strategies fit all people. Our videos ARE NOT financial advice. Digital Assets are highly volatile and carry a considerable amount of risk. Only use exchanges for trading digital assets. Never keep your entire portfolio on an exchange. ben armstrong bitboy\n\n#bitcoin #money #crypto",
+                    "media:community": {
+                        "media:starRating": {
+                            "@count": "274",
+                            "@average": "5.00",
+                            "@min": "1",
+                            "@max": "5"
+                        },
+                        "media:statistics": {
+                            "@views": "4906"
+                        }
+                    }
+                }
+            },
+            {
+                "id": "yt:video:u8098vcC_WU",
+                "yt:videoId": "u8098vcC_WU",
+                "yt:channelId": "UCjemQfjaXAzA-95RKoy9n_g",
+                "title": "This Could Trigger MASSIVE XRP Price Surge! (FOMC DAY)",
+                "link": {
+                    "@rel": "alternate",
+                    "@href": "https://www.youtube.com/watch?v=u8098vcC_WU"
+                },
+                "author": {
+                    "name": "Discover Crypto",
+                    "uri": "https://www.youtube.com/channel/UCjemQfjaXAzA-95RKoy9n_g"
+                },
+                "published": "2023-12-13T17:08:05+00:00",
+                "updated": "2023-12-14T13:22:01+00:00",
+                "media:group": {
+                    "media:title": "This Could Trigger MASSIVE XRP Price Surge! (FOMC DAY)",
+                    "media:content": {
+                        "@url": "https://www.youtube.com/v/u8098vcC_WU?version=3",
+                        "@type": "application/x-shockwave-flash",
+                        "@width": "640",
+                        "@height": "390"
+                    },
+                    "media:thumbnail": {
+                        "@url": "https://i2.ytimg.com/vi/u8098vcC_WU/hqdefault.jpg",
+                        "@width": "480",
+                        "@height": "360"
+                    },
+                    "media:description": "In todays video we will discuss the FOMC meeting as markets eye the Federal Reserve's next move and what it means for the crypto markets.\n\nJoin this channel to get access to perks:\nhttps://www.youtube.com/channel/UCjemQfjaXAzA-95RKoy9n_g/join\n\nCome trade with us on Blofin, where whales are made: \nhttps://partner.blofin.com/d/DiscoverCrypto \n\n\u27a1\ufe0fGet 20% Off an Arculus Wallet, by using code DISCOVERCRYPTO20\nhttps://www.getarculus.com/\n\n\ud83d\udcf2 Follow the OFFICIAL Discover Crypto Socials: \nTwitter (X): https://twitter.com/DiscoverCrypto_\nTik Tok: https://www.tiktok.com/@discovercrypto_official\n\n\u27a1\ufe0fTrade Bitcoin on Fairdesk - https://www.fairdesk.com/signup?vipCode=DiscoverCrypto\n\n\ud83d\udcda Learn more about crypto \u27a1\ufe0f https://bitlabacademy.com\n\n\ud83d\udcc8 BitLab Trading Suite | Get access to the best trading indicators \u27a1\ufe0f https://bitlabacademy.com/indicators \n\nProtect Your Crypto in Cold Storage: \n\ud83d\udcb3 Safepal Wallet \u27a1\ufe0f  https://www.safepal.com/store/s1?ref=...\n\nTools:\n\ud83d\udd2c Research with Token Metrics \u27a1\ufe0f https://tokenmetrics.com/?ref=benarmstrong4\n\u2699\ufe0fLux Algo Trading Tool \u27a1\ufe0f https://luxalgo.com/?rfsn=6778216.6e72df#premium-packages\n\ud83d\udee0 Market Cipher Trading Tool \u27a1\ufe0fhttps://marketciphertrading.com?ref=353\n\nCome Stake On-Chain: \n\ud83e\uddd0 How to join Cardano (ADA) BitPool \u27a1\ufe0f https://bitboycrypto.com/staking/card...\n\n\u25cf\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25cf\n\nTimestamps\n00:00 Intro\n06:03 Market Watch\n08:55 KuCoin Banned from Doing Business by New York AG\n17:15 Vivek Ramaswamy on Crypto Policy Changes\n24:55 BitLab Charts with Kelly Kellam\n32:37 Bitcoin Path\n37:40 CPI for November rose 3.1% YoY\n43:23 FED Money Printing Could Trigger XRP Price Surge\n51:31 The FED Pivot\n53:35 SBF's Lawyer FO with SBF Parents\n1:01:33 Billions for China's Blockchain ID Revolution\n1:06:39 Ethereum Burns $2.5B Worth of ETH, Supply Drops\n1:09:26 Bullish on the L2s\n1:12:20 Top 3 DeFi Projects\u2014SOL, ADA, AVAX\n1:13:58 Q&A\n\n\u25cf\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25cf\n\nAll of our videos are strictly personal opinions. Please make sure to do your own research. Never take one person's opinion for financial guidance. There are multiple strategies and not all strategies fit all people. Our videos ARE NOT financial advice. Digital Assets are highly volatile and carry a considerable amount of risk. Only use exchanges for trading digital assets. Never keep your entire portfolio on an exchange. ben armstrong bitboy\n\n#bitcoin #money #crypto",
+                    "media:community": {
+                        "media:starRating": {
+                            "@count": "571",
+                            "@average": "5.00",
+                            "@min": "1",
+                            "@max": "5"
+                        },
+                        "media:statistics": {
+                            "@views": "10062"
+                        }
+                    }
+                }
+            },
+            {
+                "id": "yt:video:pA2jD85OJyw",
+                "yt:videoId": "pA2jD85OJyw",
+                "yt:channelId": "UCjemQfjaXAzA-95RKoy9n_g",
+                "title": "Top 5 Altcoins Picks! (Crypto Experts Predict)",
+                "link": {
+                    "@rel": "alternate",
+                    "@href": "https://www.youtube.com/watch?v=pA2jD85OJyw"
+                },
+                "author": {
+                    "name": "Discover Crypto",
+                    "uri": "https://www.youtube.com/channel/UCjemQfjaXAzA-95RKoy9n_g"
+                },
+                "published": "2023-12-12T00:00:28+00:00",
+                "updated": "2023-12-14T14:10:20+00:00",
+                "media:group": {
+                    "media:title": "Top 5 Altcoins Picks! (Crypto Experts Predict)",
+                    "media:content": {
+                        "@url": "https://www.youtube.com/v/pA2jD85OJyw?version=3",
+                        "@type": "application/x-shockwave-flash",
+                        "@width": "640",
+                        "@height": "390"
+                    },
+                    "media:thumbnail": {
+                        "@url": "https://i1.ytimg.com/vi/pA2jD85OJyw/hqdefault.jpg",
+                        "@width": "480",
+                        "@height": "360"
+                    },
+                    "media:description": "Crypto Experts have been talking about these Altcoins for a while! Are these coins in your portfolio?\n\nJoin this channel to get access to perks:\nhttps://www.youtube.com/channel/UCjemQfjaXAzA-95RKoy9n_g/join\n\nCome trade with us on Blofin, where whales are made: \nhttps://partner.blofin.com/d/DiscoverCrypto \n\n\u27a1\ufe0fGet 20% Off an Arculus Wallet, by using code DISCOVERCRYPTO20\nhttps://www.getarculus.com/\n\n\ud83d\udcf2 Follow the OFFICIAL Discover Crypto Socials: \nTwitter (X): https://twitter.com/DiscoverCrypto_\nTik Tok: https://www.tiktok.com/@discovercrypto_official\n\n\u27a1\ufe0fTrade Bitcoin on Fairdesk - https://www.fairdesk.com/signup?vipCode=DiscoverCrypto\n\n\ud83d\udcda Learn more about crypto \u27a1\ufe0f https://bitlabacademy.com\n\n\ud83d\udcc8 BitLab Trading Suite | Get access to the best trading indicators \u27a1\ufe0f https://bitlabacademy.com/indicators \n\nProtect Your Crypto in Cold Storage: \n\ud83d\udcb3 Safepal Wallet \u27a1\ufe0f  https://www.safepal.com/store/s1?ref=...\n\nTools:\n\ud83d\udd2c Research with Token Metrics \u27a1\ufe0f https://tokenmetrics.com/?ref=benarmstrong4\n\u2699\ufe0fLux Algo Trading Tool \u27a1\ufe0f https://luxalgo.com/?rfsn=6778216.6e72df#premium-packages\n\ud83d\udee0 Market Cipher Trading Tool \u27a1\ufe0fhttps://marketciphertrading.com?ref=353\n\nCome Stake On-Chain: \n\ud83e\uddd0 How to join Cardano (ADA) BitPool \u27a1\ufe0f https://bitboycrypto.com/staking/card...\n\n\u25cf\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25cf\n\nTimestamps\n00:00 Intro\n01:00 Coin 1 by Suppoman\u2014Tap\n02:35 Coin 2 by Alex Becker\n04:09 Coin 3 by Crypto Banter\n07:03 Coin 4 by Elio Trades\n08:38 Coin 5 by VirtualBacon\n\n\n\u25cf\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25cf\n\nAll of our videos are strictly personal opinions. Please make sure to do your own research. Never take one person's opinion for financial guidance. There are multiple strategies and not all strategies fit all people. Our videos ARE NOT financial advice. Digital Assets are highly volatile and carry a considerable amount of risk. Only use exchanges for trading digital assets. Never keep your entire portfolio on an exchange. ben armstrong bitboy\n\n#bitcoin #money #crypto",
+                    "media:community": {
+                        "media:starRating": {
+                            "@count": "570",
+                            "@average": "5.00",
+                            "@min": "1",
+                            "@max": "5"
+                        },
+                        "media:statistics": {
+                            "@views": "9818"
+                        }
+                    }
+                }
+            },
+            {
+                "id": "yt:video:caGUpml_F8A",
+                "yt:videoId": "caGUpml_F8A",
+                "yt:channelId": "UCjemQfjaXAzA-95RKoy9n_g",
+                "title": "U.S. Banks Collapsing! (Swift Turns To Chainlink)",
+                "link": {
+                    "@rel": "alternate",
+                    "@href": "https://www.youtube.com/watch?v=caGUpml_F8A"
+                },
+                "author": {
+                    "name": "Discover Crypto",
+                    "uri": "https://www.youtube.com/channel/UCjemQfjaXAzA-95RKoy9n_g"
+                },
+                "published": "2023-12-10T16:00:31+00:00",
+                "updated": "2023-12-14T14:01:47+00:00",
+                "media:group": {
+                    "media:title": "U.S. Banks Collapsing! (Swift Turns To Chainlink)",
+                    "media:content": {
+                        "@url": "https://www.youtube.com/v/caGUpml_F8A?version=3",
+                        "@type": "application/x-shockwave-flash",
+                        "@width": "640",
+                        "@height": "390"
+                    },
+                    "media:thumbnail": {
+                        "@url": "https://i4.ytimg.com/vi/caGUpml_F8A/hqdefault.jpg",
+                        "@width": "480",
+                        "@height": "360"
+                    },
+                    "media:description": "Join this channel to get access to perks:\nhttps://www.youtube.com/channel/UCjemQfjaXAzA-95RKoy9n_g/join\n\nCome trade with us on Blofin, where whales are made: \nhttps://partner.blofin.com/d/DiscoverCrypto \n\n\u27a1\ufe0fGet 20% Off an Arculus Wallet, by using code DISCOVERCRYPTO20\nhttps://www.getarculus.com/\n\n\ud83d\udcf2 Follow the OFFICIAL Discover Crypto Socials: \nTwitter (X): https://twitter.com/DiscoverCrypto_\nTik Tok: https://www.tiktok.com/@discovercrypto_official\n\n\u27a1\ufe0fTrade Bitcoin on Fairdesk - https://www.fairdesk.com/signup?vipCode=DiscoverCrypto\n\n\ud83d\udcda Learn more about crypto \u27a1\ufe0f https://bitlabacademy.com\n\n\ud83d\udcc8 BitLab Trading Suite | Get access to the best trading indicators \u27a1\ufe0f https://bitlabacademy.com/indicators \n\nProtect Your Crypto in Cold Storage: \n\ud83d\udcb3 Safepal Wallet \u27a1\ufe0f  https://www.safepal.com/store/s1?ref=...\n\nTools:\n\ud83d\udd2c Research with Token Metrics \u27a1\ufe0f https://tokenmetrics.com/?ref=benarmstrong4\n\u2699\ufe0fLux Algo Trading Tool \u27a1\ufe0f https://luxalgo.com/?rfsn=6778216.6e72df#premium-packages\n\ud83d\udee0 Market Cipher Trading Tool \u27a1\ufe0fhttps://marketciphertrading.com?ref=353\n\nCome Stake On-Chain: \n\ud83e\uddd0 How to join Cardano (ADA) BitPool \u27a1\ufe0f https://bitboycrypto.com/staking/card...\n\n\u25cf\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25cf\n\nTimestamps\n00:00 Intro\n01:00 Today's Economy and Finance, an Explainer\n02:17 The CIA-Backed Coup in Iran\n08:00 The SWIFT Payment System\n12:21 ChainLink and Financial Innovation\n17:00 A Decentralized Alternative\n\n\u25cf\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25cf\n\nAll of our videos are strictly personal opinions. Please make sure to do your own research. Never take one person's opinion for financial guidance. There are multiple strategies and not all strategies fit all people. Our videos ARE NOT financial advice. Digital Assets are highly volatile and carry a considerable amount of risk. Only use exchanges for trading digital assets. Never keep your entire portfolio on an exchange. ben armstrong bitboy\n\n#bitcoin #money #crypto",
+                    "media:community": {
+                        "media:starRating": {
+                            "@count": "794",
+                            "@average": "5.00",
+                            "@min": "1",
+                            "@max": "5"
+                        },
+                        "media:statistics": {
+                            "@views": "12523"
+                        }
+                    }
+                }
+            },
+            {
+                "id": "yt:video:0PAn0gHmpYE",
+                "yt:videoId": "0PAn0gHmpYE",
+                "yt:channelId": "UCjemQfjaXAzA-95RKoy9n_g",
+                "title": "Is CRYPTO SAFE? (3 Red Flags)",
+                "link": {
+                    "@rel": "alternate",
+                    "@href": "https://www.youtube.com/watch?v=0PAn0gHmpYE"
+                },
+                "author": {
+                    "name": "Discover Crypto",
+                    "uri": "https://www.youtube.com/channel/UCjemQfjaXAzA-95RKoy9n_g"
+                },
+                "published": "2023-12-09T16:00:00+00:00",
+                "updated": "2023-12-14T13:41:31+00:00",
+                "media:group": {
+                    "media:title": "Is CRYPTO SAFE? (3 Red Flags)",
+                    "media:content": {
+                        "@url": "https://www.youtube.com/v/0PAn0gHmpYE?version=3",
+                        "@type": "application/x-shockwave-flash",
+                        "@width": "640",
+                        "@height": "390"
+                    },
+                    "media:thumbnail": {
+                        "@url": "https://i1.ytimg.com/vi/0PAn0gHmpYE/hqdefault.jpg",
+                        "@width": "480",
+                        "@height": "360"
+                    },
+                    "media:description": "Join this channel to get access to perks:\nhttps://www.youtube.com/channel/UCjemQfjaXAzA-95RKoy9n_g/join\n\nCome trade with us on Blofin, where whales are made: \nhttps://partner.blofin.com/d/DiscoverCrypto \n\n\u27a1\ufe0fGet 20% Off an Arculus Wallet, by using code DISCOVERCRYPTO20\nhttps://www.getarculus.com/\n\n\ud83d\udcf2 Follow the OFFICIAL Discover Crypto Socials: \nTwitter (X): https://twitter.com/DiscoverCrypto_\nTik Tok: https://www.tiktok.com/@discovercrypto_official\n\n\u27a1\ufe0fTrade Bitcoin on Fairdesk - https://www.fairdesk.com/signup?vipCode=DiscoverCrypto\n\n\ud83d\udcda Learn more about crypto \u27a1\ufe0f https://bitlabacademy.com\n\n\ud83d\udcc8 BitLab Trading Suite | Get access to the best trading indicators \u27a1\ufe0f https://bitlabacademy.com/indicators \n\nProtect Your Crypto in Cold Storage: \n\ud83d\udcb3 Safepal Wallet \u27a1\ufe0f  https://www.safepal.com/store/s1?ref=...\n\nTools:\n\ud83d\udd2c Research with Token Metrics \u27a1\ufe0f https://tokenmetrics.com/?ref=benarmstrong4\n\u2699\ufe0fLux Algo Trading Tool \u27a1\ufe0f https://luxalgo.com/?rfsn=6778216.6e72df#premium-packages\n\ud83d\udee0 Market Cipher Trading Tool \u27a1\ufe0fhttps://marketciphertrading.com?ref=353\n\nCome Stake On-Chain: \n\ud83e\uddd0 How to join Cardano (ADA) BitPool \u27a1\ufe0f https://bitboycrypto.com/staking/card...\n\n\u25cf\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25cf\n\nTimestamps\n00:00 Intro\n01:00 Dr. Adam Lowe and Arculus, A Backstory\n03:27 Fundamental Difference of Arculus' Security Mechanism\n05:11 New Feature Added\n06:14 Supporting the dApp Ecosystem\n07:15 The Ethos of The Guardian, Arculus' Logo\n08:08 Red Flags To Watch Out For in Hardware Wallets\n10:20 Why Shift From Elitist Clients to Crypto?\n11:37 Vision of Arculus Moving Into 2024\n12:43 What is 3FA?\n13:47 Why Arculus Doesn't Use Bluetooth\n14:40 No Man-In-the-Middle Attack in Arculus\n15:41 \"Crypto And Blockchain Can Do So Much More Globally\"\n17:20 How Does Crypto Crossover in the World of Science?\n20:16 Patent Issues Impacting Scientists\n22:15 Outlook on Science Across Time and Space\n\n\n\u25cf\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25cf\n\nAll of our videos are strictly personal opinions. Please make sure to do your own research. Never take one person's opinion for financial guidance. There are multiple strategies and not all strategies fit all people. Our videos ARE NOT financial advice. Digital Assets are highly volatile and carry a considerable amount of risk. Only use exchanges for trading digital assets. Never keep your entire portfolio on an exchange. ben armstrong bitboy\n\n#bitcoin #money #crypto",
+                    "media:community": {
+                        "media:starRating": {
+                            "@count": "183",
+                            "@average": "5.00",
+                            "@min": "1",
+                            "@max": "5"
+                        },
+                        "media:statistics": {
+                            "@views": "4448"
+                        }
+                    }
+                }
+            },
+            {
+                "id": "yt:video:eX_3EfiN7ak",
+                "yt:videoId": "eX_3EfiN7ak",
+                "yt:channelId": "UCjemQfjaXAzA-95RKoy9n_g",
+                "title": "Altcoin Price Predictions! (100X Potential)",
+                "link": {
+                    "@rel": "alternate",
+                    "@href": "https://www.youtube.com/watch?v=eX_3EfiN7ak"
+                },
+                "author": {
+                    "name": "Discover Crypto",
+                    "uri": "https://www.youtube.com/channel/UCjemQfjaXAzA-95RKoy9n_g"
+                },
+                "published": "2023-12-08T17:04:23+00:00",
+                "updated": "2023-12-14T17:44:02+00:00",
+                "media:group": {
+                    "media:title": "Altcoin Price Predictions! (100X Potential)",
+                    "media:content": {
+                        "@url": "https://www.youtube.com/v/eX_3EfiN7ak?version=3",
+                        "@type": "application/x-shockwave-flash",
+                        "@width": "640",
+                        "@height": "390"
+                    },
+                    "media:thumbnail": {
+                        "@url": "https://i2.ytimg.com/vi/eX_3EfiN7ak/hqdefault.jpg",
+                        "@width": "480",
+                        "@height": "360"
+                    },
+                    "media:description": "In todays video we will look at some MASSIVE pumps for altcoins and a few projects with INSANE potential. Special Guest: Nate from Kaspa!\n\nFollow our Special Guest Nate with Kaspa!- https://twitter.com/BubblegumLtng\n\nJoin this channel to get access to perks:\nhttps://www.youtube.com/channel/UCjemQfjaXAzA-95RKoy9n_g/join\n\nCome trade with us on Blofin, where whales are made: \nhttps://partner.blofin.com/d/DiscoverCrypto \n\n\u27a1\ufe0fGet 20% Off an Arculus Wallet, by using code DISCOVERCRYPTO20\nhttps://www.getarculus.com/\n\n\ud83d\udcf2 Follow the OFFICIAL Discover Crypto Socials: \nTwitter (X): https://twitter.com/DiscoverCrypto_\nTik Tok: https://www.tiktok.com/@discovercrypto_official\n\n\u27a1\ufe0fTrade Bitcoin on Fairdesk - https://www.fairdesk.com/signup?vipCode=DiscoverCrypto\n\n\ud83d\udcda Learn more about crypto \u27a1\ufe0f https://bitlabacademy.com\n\n\ud83d\udcc8 BitLab Trading Suite | Get access to the best trading indicators \u27a1\ufe0f https://bitlabacademy.com/indicators \n\nProtect Your Crypto in Cold Storage: \n\ud83d\udcb3 Safepal Wallet \u27a1\ufe0f  https://www.safepal.com/store/s1?ref=...\n\nTools:\n\ud83d\udd2c Research with Token Metrics \u27a1\ufe0f https://tokenmetrics.com/?ref=benarmstrong4\n\u2699\ufe0fLux Algo Trading Tool \u27a1\ufe0f https://luxalgo.com/?rfsn=6778216.6e72df#premium-packages\n\ud83d\udee0 Market Cipher Trading Tool \u27a1\ufe0fhttps://marketciphertrading.com?ref=353\n\nCome Stake On-Chain: \n\ud83e\uddd0 How to join Cardano (ADA) BitPool \u27a1\ufe0f https://bitboycrypto.com/staking/card...\n\n\u25cf\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25cf\n\nTimestamps\n00:00 Intro\n01:15 Market Watch\n04:42 Cardano Price Reaches New Yearly High\n11:50 BTC Charts\n20:13 Kaspa Interview with Nate\n31:08 BTC Breather\n32:21 Vaneck Spot ETF Ticker\u2014HODL\n37:36 BTC Miners Cash $131M Worth of BTC\n40:48 Elizabeth Warren Links Crypto to Criminal Activities\n45:12 CZ Sets Signs on DeSci Sector\n1:07:55 Predictions\n1:10:07 LINK Staked\n1:17:00 Q&A\n\n\u25cf\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25ac\u25cf\n\nAll of our videos are strictly personal opinions. Please make sure to do your own research. Never take one person's opinion for financial guidance. There are multiple strategies and not all strategies fit all people. Our videos ARE NOT financial advice. Digital Assets are highly volatile and carry a considerable amount of risk. Only use exchanges for trading digital assets. Never keep your entire portfolio on an exchange. ben armstrong bitboy\n\n#bitcoin #money #crypto",
+                    "media:community": {
+                        "media:starRating": {
+                            "@count": "809",
+                            "@average": "5.00",
+                            "@min": "1",
+                            "@max": "5"
+                        },
+                        "media:statistics": {
+                            "@views": "13210"
+                        }
+                    }
+                }
+            }
+        ]
+    }
+}
