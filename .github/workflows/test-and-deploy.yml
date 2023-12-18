@@ -1,5 +1,4 @@
 name: 'Test and Deploy'
-on: push
 
 jobs:
   initialise-workflow:
