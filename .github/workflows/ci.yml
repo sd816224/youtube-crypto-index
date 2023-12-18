@@ -18,6 +18,8 @@ jobs:
       run : docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
     - name: Build the Docker image
       run: docker build -t dashboard-pipeline .
+    - name: Tag the Docker image
+      run: docker tag dashboard-pipeline:latest sd816224/dashboard-pipeline:latest
     - name: Push to Dockerhub
       run: docker push sd816224/dashboard-pipeline:latest
 
