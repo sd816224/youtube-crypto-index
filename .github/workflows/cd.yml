@@ -1,0 +1,21 @@
+name: CD Pipeline
+on:
+  workflow_run:
+    workflows: ["CI Pipeline"]
+    types:
+      - completed
+
+jobs:
+
+  build:
+
+    runs-on: self-hosted
+
+    steps:
+
+    - name: Pull Docker image
+      run: docker pull sd816224/dashboard-pipeline:latest
+    - name: Delete old docker container
+      run: docker rm -f dashboard-container || true
+    - name: Run Docker container
+      run: docker run -d --name dashboard-container -p 4500:8050 sd816224/dashboard-pipeline:latest

@@ -81,3 +81,15 @@ schema:yt
 
  ![Alt text](md_images/image.png)
 
+
+
+- add runner:
+    - ec2:
+        - sudo apt update
+        - sudo apt-get upgrade -y
+        - copy paste runner code from setting/Add new self-hosted runner
+        - install docker in ec2  (https://docs.docker.com/engine/install/ubuntu/)
+
+
+run docker container:
+docker run -h localhost -p 4500:8050 -d --name dash-container dashboard-pipeline
