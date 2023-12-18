@@ -1,5 +1,7 @@
 name: CD Pipeline
 on:
+  push:
+    branches: [ "main" ,"docker"]
   workflow_run:
     workflows: ["CI Pipeline"]
     types:
@@ -12,7 +14,6 @@ jobs:
     runs-on: self-hosted
 
     steps:
-
     - name: Pull Docker image
       run: docker pull sd816224/dashboard-pipeline:latest
     - name: Delete old docker container
