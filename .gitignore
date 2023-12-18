@@ -4,3 +4,5 @@ YOUR_CLIENT_SECRET_FILE.json
 src/YOUR_CLIENT_SECRET_FILE.json
 src/.env
 venv/
+feed_example/*
+data_example/*
