@@ -9,6 +9,9 @@ from db_connection import get_connection
 # import pandas as pd
 # import numpy as np
 # import requests
+from dotenv import load_dotenv
+import os
+load_dotenv()
 
 app = Dash()
 app.layout = html.Div([
@@ -20,11 +23,11 @@ app.layout = html.Div([
 ])
 conn = get_connection(
     {
-        'RDS_USERNAME': 'testuser',
-        'RDS_HOSTNAME': 'localhost',
-        'DS_DB_NAME': 'testdb',
-        'RDS_PORT': 5432,
-        'RDS_PASSWORD': 'testpass',
+        'RDS_USERNAME': os.getenv('RDS_USERNAME'),
+        'RDS_HOSTNAME': os.getenv('RDS_HOSTNAME'),
+        'DS_DB_NAME': os.getenv('DS_DB_NAME'),
+        'RDS_PORT': os.getenv('RDS_PORT'),
+        'RDS_PASSWORD': os.getenv('RDS_PASSWORD'),
     }
 )
 
@@ -80,5 +83,5 @@ def query_latest_videos(conn):
 
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
-    conn.close()
+    app.run_server(debug=True,host="0.0.0.0")
+    # conn.close()
