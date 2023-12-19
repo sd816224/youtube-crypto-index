@@ -93,6 +93,7 @@ schema:yt
         - fix docker group if meeting permission deny issus (https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user)
         - ./run.sh to make ec2 to github connected up. or ./run.sh & run at background
 
+
 after check cd.yml run fine. check docker ps running fine at background.
 - sudo apt install nginx
 - find docker container ip address (https://www.freecodecamp.org/news/how-to-get-a-docker-container-ip-address-explained-with-examples/)
@@ -100,6 +101,10 @@ after check cd.yml run fine. check docker ps running fine at background.
     - cd /etc/nginx/sites-available/
     - sudo nano default -> add 'proxy_pass http://container-ip:container-export-port ; ' to 'location'
     - sudo restart nginx: systemctl restart nginx
+
+- make sure security group good for access
+
+
 run docker container:
 
 
