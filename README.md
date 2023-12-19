@@ -81,7 +81,7 @@ schema:yt
 
  ![Alt text](md_images/image.png)
 
-
+- add 7 secrets into action:
 
 - add runner:
     - ec2:
