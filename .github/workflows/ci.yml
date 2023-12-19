@@ -1,7 +1,9 @@
 name: CI Pipeline
 on:
   push:
-    branches: [ "main" ,"docker"]
+    branches: 
+      - main
+      - docker
 
 jobs:
 
