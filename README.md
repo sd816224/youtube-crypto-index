@@ -108,7 +108,7 @@ after check cd.yml run fine. check docker ps running fine at background.
 run docker container:
 
 
-ec2 container ip: 172.17.0.2  
+ec2 container ip: 172.17.0.2
 
 Flask==2.1.3
 Werkzeug==2.2.2 
