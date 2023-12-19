@@ -110,3 +110,6 @@ Werkzeug==2.2.2
 can not pass the security check . comment out for now. 
 if upgrade their verision docker container wont run for :
 TypeError: LocalProxy.__init__() got an unexpected keyword argument 'unbound_message'
+
+sudo docker container ls -a
+docker image ls
