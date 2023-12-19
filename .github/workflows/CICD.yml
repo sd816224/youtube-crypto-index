@@ -30,13 +30,7 @@ jobs:
     - name: Delete old docker container
       run: sudo docker rm -f dashboard-container || true
     - name: Run Docker container
-      run: sudo docker run -d -e RDS_DB_NAME="${{secrets.RDS_DB_NAME}}" \
-            -e RDS_USERNAME="${{secrets.RDS_USERNAME}}" \
-            -e RDS_PASSWORD="${{secrets.RDS_PASSWORD}}" \
-            -e RDS_HOSTNAME="${{secrets.RDS_HOSTNAME}}" \
-            -e RDS_PORT="${{secrets.RDS_PORT}}" \
-            -p 8050:8050 \
-            --name dashboard-container ${{secrets.DOCKER_USERNAME}}/dashboard-pipeline:latest
+      run: sudo docker run -d -e RDS_DB_NAME="${{secrets.RDS_DB_NAME}}" -e RDS_USERNAME="${{secrets.RDS_USERNAME}}" -e RDS_PASSWORD="${{secrets.RDS_PASSWORD}}" -e RDS_HOSTNAME="${{secrets.RDS_HOSTNAME}}" -e RDS_PORT="${{secrets.RDS_PORT}}" -p 8050:8050 --name dashboard-container ${{secrets.DOCKER_USERNAME}}/dashboard-pipeline:latest
 
 
 # test image locally before pushing to dockerhub
