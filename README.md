@@ -89,7 +89,18 @@ schema:yt
         - sudo apt-get upgrade -y
         - copy paste runner code from setting/Add new self-hosted runner
         - install docker in ec2  (https://docs.docker.com/engine/install/ubuntu/)
+        - login docker account sudo su -> docker login> put username and password -> exit
+        - fix docker group if meeting permission deny issus (https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user)
+        - ./run.sh to make ec2 to github connected up. or ./run.sh & run at background
 
-
+after check cd.yml run fine. check docker ps running fine at background.
+- sudo apt install nginx
+- find docker container ip address (https://www.freecodecamp.org/news/how-to-get-a-docker-container-ip-address-explained-with-examples/)
+- edit nginx config:
+    - cd /etc/nginx/sites-available/
+    - sudo nano default -> add 'proxy_pass http://container-ip:container-export-port ; ' to 'location'
+    - sudo restart nginx: systemctl restart nginx
 run docker container:
-docker run -h localhost -p 4500:8050 -d --name dash-container dashboard-pipeline
+
+
+172.17.0.2

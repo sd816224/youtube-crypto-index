@@ -23,3 +23,5 @@ jobs:
     - name: Push to Dockerhub
       run: docker push sd816224/dashboard-pipeline:latest
 
+# test image locally
+# docker run -h localhost -p 4500:8050 -d --name dash-container dashboard-pipeline

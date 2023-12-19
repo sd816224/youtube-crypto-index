@@ -32,16 +32,18 @@ def main():
     load_dotenv()
     # config
     reset_db_only = False
-    work_on_remote_db = False
-    channel_pages_to_search = 2
+    db_init = False
+    work_on_remote_db = True
+    channel_pages_to_search = 40
     q = 'bitcoin'
-    maxResults_channels = '25'
+    maxResults_channels = '50'
     maxResults_videos = '50'
     # config
     google_api_key = os.getenv('google_api_key')
     order = 'relevance'
     search_type = 'channel'
     logger.info('start')
+
     if work_on_remote_db:
         conn = get_connection(
             {
@@ -71,27 +73,28 @@ def main():
         conn.close()
         logger.info('reset db done')
         return
-    destroy_tables(conn)
-    create_tables(conn)
-    check_tables(conn)
-    channel_list_primary = search_channels(
-        channel_pages_to_search,
-        google_api_key,
-        q,
-        order,
-        search_type,
-        maxResults_channels,
-    )
-    logger.info('search_channels done')
-    ready_channel_list = list_all_channels(
-        channel_list_primary,
-        google_api_key,
-    )
-    logger.info('list_channels done')
-    load_channels_table(conn, ready_channel_list)
-    load_status_table(conn, ready_channel_list)
-    load_statistics_table(conn, ready_channel_list)
-    logger.info('load channges&status&statistics done')
+    if db_init:
+        destroy_tables(conn)
+        create_tables(conn)
+        check_tables(conn)
+        channel_list_primary = search_channels(
+            channel_pages_to_search,
+            google_api_key,
+            q,
+            order,
+            search_type,
+            maxResults_channels,
+        )
+        logger.info('search_channels done')
+        ready_channel_list = list_all_channels(
+            channel_list_primary,
+            google_api_key,
+        )
+        logger.info('list_channels done')
+        load_channels_table(conn, ready_channel_list)
+        load_status_table(conn, ready_channel_list)
+        load_statistics_table(conn, ready_channel_list)
+        logger.info('load channges&status&statistics done')
     channels_iterator(conn, google_api_key, maxResults_videos)
     logger.info('load videos done')
     conn.close()
