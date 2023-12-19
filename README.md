@@ -106,3 +106,4 @@ run docker container:
 172.17.0.2
 
 Flask==2.2.5
+Werkzeug==2.3.3
