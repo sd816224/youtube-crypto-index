@@ -3,7 +3,7 @@ on:
   workflow_run:
     branches:
       - main
-      - 'releases/**'
+      - docker
     workflows: ["CI Pipeline"]
     types:
       - completed
