@@ -1,0 +1,37 @@
+name: CICD
+on:
+  push:
+    branches: [ "main" ,"docker"]
+
+jobs:
+
+  CI:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Login Dcokerhub
+      env:
+        DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
+        DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+      run : docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+    - name: Build the Docker image
+      run: docker build -t dashboard-pipeline .
+    - name: Tag the Docker image
+      run: docker tag dashboard-pipeline:latest sd816224/dashboard-pipeline:latest
+    - name: Push to Dockerhub
+      run: docker push sd816224/dashboard-pipeline:latest
+
+  CD: 
+    runs-on: self-hosted
+    needs: CI
+    steps:
+    - name: Pull Docker image
+      run: sudo docker pull sd816224/dashboard-pipeline:latest
+    - name: Delete old docker container
+      run: docker rm -f dashboard-container || true
+    - name: Run Docker container
+      run: docker run -d --name dashboard-container -p 8050:8050 sd816224/dashboard-pipeline:latest
+      # run: docker run -d --name dashboard-container -p 8050:8050 sd816224/dashboard-pipeline:latest
+
+# test image locally before pushing to dockerhub
+# docker run -h localhost -p 4500:8050 -d --name dash-container dashboard-pipeline
