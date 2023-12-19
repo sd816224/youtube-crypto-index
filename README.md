@@ -104,3 +104,5 @@ run docker container:
 
 
 172.17.0.2
+
+Flask==2.2.5
