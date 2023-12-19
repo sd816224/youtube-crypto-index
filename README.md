@@ -105,5 +105,8 @@ run docker container:
 
 172.17.0.2
 
-Flask==2.2.5
-Werkzeug==2.3.3
+Flask==2.1.3
+Werkzeug==2.2.2 
+can not pass the security check . comment out for now. 
+if upgrade their verision docker container wont run for :
+TypeError: LocalProxy.__init__() got an unexpected keyword argument 'unbound_message'
