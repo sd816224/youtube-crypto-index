@@ -13,7 +13,7 @@ logger.setLevel(logging.INFO)
 database_credentials = {
     "RDS_USERNAME": "testuser",
     "RDS_PASSWORD": "testpass",
-    "DS_DB_NAME": "testdb",
+    "RDS_DB_NAME": "testdb",
     "RDS_HOSTNAME": "localhost",
     "RDS_PORT": 5433,
 }

@@ -17,7 +17,7 @@ def get_connection(database_credentials):
     which is a dictionary consisting of:
         RDS_USERNAME
         RDS_HOSTNAME
-        DS_DB_NAME
+        RDS_DB_NAME
         RDS_PORT
         RDS_PASSWORD
 
@@ -35,7 +35,7 @@ def get_connection(database_credentials):
     try:
         user = database_credentials['RDS_USERNAME']
         host = database_credentials['RDS_HOSTNAME']
-        database = database_credentials['DS_DB_NAME']
+        database = database_credentials['RDS_DB_NAME']
         port = database_credentials['RDS_PORT']
         password = database_credentials['RDS_PASSWORD']
 

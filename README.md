@@ -13,7 +13,7 @@ guidance for colabrators:
 - clone the repo
 - create enviroment params file: src/.env. config it as src/.env.example:
     - create your own google api key for google_api_key (enable youtube bigdata v3 and create key)
-    - config when you have your postgres database ready, otherwise comment out: DS_DB_NAME. RDS_USERNAME. RDS_PASSWORD. RDS_HOSTNAME. RDS_PORT
+    - config when you have your postgres database ready, otherwise comment out: RDS_DB_NAME. RDS_USERNAME. RDS_PASSWORD. RDS_HOSTNAME. RDS_PORT
 
 - setup docker for dev&testing:  
     - make sure running docker application. for dev stage with local-dev-d    - spin up the container by CLI ``` docker-compose -f ./src/docker-compose-dev.yaml up -d```
@@ -103,7 +103,7 @@ after check cd.yml run fine. check docker ps running fine at background.
 run docker container:
 
 
-172.17.0.2
+ec2 container ip: 172.17.0.2  
 
 Flask==2.1.3
 Werkzeug==2.2.2 
