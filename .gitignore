@@ -6,5 +6,5 @@ src/.env
 venv/
 feed_example/*
 data_example/*
-!.feed_example
-!.data_example
+!.feed_example/.gitkeep
+!.data_example/.gitkeep
