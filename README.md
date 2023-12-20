@@ -120,5 +120,5 @@ sudo docker container ls -a
 docker image ls
 
 
-callback url:
-http://13.41.65.150:8050/feed
+callback url: /feed
+http://13.41.65.150:8050

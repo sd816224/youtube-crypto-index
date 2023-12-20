@@ -69,7 +69,7 @@ conn = get_connection(
 
 def query_latest_videos(conn):
     content = conn.run(
-        'select title,video_published_at,video_id from yt.videos order by video_published_at desc limit 20')  # noqa
+        'select title,video_published_at,video_id from yt.videos order by video_published_at desc limit 15')  # noqa
     titles = [i[0] for i in content]
     published_at = [i[1].strftime("%Y-%m-%d %H:%M:%S") for i in content]
     video_id = [i[2] for i in content]
