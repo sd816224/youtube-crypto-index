@@ -1,3 +1,9 @@
+import requests
+import pandas as pd
+import plotly.graph_objects as go
+from dash import Input, Output
+from dash import dcc
+from dash import Dash, html
 import logging
 from load_db_tables import load_videos_table
 from db_connection import get_connection
@@ -18,28 +24,21 @@ from werkzeug.serving import run_simple
 src_path = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(src_path)
 
-from dash import Dash,html
-from dash import dcc
-from dash import Input, Output
 # import dash_bootstrap_components as dbc
 # import plotly.express as px
-import plotly.graph_objects as go
-from db_connection import get_connection
 
-import pandas as pd
 # import numpy as np
-import requests
-from dotenv import load_dotenv
-import os
 load_dotenv()
 
 
 app_flask = Flask(__name__)
-app_dash = Dash(__name__,server=app_flask)
+app_dash = Dash(__name__, server=app_flask)
 
-@app_flask.route('/plotly_dashboard') 
+
+@app_flask.route('/plotly_dashboard')
 def render_dashboard():
     return flask.redirect('/dash')
+
 
 app = DispatcherMiddleware(app_flask, {
     '/dash': app_dash.server,
@@ -61,6 +60,7 @@ conn = get_connection(
         'RDS_PASSWORD': os.getenv('RDS_PASSWORD'),
     }
 )
+
 
 def query_latest_videos(conn):
     content = conn.run(
@@ -111,7 +111,7 @@ def update_figure(n_intervals):
         new_video_table = html.Table([
         html.Caption("New uploaded Videos", style={"font-size": "28px", "font-weight": "bold"}),  # noqa
         html.Thead(html.Tr([html.Th("published_at"), html.Th("titles"), html.Th("video_links")])),  # noqa
-        html.Tbody([html.Tr([html.Td(a), html.Td(b), html.Td(c)]) for a, b, c in zip(published_at, titles, video_links)])])# noqa
+        html.Tbody([html.Tr([html.Td(a), html.Td(b), html.Td(c)]) for a, b, c in zip(published_at, titles, video_links)])])  # noqa
     except Exception as e:
         print(e)
 
