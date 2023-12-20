@@ -181,8 +181,8 @@ def sub_manager():
     '''  # noqa E501
     load_dotenv()
     # config
-    callback_url = 'https://7ad0-86-1-59-63.ngrok-free.app/feed'
-    work_on_remote_db = False
+    callback_url = 'https://bdc4-86-1-59-63.ngrok-free.app/feed'
+    work_on_remote_db = True
     try:
         if work_on_remote_db:
             conn = get_connection(

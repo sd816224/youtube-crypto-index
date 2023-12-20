@@ -27,7 +27,7 @@ def webhook():
     load_dotenv()
     # config
     # path_name
-    work_on_remote_db = False
+    work_on_remote_db = True
 
     challenge = request.args.get('hub.challenge')
     if challenge:
@@ -148,4 +148,12 @@ def parse_filter_notification(conn, notification):
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True, port=5000, host='0.0.0.0')
+
+
+# http://172.31.38.101:5000
+    
+    # ec2: http://13.40.181.36:5000/feed
+
+
+    # https://bdc4-86-1-59-63.ngrok-free.app/feed
