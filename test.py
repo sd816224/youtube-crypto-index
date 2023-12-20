@@ -1,9 +1,6 @@
+import pandas as pd
 
-my_variable = {'key': 'value'}
+# Assuming you have two dataframes: df1 and df2
+# Both dataframes have a 'timestamp' column
 
-if isinstance(my_variable, dict):
-    print("The variable is a dictionary.")
-elif isinstance(my_variable, list):
-    print("The variable is a list.")
-else:
-    print("The variable is neither a dictionary nor a list.")
+merged_df = pd.merge(df1, df2, on='timestamp')

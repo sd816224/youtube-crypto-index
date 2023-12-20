@@ -3,6 +3,7 @@ YOUR_CLIENT_SECRET_FILE.json
 
 src/YOUR_CLIENT_SECRET_FILE.json
 src/.env
+test/.env
 venv/
 
 feed_example/*

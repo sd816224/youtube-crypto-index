@@ -1,38 +1,41 @@
+import plotly.express as px
+import dash_bootstrap_components as dbc
+from werkzeug.serving import run_simple
+from werkzeug.middleware.dispatcher import DispatcherMiddleware
+from dotenv import load_dotenv
+import datetime as dt
+import json
+import flask
+from flask import Flask, request
+from xml.parsers.expat import ExpatError
+import xmltodict
+from db_connection import get_connection
+from load_db_tables import load_videos_table
 import requests
 import pandas as pd
 import plotly.graph_objects as go
 from dash import Input, Output
 from dash import dcc
+# from dash import dash_table
 from dash import Dash, html
 import logging
-from load_db_tables import load_videos_table
-from db_connection import get_connection
-import xmltodict
-from xml.parsers.expat import ExpatError
-from flask import Flask, request
-import flask
-import json
-import datetime as dt
 import sys
 import os
-from dotenv import load_dotenv
-
-# from werkzeug.wsgi import DispatcherMiddleware
-from werkzeug.middleware.dispatcher import DispatcherMiddleware
-from werkzeug.serving import run_simple
+src_path = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(src_path)
 
 src_path = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(src_path)
 
-# import dash_bootstrap_components as dbc
-# import plotly.express as px
-
 # import numpy as np
 load_dotenv()
 
-
 app_flask = Flask(__name__)
-app_dash = Dash(__name__, server=app_flask)
+app_dash = Dash(
+    __name__,
+    server=app_flask,
+    external_stylesheets=[
+        dbc.themes.DARKLY])
 
 
 @app_flask.route('/plotly_dashboard')
@@ -46,10 +49,12 @@ app = DispatcherMiddleware(app_flask, {
 
 app_dash.layout = html.Div([
     html.H1('Youtube-Crypto-Index'),
+    html.H2("Latest Youtube Videos", style={"font-size": "28px", "font-weight": "bold"}), # noqa
     html.Div(id="new_video_container"),
     dcc.Graph(id='candles'),
+    dcc.Graph(id='index'),
     dcc.Interval(id='page_refresh_interval', interval=2000),
-    html.H1(id='count_up'),
+    html.H1(id='count_up')
 ])
 conn = get_connection(
     {
@@ -68,35 +73,68 @@ def query_latest_videos(conn):
     titles = [i[0] for i in content]
     published_at = [i[1].strftime("%Y-%m-%d %H:%M:%S") for i in content]
     video_id = [i[2] for i in content]
-    return titles, published_at, video_id
+    df = pd.DataFrame(
+        {
+            'published_at': published_at,
+            'title': titles,
+            'video_id': video_id
+        })
+    return titles, published_at, video_id, df
+
+
+def merge_query_to_btc_bars(conn):
+    query = """
+            select * from (select
+            date_trunc('day',video_published_at) as day_up,
+            count(video_id) as count
+            from yt.videos
+            group by day_up
+            order by day_up desc) prim_table
+            where day_up > NOW()-interval '30 DAY';
+
+        """
+    content = conn.run(query)
+    df = pd.DataFrame({
+        "timestamp": [i[0] for i in content],
+        'count': [i[1] for i in content]
+    }
+    )
+
+    btc_df = fetch_btc_bars()
+    merged_df = pd.merge(df, btc_df, on='timestamp')
+    return merged_df
+
+
+def fetch_btc_bars():
+    url = 'https://www.bitstamp.net/api/v2/ohlc/btcusd/'
+    params = {
+        'step': '86400',
+        'limit': '30',
+    }
+    data = requests.get(url, params=params).json()['data']['ohlc']
+    data = pd.DataFrame(
+        data,
+        columns=[
+            'timestamp',
+            'open',
+            'high',
+            'low',
+            'close'])
+    data.timestamp = data.timestamp.astype(int)
+    data.timestamp = pd.to_datetime(data.timestamp, unit='s')
+    return data
 
 
 @app_dash.callback(
     Output('candles', 'figure'),
     Output('count_up', 'children'),
     Output('new_video_container', 'children'),
-    Input('page_refresh_interval', 'n_intervals')
+    Output('index', 'figure'),
+    Input('page_refresh_interval', 'n_intervals'),
 )
 def update_figure(n_intervals):
-
-    url = 'https://www.bitstamp.net/api/v2/ohlc/btcusd/'
-    params = {
-        'step': '60',
-        'limit': '30',
-    }
     try:
-
-        data = requests.get(url, params=params).json()['data']['ohlc']
-        data = pd.DataFrame(
-            data,
-            columns=[
-                'timestamp',
-                'open',
-                'high',
-                'low',
-                'close'])
-        data.timestamp = data.timestamp.astype(int)
-        data.timestamp = pd.to_datetime(data.timestamp, unit='s')
+        data = merge_query_to_btc_bars(conn)
         candles = go.Figure(
             data=[
                 go.Candlestick(
@@ -106,16 +144,32 @@ def update_figure(n_intervals):
                     low=data.low,
                     close=data.close,
                 )])
-        titles, published_at, video_id = query_latest_videos(conn)
+        candles.update_layout(
+            xaxis_rangeslider_visible=False,
+            height=600, width=1000,
+            title_text="BTC/USD",
+            template='plotly_dark',
+        )
+
+        index = px.line(x=data.timestamp, y=data['count'], height=300)
+        index.update_layout(
+            height=300, width=1000,
+            title_text="YCI",
+            template='plotly_dark',
+        )
+
+        titles, published_at, video_id, df = query_latest_videos(conn)
+
         video_links = [html.A(video_id, href=f"https://www.youtube.com/watch?v={video_id}", target="_blank") for video_id in video_id]  # noqa
-        new_video_table = html.Table([
-        html.Caption("New uploaded Videos", style={"font-size": "28px", "font-weight": "bold"}),  # noqa
+        new_video_table = html.Table([  # noqa
         html.Thead(html.Tr([html.Th("published_at"), html.Th("titles"), html.Th("video_links")])),  # noqa
         html.Tbody([html.Tr([html.Td(a), html.Td(b), html.Td(c)]) for a, b, c in zip(published_at, titles, video_links)])])  # noqa
+
     except Exception as e:
         print(e)
 
-    return candles, n_intervals, new_video_table
+    # return candles,index, n_intervals, new_video_table
+    return candles, n_intervals, new_video_table, index
 
 
 @app_flask.route('/feed', methods=['GET', 'POST'])

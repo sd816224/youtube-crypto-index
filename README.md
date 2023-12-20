@@ -118,3 +118,7 @@ TypeError: LocalProxy.__init__() got an unexpected keyword argument 'unbound_mes
 
 sudo docker container ls -a
 docker image ls
+
+
+callback url:
+http://13.41.65.150:8050/feed
