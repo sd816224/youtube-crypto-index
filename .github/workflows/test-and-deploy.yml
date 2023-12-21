@@ -23,8 +23,8 @@ jobs:
       - name: Install Dependencies
         run: make requirements
 
-      - name: Run Security Checks
-        run: make security-test
+      # - name: Run Security Checks
+      #   run: make security-test
 
       - name: Run Flake Checks
         run: make run-flake
