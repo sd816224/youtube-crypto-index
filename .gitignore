@@ -3,6 +3,10 @@ YOUR_CLIENT_SECRET_FILE.json
 
 src/YOUR_CLIENT_SECRET_FILE.json
 src/.env
+test/.env
 venv/
+
 feed_example/*
 data_example/*
+!feed_example/.gitkeep
+!data_example/.gitkeep

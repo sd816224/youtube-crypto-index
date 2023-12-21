@@ -25,6 +25,11 @@ def channels_iterator(conn, google_api_key, maxResults_videos):
     while upload_id is not None:
 
         all_videos = fetch_videos(google_api_key, upload_id, maxResults_videos)
+        # check some channel has no videos. mark it as fetched and carry on
+        if all_videos is None:
+            mark_channel_fetched(conn, upload_id)
+            upload_id = get_one_channel_id_from_db(conn)
+            continue
     # save_json(all_videos, 'data_example/debug_stage1_fetch_videos_return.json') # noqa E501
     # all_videos = read_json_file('data_example/debug_stage1_fetch_videos_return.json')  # noqa E501
         load_videos_table(conn, all_videos['items'])

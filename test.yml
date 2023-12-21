@@ -1,0 +1,10 @@
+gitflow:
+  cd.yml:
+    run:
+      depends-on:
+        - ci.yml
+    finish:
+      branches:
+        - main
+        - docker
+        - push

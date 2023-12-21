@@ -103,7 +103,7 @@ def load_videos_table(conn, listof_videos):
 #     {
 #         'RDS_USERNAME': 'testuser',
 #         'RDS_HOSTNAME': 'localhost',
-#         'DS_DB_NAME': 'testdb',
+#         'RDS_DB_NAME': 'testdb',
 #         'RDS_PORT': 5432,
 #         'RDS_PASSWORD': 'testpass',
 #     }

@@ -27,7 +27,7 @@ def webhook():
     load_dotenv()
     # config
     # path_name
-    work_on_remote_db = False
+    work_on_remote_db = True
 
     challenge = request.args.get('hub.challenge')
     if challenge:
@@ -47,7 +47,7 @@ def webhook():
                 {
                     'RDS_USERNAME': os.getenv('RDS_USERNAME'),
                     'RDS_HOSTNAME': os.getenv('RDS_HOSTNAME'),
-                    'DS_DB_NAME': os.getenv('DS_DB_NAME'),
+                    'RDS_DB_NAME': os.getenv('RDS_DB_NAME'),
                     'RDS_PORT': int(os.getenv('RDS_PORT')),
                     'RDS_PASSWORD': os.getenv('RDS_PASSWORD'),
                 }
@@ -57,7 +57,7 @@ def webhook():
                 {
                     'RDS_USERNAME': 'testuser',
                     'RDS_HOSTNAME': 'localhost',
-                    'DS_DB_NAME': 'testdb',
+                    'RDS_DB_NAME': 'testdb',
                     'RDS_PORT': 5432,
                     'RDS_PASSWORD': 'testpass',
                 }
@@ -148,4 +148,4 @@ def parse_filter_notification(conn, notification):
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True, port=5000, host='0.0.0.0')

@@ -29,6 +29,9 @@ def fetch_videos(google_api_key, playlistId, maxResults, page_token=None):
         playlistId,
         maxResults,
         page_token)
+    if payload is None:
+        logger.error('playlistId:%s payload is None. check log. either remove the channel or else',playlistId) # noqa E501
+        return None
     next_page_token = payload.get('nextPageToken')
     all_items = payload['items']
     page_no = 2
@@ -73,7 +76,9 @@ def fetch_videos_page(google_api_key, playlistId, maxResults, pageToken=None):
         )
         payload = json.loads(response.text)
         if 'error' in payload:
-            logger.error('error in response: fetch_videos_page')
+            logger.error('error in response: fetch_videos_page. ')
+            logger.error('payload: %s', payload)
+            logger.error('playlistId: %s', playlistId)
             return None
         return payload
     except Exception as e:

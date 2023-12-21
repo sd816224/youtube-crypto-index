@@ -181,15 +181,15 @@ def sub_manager():
     '''  # noqa E501
     load_dotenv()
     # config
-    callback_url = 'https://7ad0-86-1-59-63.ngrok-free.app/feed'
-    work_on_remote_db = False
+    callback_url = 'http://13.41.65.150:8050/feed'
+    work_on_remote_db = True
     try:
         if work_on_remote_db:
             conn = get_connection(
                 {
                     'RDS_USERNAME': os.getenv('RDS_USERNAME'),
                     'RDS_HOSTNAME': os.getenv('RDS_HOSTNAME'),
-                    'DS_DB_NAME': os.getenv('DS_DB_NAME'),
+                    'RDS_DB_NAME': os.getenv('RDS_DB_NAME'),
                     'RDS_PORT': int(os.getenv('RDS_PORT')),
                     'RDS_PASSWORD': os.getenv('RDS_PASSWORD'),
                 }
@@ -199,7 +199,7 @@ def sub_manager():
                 {
                     'RDS_USERNAME': 'testuser',
                     'RDS_HOSTNAME': 'localhost',
-                    'DS_DB_NAME': 'testdb',
+                    'RDS_DB_NAME': 'testdb',
                     'RDS_PORT': 5432,
                     'RDS_PASSWORD': 'testpass',
                 }

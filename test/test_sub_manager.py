@@ -96,7 +96,7 @@ def test_get_channel_list_init_list(pg_container):
         {
             'RDS_USERNAME': 'testuser',
             'RDS_HOSTNAME': 'localhost',
-            'DS_DB_NAME': 'testdb',
+            'RDS_DB_NAME': 'testdb',
             'RDS_PORT': 5433,
             'RDS_PASSWORD': 'testpass',
         })
@@ -120,7 +120,7 @@ def test_load_subscription_table(pg_container):
         {
             'RDS_USERNAME': 'testuser',
             'RDS_HOSTNAME': 'localhost',
-            'DS_DB_NAME': 'testdb',
+            'RDS_DB_NAME': 'testdb',
             'RDS_PORT': 5433,
             'RDS_PASSWORD': 'testpass',
         })
@@ -179,7 +179,7 @@ def test_get_channel_list_expire_list(pg_container):
         {
             'RDS_USERNAME': 'testuser',
             'RDS_HOSTNAME': 'localhost',
-            'DS_DB_NAME': 'testdb',
+            'RDS_DB_NAME': 'testdb',
             'RDS_PORT': 5433,
             'RDS_PASSWORD': 'testpass',
         })
@@ -202,7 +202,7 @@ def test_get_channel_list_expire_list_multiple_renew(pg_container):
         {
             'RDS_USERNAME': 'testuser',
             'RDS_HOSTNAME': 'localhost',
-            'DS_DB_NAME': 'testdb',
+            'RDS_DB_NAME': 'testdb',
             'RDS_PORT': 5433,
             'RDS_PASSWORD': 'testpass',
         })

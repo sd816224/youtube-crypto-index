@@ -66,7 +66,7 @@ def test_get_connection_returns_correct_log_when_successful_con(
         database_credentials = {
             "RDS_USERNAME": "testuser",
             "RDS_PASSWORD": "testpass",
-            "DS_DB_NAME": "testdb",
+            "RDS_DB_NAME": "testdb",
             "RDS_HOSTNAME": "localhost",
             "RDS_PORT": 5433,
         }
@@ -86,7 +86,7 @@ def test_get_connection_with_interface_error_no_user(pg_container):
         database_credentials = {
             "RDS_USERNAME": "",
             "RDS_PASSWORD": "testpass",
-            "DS_DB_NAME": "testdb",
+            "RDS_DB_NAME": "testdb",
             "RDS_HOSTNAME": "localhost",
             "RDS_PORT": 5433,
         }
@@ -102,7 +102,7 @@ def test_get_connection_with_interface_error_no_host(pg_container):
         database_credentials = {
             "RDS_USERNAME": "testuser",
             "RDS_PASSWORD": "testpass",
-            "DS_DB_NAME": "testdb",
+            "RDS_DB_NAME": "testdb",
             "RDS_HOSTNAME": "incorrect-host",
             "RDS_PORT": 5433,
         }
@@ -118,7 +118,7 @@ def test_for_interface_error_when_provided_incorrect_port(pg_container):
         database_credentials = {
             "RDS_USERNAME": "testuser",
             "RDS_PASSWORD": "testpass",
-            "DS_DB_NAME": "testdb",
+            "RDS_DB_NAME": "testdb",
             "RDS_HOSTNAME": "localhost",
             "RDS_PORT": 1000,
         }
@@ -137,7 +137,7 @@ def test_get_connection_with_database_error_incorrect_database_name(
         database_credentials = {
             "RDS_USERNAME": "testuser",
             "RDS_PASSWORD": "testpass",
-            "DS_DB_NAME": "wrong-db-name",
+            "RDS_DB_NAME": "wrong-db-name",
             "RDS_HOSTNAME": "localhost",
             "RDS_PORT": 5433,
         }
@@ -153,7 +153,7 @@ def test_get_connection_with_database_error_incorrect_password(pg_container):
         database_credentials = {
             "RDS_USERNAME": "testuser",
             "RDS_PASSWORD": "wrong-password",
-            "DS_DB_NAME": "testdb",
+            "RDS_DB_NAME": "testdb",
             "RDS_HOSTNAME": "localhost",
             "RDS_PORT": 5433,
         }

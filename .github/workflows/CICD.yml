@@ -1,0 +1,49 @@
+name: CICD
+on:
+  push:
+    branches: [ "main" ,"docker"]
+
+jobs:
+
+  CI:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Login Dcokerhub
+      env:
+        DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
+        DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+      run : docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+    - name: Build the Docker image
+      run: docker build -t dashboard-pipeline .
+    - name: Tag the Docker image
+      run: docker tag dashboard-pipeline:latest ${{secrets.DOCKER_USERNAME}}/dashboard-pipeline:latest
+    - name: Push to Dockerhub
+      run: docker push ${{secrets.DOCKER_USERNAME}}/dashboard-pipeline:latest
+
+  CD: 
+    runs-on: self-hosted
+    needs: CI
+    steps:
+    - name: Pull Docker image
+      run: sudo docker pull ${{secrets.DOCKER_USERNAME}}/dashboard-pipeline:latest
+    - name: Delete old docker container
+      run: sudo docker rm -f dashboard-container || true
+    - name: Delete old docker image
+      run: sudo docker image prune -f
+    - name: Run Docker container
+      run: sudo docker run -d -e RDS_DB_NAME="${{secrets.RDS_DB_NAME}}" -e RDS_USERNAME="${{secrets.RDS_USERNAME}}" -e RDS_PASSWORD="${{secrets.RDS_PASSWORD}}" -e RDS_HOSTNAME="${{secrets.RDS_HOSTNAME}}" -e RDS_PORT="${{secrets.RDS_PORT}}" -p 8050:8050 --name dashboard-container ${{secrets.DOCKER_USERNAME}}/dashboard-pipeline:latest
+    # - name: Run Docker container
+    #   run: >
+    #     sudo docker run -d 
+    #     -e RDS_DB_NAME="${{secrets.RDS_DB_NAME}}" 
+    #     -e RDS_USERNAME="${{secrets.RDS_USERNAME}}" 
+    #     -e RDS_PASSWORD="${{secrets.RDS_PASSWORD}}" 
+    #     -e RDS_HOSTNAME="${{secrets.RDS_HOSTNAME}}" 
+    #     -e RDS_PORT="${{secrets.RDS_PORT}}" 
+    #     -p 8050:8050 
+    #     --name dashboard-container ${{secrets.DOCKER_USERNAME}}/dashboard-pipeline:latest
+
+
+# test image locally before pushing to dockerhub
+# docker run -h localhost -p 4500:8050 -d --name dash-container dashboard-pipeline

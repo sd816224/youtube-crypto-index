@@ -13,7 +13,7 @@ guidance for colabrators:
 - clone the repo
 - create enviroment params file: src/.env. config it as src/.env.example:
     - create your own google api key for google_api_key (enable youtube bigdata v3 and create key)
-    - config when you have your postgres database ready, otherwise comment out: DS_DB_NAME. RDS_USERNAME. RDS_PASSWORD. RDS_HOSTNAME. RDS_PORT
+    - config when you have your postgres database ready, otherwise comment out: RDS_DB_NAME. RDS_USERNAME. RDS_PASSWORD. RDS_HOSTNAME. RDS_PORT
 
 - setup docker for dev&testing:  
     - make sure running docker application. for dev stage with local-dev-d    - spin up the container by CLI ``` docker-compose -f ./src/docker-compose-dev.yaml up -d```
@@ -74,10 +74,55 @@ guidance for colabrators:
 
 ---
 
-# database design:
+## database design:
 
 schema:yt
 
+ ![Alt text](md_images/db.png)
 
- ![Alt text](md_images/image.png)
+## overall structure:
 
+![Alt text](md_images/YCI.png)
+
+
+- add 7 secrets into action:
+
+- add runner:
+    - ec2:
+        - sudo apt update
+        - sudo apt-get upgrade -y
+        - copy paste runner code from setting/Add new self-hosted runner
+        - install docker in ec2  (https://docs.docker.com/engine/install/ubuntu/)
+        - login docker account sudo su -> docker login> put username and password -> exit
+        - fix docker group if meeting permission deny issus (https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user)
+        - ./run.sh to make ec2 to github connected up. or ./run.sh & run at background
+
+
+after check cd.yml run fine. check docker ps running fine at background.
+- sudo apt install nginx
+- find docker container ip address (https://www.freecodecamp.org/news/how-to-get-a-docker-container-ip-address-explained-with-examples/)
+- edit nginx config:
+    - cd /etc/nginx/sites-available/
+    - sudo nano default -> add 'proxy_pass http://container-ip:container-export-port ; ' to 'location'
+    - sudo restart nginx: systemctl restart nginx
+
+- make sure security group good for access
+
+
+run docker container:
+
+
+ec2 container ip: 172.17.0.2
+
+Flask==2.1.3
+Werkzeug==2.2.2 
+can not pass the security check . comment out for now. 
+if upgrade their verision docker container wont run for :
+TypeError: LocalProxy.__init__() got an unexpected keyword argument 'unbound_message'
+
+sudo docker container ls -a
+docker image ls
+
+
+callback url: /feed
+http://13.41.65.150:8050

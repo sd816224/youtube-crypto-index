@@ -37,6 +37,7 @@ def search_channels(
     logger.info('fetch page: 1')
     payload = fetch_channels_page(
         google_api_key, q, order, search_type, maxResults_channels, page_token)
+
     all_items = payload['items']
     for i in range(pages_to_search - 1):
         next_page_token = payload.get('nextPageToken')

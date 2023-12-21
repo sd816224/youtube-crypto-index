@@ -62,7 +62,7 @@ def test_parse_filter_notification_all_new_uploads(pg_container):
         {
             'RDS_USERNAME': 'testuser',
             'RDS_HOSTNAME': 'localhost',
-            'DS_DB_NAME': 'testdb',
+            'RDS_DB_NAME': 'testdb',
             'RDS_PORT': 5433,
             'RDS_PASSWORD': 'testpass',
         })
@@ -105,7 +105,7 @@ def test_parse_filter_notification_if_video_exists(pg_container):
         {
             'RDS_USERNAME': 'testuser',
             'RDS_HOSTNAME': 'localhost',
-            'DS_DB_NAME': 'testdb',
+            'RDS_DB_NAME': 'testdb',
             'RDS_PORT': 5433,
             'RDS_PASSWORD': 'testpass',
         })
@@ -127,7 +127,7 @@ def test_parse_filter_notification_get_name_changing_feed(pg_container):
         {
             'RDS_USERNAME': 'testuser',
             'RDS_HOSTNAME': 'localhost',
-            'DS_DB_NAME': 'testdb',
+            'RDS_DB_NAME': 'testdb',
             'RDS_PORT': 5433,
             'RDS_PASSWORD': 'testpass',
         })
@@ -151,7 +151,7 @@ def test_parse_filter_notification_deletion_feed(pg_container):
         {
             'RDS_USERNAME': 'testuser',
             'RDS_HOSTNAME': 'localhost',
-            'DS_DB_NAME': 'testdb',
+            'RDS_DB_NAME': 'testdb',
             'RDS_PORT': 5433,
             'RDS_PASSWORD': 'testpass',
         })
