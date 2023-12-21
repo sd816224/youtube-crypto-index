@@ -1,5 +1,5 @@
 # from src.dashboard import query_latest_videos
-# from src.dashboard import query_day_aggregate
+# from src.dashboard import query_latest_videos
 # from src.dashboard import parse_filter_notification
 # from src.dashboard import fetch_btc_bars
 # from src.db_connection import get_connection
@@ -84,7 +84,7 @@ def read_json_file(file_path):
 #     pprint(result)
 #     assert 1==1
 
-# def test_query_latest_videso(pg_container):
+# def test_merge_query_to_btc_bars(pg_container):
 #     conn = get_connection(
 #         {
 #             'RDS_USERNAME': os.getenv('RDS_USERNAME'),
@@ -95,10 +95,7 @@ def read_json_file(file_path):
 #         }
 #     )
 
-#     result = query_day_aggregate(conn)
-
-#     from pprint import pprint
-#     pprint(result)
+#     result = merge_query_to_btc_bars(conn,'day','30')
 #     assert result == 1
 
 # def test_fetch_btc_bars():
@@ -106,3 +103,17 @@ def read_json_file(file_path):
 #     from pprint import pprint
 #     pprint(result)
 #     assert result==1
+
+# def test_query_latest_videos():
+#     conn = get_connection(
+#         {
+#             'RDS_USERNAME': os.getenv('RDS_USERNAME'),
+#             'RDS_HOSTNAME': os.getenv('RDS_HOSTNAME'),
+#             'RDS_DB_NAME': os.getenv('RDS_DB_NAME'),
+#             'RDS_PORT': os.getenv('RDS_PORT'),
+#             'RDS_PASSWORD': os.getenv('RDS_PASSWORD'),
+#         }
+#     )
+
+#     result = query_latest_videos(conn)
+#     assert result == 1

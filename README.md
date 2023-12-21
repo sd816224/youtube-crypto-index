@@ -74,12 +74,16 @@ guidance for colabrators:
 
 ---
 
-# database design:
+## database design:
 
 schema:yt
 
+ ![Alt text](md_images/db.png)
 
- ![Alt text](md_images/image.png)
+## overall structure:
+
+![Alt text](md_images/YCI.png)
+
 
 - add 7 secrets into action:
 

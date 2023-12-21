@@ -1,34 +1,44 @@
-import plotly.express as px
+from dash import Dash, html
+from dash import dash_table
 import dash_bootstrap_components as dbc
-from werkzeug.serving import run_simple
-from werkzeug.middleware.dispatcher import DispatcherMiddleware
+import plotly.express as px
+from dash import dcc
+from dash import Input, Output
+import plotly.graph_objects as go
+from load_db_tables import load_videos_table
+from db_connection import get_connection
 from dotenv import load_dotenv
 import datetime as dt
-import json
-import flask
-from flask import Flask, request
-from xml.parsers.expat import ExpatError
-import xmltodict
-from db_connection import get_connection
-from load_db_tables import load_videos_table
-import requests
 import pandas as pd
-import plotly.graph_objects as go
-from dash import Input, Output
-from dash import dcc
-# from dash import dash_table
-from dash import Dash, html
+import requests
 import logging
 import sys
 import os
+import json
+import flask
+from flask import Flask, request
+from werkzeug.serving import run_simple
+from werkzeug.middleware.dispatcher import DispatcherMiddleware
+from xml.parsers.expat import ExpatError
+import xmltodict
 src_path = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(src_path)
+
 
 src_path = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(src_path)
 
 # import numpy as np
 load_dotenv()
+conn = get_connection(
+    {
+        'RDS_USERNAME': os.getenv('RDS_USERNAME'),
+        'RDS_HOSTNAME': os.getenv('RDS_HOSTNAME'),
+        'RDS_DB_NAME': os.getenv('RDS_DB_NAME'),
+        'RDS_PORT': os.getenv('RDS_PORT'),
+        'RDS_PASSWORD': os.getenv('RDS_PASSWORD'),
+    }
+)
 
 app_flask = Flask(__name__)
 app_dash = Dash(
@@ -47,94 +57,87 @@ app = DispatcherMiddleware(app_flask, {
     '/dash': app_dash.server,
 })
 
-app_dash.layout = html.Div([
-    html.H1('Youtube-Crypto-Index'),
-    html.H2("Latest Youtube Videos", style={"font-size": "28px", "font-weight": "bold"}), # noqa
-    html.Div(id="new_video_container"),
-    dcc.Graph(id='candles'),
-    dcc.Graph(id='index'),
-    dcc.Interval(id='page_refresh_interval', interval=2000),
-    html.H1(id='count_up')
-])
-conn = get_connection(
-    {
-        'RDS_USERNAME': os.getenv('RDS_USERNAME'),
-        'RDS_HOSTNAME': os.getenv('RDS_HOSTNAME'),
-        'RDS_DB_NAME': os.getenv('RDS_DB_NAME'),
-        'RDS_PORT': os.getenv('RDS_PORT'),
-        'RDS_PASSWORD': os.getenv('RDS_PASSWORD'),
-    }
-)
-
 
 def query_latest_videos(conn):
     content = conn.run(
-        'select title,video_published_at,video_id from yt.videos order by video_published_at desc limit 15')  # noqa
+        'select title,video_published_at,video_id from yt.videos order by video_published_at desc limit 50')  # noqa
     titles = [i[0] for i in content]
     published_at = [i[1].strftime("%Y-%m-%d %H:%M:%S") for i in content]
-    video_id = [i[2] for i in content]
+    video_list = [i[2] for i in content]
+    video_links = [
+        f'[{item}](https://www.youtube.com/watch?v={item})' for item in video_list]  # noqa
     df = pd.DataFrame(
         {
             'published_at': published_at,
             'title': titles,
-            'video_id': video_id
+            'video_link': video_links
         })
-    return titles, published_at, video_id, df
+    return df.to_dict('records')
 
 
-def merge_query_to_btc_bars(conn):
-    query = """
-            select * from (select
-            date_trunc('day',video_published_at) as day_up,
-            count(video_id) as count
-            from yt.videos
-            group by day_up
-            order by day_up desc) prim_table
-            where day_up > NOW()-interval '30 DAY';
-
-        """
-    content = conn.run(query)
-    df = pd.DataFrame({
-        "timestamp": [i[0] for i in content],
-        'count': [i[1] for i in content]
-    }
+def create_dropdown(option, id):
+    return html.Div(
+        [
+            html.Label(id),
+            dcc.Dropdown(option, option[0], id=id, clearable=False)
+        ]
     )
 
-    btc_df = fetch_btc_bars()
-    merged_df = pd.merge(df, btc_df, on='timestamp')
-    return merged_df
+
+tblcols = [
+    {'name': 'published_at', 'id': 'published_at'},
+    {'name': 'title', 'id': 'title'},
+    {'name': 'video_link', 'id': 'video_link', 'presentation': 'markdown'},
+]
+
+app_dash.layout = html.Div([
+    html.H1('Youtube-Crypto-Index'),
+    html.H2("Latest Youtube Videos", style={"font-size": "28px", "font-weight": "bold"}),  # noqa
 
 
-def fetch_btc_bars():
-    url = 'https://www.bitstamp.net/api/v2/ohlc/btcusd/'
-    params = {
-        'step': '86400',
-        'limit': '30',
-    }
-    data = requests.get(url, params=params).json()['data']['ohlc']
-    data = pd.DataFrame(
-        data,
-        columns=[
-            'timestamp',
-            'open',
-            'high',
-            'low',
-            'close'])
-    data.timestamp = data.timestamp.astype(int)
-    data.timestamp = pd.to_datetime(data.timestamp, unit='s')
-    return data
+    dbc.Row([
+        dbc.Col([
+            dash_table.DataTable(
+                id="new_video_container",
+                data=query_latest_videos(conn),
+                columns=tblcols,
+                style_header={
+                    'backgroundColor': 'rgb(30, 30, 30)', 'color': 'white'
+                    },
+                style_data={
+                        'backgroundColor': 'rgb(50, 50, 50)',
+                        'color': 'white',
+                        'whiteSpace': 'normal'
+                    },
+                page_size=10,
+                page_current=0,
+            ),
+        ], width=8),
+    ]),
+    html.Div([
+        create_dropdown(['day', 'hour'], id='timeframe'),
+        create_dropdown(['30', '60', '120', '240', '480'], id='bar_nums'),
+    ],style={'display': 'flex', 'margin': 'auto', 'justify-content': 'flex-start'}, # noqa
+    ),
+    dcc.Graph(id='candles'),
+    dcc.Graph(id='index'),
+    dcc.Interval(id='page_refresh_interval', interval=5000),
+    html.H1(id='count_up')
+])
 
 
 @app_dash.callback(
-    Output('candles', 'figure'),
     Output('count_up', 'children'),
-    Output('new_video_container', 'children'),
+    Output('candles', 'figure'),
     Output('index', 'figure'),
+    Output('new_video_container', 'data'),
     Input('page_refresh_interval', 'n_intervals'),
+    Input('timeframe', 'value'),
+    Input('bar_nums', 'value'),
 )
-def update_figure(n_intervals):
+def update_figure(n_intervals, timeframe, bar_nums):
     try:
-        data = merge_query_to_btc_bars(conn)
+        data = merge_query_to_btc_bars(conn, timeframe, bar_nums)
         candles = go.Figure(
             data=[
                 go.Candlestick(
@@ -146,7 +149,7 @@ def update_figure(n_intervals):
                 )])
         candles.update_layout(
             xaxis_rangeslider_visible=False,
-            height=600, width=1000,
+            height=400, width=1000,
             title_text="BTC/USD",
             template='plotly_dark',
         )
@@ -158,18 +161,11 @@ def update_figure(n_intervals):
             template='plotly_dark',
         )
 
-        titles, published_at, video_id, df = query_latest_videos(conn)
-
-        video_links = [html.A(video_id, href=f"https://www.youtube.com/watch?v={video_id}", target="_blank") for video_id in video_id]  # noqa
-        new_video_table = html.Table([  # noqa
-        html.Thead(html.Tr([html.Th("published_at"), html.Th("titles"), html.Th("video_links")])),  # noqa
-        html.Tbody([html.Tr([html.Td(a), html.Td(b), html.Td(c)]) for a, b, c in zip(published_at, titles, video_links)])])  # noqa
-
     except Exception as e:
         print(e)
 
     # return candles,index, n_intervals, new_video_table
-    return candles, n_intervals, new_video_table, index
+    return n_intervals, candles, index, query_latest_videos(conn)
 
 
 @app_flask.route('/feed', methods=['GET', 'POST'])
@@ -179,19 +175,16 @@ def webhook():
     # config
     # path_name
     work_on_remote_db = True
-
     challenge = request.args.get('hub.challenge')
     if challenge:
         return challenge
     try:
         xml_dict = xmltodict.parse(request.data)
-
         # Save the dictionary to a JSON file
-
-        document_prefix = str(dt.datetime.now())[:16]
-        file_name = f'./feed_example/notification_{document_prefix}.json'
-        save_json(xml_dict, file_name)
-        logger.info('notification saved to json file')
+        # document_prefix = str(dt.datetime.now())[:16]
+        # file_name = f'./feed_example/notification_{document_prefix}.json'
+        # save_json(xml_dict, file_name)
+        # logger.info('notification saved to json file')
 
         if work_on_remote_db:
             conn = get_connection(
@@ -213,19 +206,62 @@ def webhook():
                     'RDS_PASSWORD': 'testpass',
                 }
             )
-
         listof_videos = parse_filter_notification(conn, xml_dict)
         logger.info('listof_videos parsed: %s', listof_videos)
         if listof_videos:
             load_videos_table(conn, listof_videos)
             logger.info('load_videos_table done')
-
         conn.close()
-
     except (ExpatError, LookupError):
         return "", 403
-
     return "", 204
+
+
+def merge_query_to_btc_bars(conn, timeframe, bar_nums):
+    query = f"""
+            select * from (select
+            date_trunc('{timeframe}',video_published_at) as interval_up,
+            count(video_id) as count
+            from yt.videos
+            group by interval_up
+            order by interval_up desc) prim_table
+            where interval_up > NOW()-interval '{bar_nums} {timeframe.upper()}';
+        """ # noqa E501
+    content = conn.run(query)
+    df = pd.DataFrame({
+        "timestamp": [i[0] for i in content],
+        'count': [i[1] for i in content]
+    }
+    )
+    btc_df = fetch_btc_bars(timeframe, bar_nums)
+    merged_df = pd.merge(df, btc_df, on='timestamp', how='right').fillna(0)
+    return merged_df
+
+
+def fetch_btc_bars(timeframe, bar_nums):
+    interval_dict = {
+        'minute': 60,
+        'hour': 3600,
+        'day': 86400
+    }
+
+    url = 'https://www.bitstamp.net/api/v2/ohlc/btcusd/'
+    params = {
+        'step': interval_dict[timeframe],
+        'limit': int(bar_nums),
+    }
+    data = requests.get(url, params=params).json()['data']['ohlc']
+    data = pd.DataFrame(
+        data,
+        columns=[
+            'timestamp',
+            'open',
+            'high',
+            'low',
+            'close'])
+    data.timestamp = data.timestamp.astype(int)
+    data.timestamp = pd.to_datetime(data.timestamp, unit='s')
+    return data
 
 
 def save_json(input, file_name):
