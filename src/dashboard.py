@@ -91,10 +91,13 @@ tblcols = [
 ]
 
 app_dash.layout = html.Div([
-    html.H1('Youtube-Crypto-Index'),
-    html.H2("Latest Youtube Videos", style={"font-size": "28px", "font-weight": "bold"}),  # noqa
-
-
+    html.H1('Youtube-Crypto-Index (YCI)', style={"font-size": "65px", "font-weight": "bold"}), # noqa
+    dbc.Row(
+        dbc.Col(
+            html.H2("Latest cryptocurrency-related videos", style={"font-size": "28px", "font-weight": "bold"}), # noqa
+            width={"offset": 3},
+        )
+    ),
     dbc.Row([
         dbc.Col([
             dash_table.DataTable(
