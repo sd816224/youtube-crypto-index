@@ -1,10 +1,10 @@
 #  [Youtebe crypto index (YCI)](http://13.41.65.150:8050)
 - It stands for the how many crypto ralated video published on youtube within the unit period.
-- It can be used for gauging sentiment in the retail crypto market. index wont reflect the deleted videos before the time point of data initial loading.
-- dashboard currently display the latest video and index with bitcoin price. [dashboard link](http://13.41.65.150:8050).
+- It can be used for gauging sentiment in the retail crypto market. index wont reflect the deleted videos before the time point of database initial loading.
+- dashboard currently display the latest videos and real time index with bitcoin price. [dashboard link](http://13.41.65.150:8050).
 - the data is sourced by youtube data api v3. the new video notificaion is bridged from google PubSubHubbub.
-- database is on aws RDS, includes 500+ channels. 337k+ videos.
-the data potentially can be used for NLP/ML for a better sentiment result in future.
+- current database is on aws RDS, includes 500+ watching channels. 337k+ videos details. data potentially can be used for NLP/ML for a better sentiment result in future.
+- the project can work for different topics on youtube as the watching channels is based on searching keywords. 
 
 
 ## structure:
