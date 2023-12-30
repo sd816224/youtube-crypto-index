@@ -173,7 +173,7 @@ def update_figure(n_intervals, timeframe, bar_nums):
 
 @app_flask.route('/feed', methods=['GET', 'POST'])
 def webhook():
-    print('>>>>>>>>>>>>coming to backend<<<<<<<<<<<<<<<<<')
+    print('>>>>>>>>>>>>callback url called<<<<<<<<<<<<<<<<<')
     load_dotenv()
     # config
     # path_name
